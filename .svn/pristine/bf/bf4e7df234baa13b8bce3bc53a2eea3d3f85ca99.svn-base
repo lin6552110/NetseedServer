@@ -1,0 +1,488 @@
+package com.switek.netseed.server;
+
+import java.sql.Blob;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
+
+import com.switek.netseed.server.bean.Brand;
+import com.switek.netseed.server.bean.Controller;
+import com.switek.netseed.server.bean.Device;
+import com.switek.netseed.server.bean.DeviceTypeDef;
+import com.switek.netseed.server.bean.IRCode;
+import com.switek.netseed.server.bean.StandardIRCode;
+import com.switek.netseed.server.bean.SubController;
+import com.switek.netseed.server.dal.DB;
+import com.switek.netseed.server.ui.ServerForm;
+import com.switek.netseed.server.ui.ServerForm.MsgType;
+
+public class DeviceManager {
+
+	public DeviceManager() {
+
+	}
+
+	private static Hashtable<String, Controller> mControllers = new Hashtable<>();
+
+	private static Hashtable<String, StandardIRCode> mStandardIRCodeList = new Hashtable<>();
+
+	private static Hashtable<Integer, DeviceTypeDef> mDeviceTypes = new Hashtable<>();	
+	
+	/**
+	 * @return the controllers
+	 */
+	public static Hashtable<String, Controller> getAllControllers() {
+		return mControllers;
+	}
+	
+	public interface DeviceManagerListener{
+		void onControllerAdded(Controller controller);
+	}
+	
+	private static final List<DeviceManagerListener> listeners=new ArrayList<>();
+	
+	public static void addListener(DeviceManagerListener listener){
+		listeners.add(listener);
+	}
+	public static void removeListener(DeviceManagerListener listener){
+		listeners.remove(listener);
+	}
+	
+	private static void  onAddController(Controller controller){
+		for (DeviceManagerListener listener : listeners) {
+			listener.onControllerAdded(controller);
+		}
+	}
+	
+	
+	public static void addController(Controller controller){
+		getAllControllers().put(controller.getControllerId(), controller);
+		onAddController(controller);
+	}
+
+	/**
+	 * @return the controllers
+	 */
+	public static Controller getController(String Id) {
+		return mControllers.get(Id);
+	}
+
+	/**
+	 * @param controllers
+	 *            the controllers to set
+	 */
+	public static void setControllers(Hashtable<String, Controller> controllers) {
+		DeviceManager.mControllers = controllers;
+	}
+
+	public static void setStandardIRCodeList(
+			Hashtable<String, StandardIRCode> standardIRCodeList) {
+		DeviceManager.mStandardIRCodeList = standardIRCodeList;
+	}
+
+	/**
+	 * get standard IR code by key
+	 * 
+	 * @param key
+	 *            device type + "_" + brand name.(EXAMPLE: TV_TCL)
+	 * @return
+	 */
+	public static StandardIRCode getStandardIRCode(String key) {
+		return mStandardIRCodeList.get(key);
+	}
+
+	public static StandardIRCode getStandardIRCode(int deviceType,
+			String brandCode) {
+		return mStandardIRCodeList
+				.get((String.valueOf(deviceType) + "_" + brandCode)
+						.toUpperCase());
+	}
+
+	public static void loadStandardIRCode() {
+		ServerForm.showLog(MsgType.Debug, "Loading standard IR code list from database...");
+		ResultSet resultSet = DB
+				.executeQuery("select * from AdIRCode order by devicetype, brandcode, ircodeindex");
+		Hashtable<String, StandardIRCode> standardIRCodeList = new Hashtable<>();
+		try {
+			while (resultSet.next()) {
+				int deviceType = resultSet.getInt("DeviceType");
+				String brandCode = resultSet.getString("BrandCode");
+				int IRCodeIndex = resultSet.getInt("IRCodeIndex");
+				byte[] IRCodeData = resultSet.getBytes("IRCodeData");
+
+				Date dtLastEditDT = resultSet.getTimestamp("LastEditDT");
+				long lastEditDT = dtLastEditDT.getTime();
+
+				String key = (deviceType + "_" + brandCode).toUpperCase();
+				StandardIRCode standardIRCode = standardIRCodeList.get(key);
+				if (standardIRCode == null) {
+					standardIRCode = new StandardIRCode();
+					standardIRCode.setDeviceType(deviceType);
+					standardIRCode.setBrandCode(brandCode);
+					standardIRCodeList.put(key, standardIRCode);
+				}
+
+				IRCode lastCode = standardIRCode.getLastIRCode();
+
+				IRCode code = new IRCode();
+				code.setKeyIndex(IRCodeIndex);
+				code.setIRCodeData(IRCodeData);
+				code.setLastEditDT(lastEditDT);
+
+				standardIRCode.getIRCodeList().add(code);
+
+				if (lastCode != null) {
+					code.setPrevious(lastCode);
+					lastCode.setNext(code);
+				}
+			}
+
+			DeviceManager.setStandardIRCodeList(standardIRCodeList);
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+		}
+
+	}
+
+	/**
+	 * Load controllers, sub-controllers and devices from database.
+	 */
+	public static void loadControllers() {
+		ServerForm.showLog(MsgType.Debug, "Loading controller list from database...");
+		ResultSet ctrlSet = DB
+				.executeQuery("select * from MDController order by controllerId");
+
+		Hashtable<String, Controller> tmpControllers = new Hashtable<>();
+		try {
+			while (ctrlSet.next()) {
+				String Id = ctrlSet.getString("ControllerId");
+				String name = ctrlSet.getString("ControllerName");
+				String status = ctrlSet.getString("Status");
+				String macAddress = ctrlSet.getString("MacAddress");
+				Controller controller = new Controller();
+				controller.setControllerId(Id);
+				controller.setControllerName(name);
+				controller.setStatus(status);
+				controller.setMacAddress(macAddress);
+				tmpControllers.put(Id, controller);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+		} finally {
+			try {
+				ctrlSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		ServerForm
+				.showLog(MsgType.Info, "There are " + tmpControllers.size() + " controller(s)");
+
+		ServerForm.showLog(MsgType.Info, "Loading subcontroller list from database...");
+		ResultSet subctrlSet = DB
+				.executeQuery("select * from MDSubController order by controllerid, subcontrollerid");
+		int subCtrlCount = 0;
+		try {
+			while (subctrlSet.next()) {
+				subCtrlCount++;
+				String controllerId = subctrlSet.getString("ControllerId");
+				String subId = subctrlSet.getString("SubControllerId");
+				String name = subctrlSet.getString("SubControllerName");
+				String status = subctrlSet.getString("Status");
+				Controller controller = tmpControllers.get(controllerId);
+				if (controller == null) {
+					ServerForm.showLog(MsgType.Warn,
+							"Couldn't find controller by Id: " + controllerId);
+					continue;
+				}
+
+				SubController sub = new SubController(controller);
+
+				sub.setControllerId(subId);
+				sub.setControllerName(name);
+				sub.setStatus(status);
+				controller.addSubController(subId, sub);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+		} finally {
+			try {
+				subctrlSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		ServerForm.showLog("There are " + subCtrlCount + " subcontroler(s).");
+
+		ServerForm.showLog("Loading device list from database...");
+		ResultSet deviceSet = DB
+				.executeQuery("select * from MDDevice order by controllerid, subcontrollerid");
+		int deviceCount = 0;
+		try {
+			while (deviceSet.next()) {
+				deviceCount++;
+				String controllerId = deviceSet.getString("ControllerId");
+				String subId = deviceSet.getString("SubControllerId");
+				String deviceId = deviceSet.getString("DeviceId");
+				String name = deviceSet.getString("DeviceName");
+				String status = deviceSet.getString("Status");
+				int deviceType = deviceSet.getInt("DeviceType");
+				String brandCode = deviceSet.getString("BrandCode");
+				int IRCodeIndex = deviceSet.getInt("IRCodeIndex");
+				int lastPressedKey = deviceSet.getInt("LastPressedKey");
+				boolean IsLearnedIRCode = deviceSet
+						.getBoolean("IsLearnedIRCode");
+
+				Date dtLastEditDT = deviceSet.getTimestamp("LastEditDT");
+				long lastEditDT = dtLastEditDT.getTime();
+
+				Controller controller = tmpControllers.get(controllerId);
+				if (controller == null) {
+					ServerForm.showLog(MsgType.Warn,
+							"Couldn't find controller by Id: " + controllerId);
+					continue;
+				}
+
+				SubController sub = controller.getSubController(subId);
+				if (sub == null) {
+					ServerForm.showLog(MsgType.Warn,
+							"Couldn't find subcontroller by Id: " + subId
+									+ " in controller: " + controllerId);
+					continue;
+				}
+
+				Device device = new Device(sub);
+				device.setControllerId(controllerId);
+				device.setSubcontrollerId(subId);
+				device.setDeviceId(deviceId);
+				device.setDeviceName(name);
+				device.setStatus(status);
+				device.setDeviceType(deviceType);
+				device.setBrandCode(brandCode);
+				device.setIRCodeIndex(IRCodeIndex);
+				device.setLearnedIRCode(IsLearnedIRCode);
+				device.setLastPressedKey(lastPressedKey);
+
+				device.setLastEditDT(lastEditDT);
+
+				sub.addDevice(deviceId, device);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+		} finally {
+			try {
+				deviceSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		ServerForm.showLog("There are " + deviceCount + " device(s).");
+
+		ServerForm.showLog("Loading learned IR code from database...");
+		ResultSet IRCodeSet = DB
+				.executeQuery("select controllerid, subcontrollerid, deviceid, keyindex, ircodedata, LastEditDT from mdlearnedircode");
+		try {
+			while (IRCodeSet.next()) {
+				String controllerId = IRCodeSet.getString("ControllerId");
+				String subId = IRCodeSet.getString("SubControllerId");
+				String deviceId = IRCodeSet.getString("DeviceId");
+				Controller controller = tmpControllers.get(controllerId);
+				if (controller == null) {
+					ServerForm.showLog(MsgType.Warn,
+							"Couldn't find controller by Id: " + controllerId);
+					continue;
+				}
+
+				SubController sub = controller.getSubController(subId);
+				if (sub == null) {
+					ServerForm.showLog(MsgType.Warn,
+							"Couldn't find subcontroller by Id: " + subId);
+					continue;
+				}
+
+				Device device = sub.getDevice(deviceId);
+				if (device == null) {
+					ServerForm.showLog(MsgType.Warn,
+							"Couldn't find device by Id: " + deviceId);
+					continue;
+				}
+
+				if (!device.isLearnedIRCode()) {
+					ServerForm.showLog("The device: " + deviceId
+							+ " is using standard IR code.");
+					continue;
+				}
+
+				int keyIndex = IRCodeSet.getInt("KeyIndex");
+				Blob IRCodeData = IRCodeSet.getBlob("IRCodeData");
+				byte[] codeDataBytes = IRCodeData.getBytes(1,
+						(int) IRCodeData.length());
+
+				Date dtLastEditDT = IRCodeSet.getTimestamp("LastEditDT");
+				long lastEditDT = dtLastEditDT.getTime();
+
+				IRCode code = new IRCode();
+				code.setKeyIndex(keyIndex);
+				code.setIRCodeData(codeDataBytes);
+				code.setLastEditDT(lastEditDT);
+				device.putIRCode(keyIndex, code);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+		} finally {
+			try {
+				IRCodeSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		ServerForm.showLog("Learned IR code are loaded!");
+
+		DeviceManager.setControllers(tmpControllers);
+	}
+
+	public static SubController getSubcontroller(String controllerId,
+			String subcontrollerId) {
+		Controller controller = DeviceManager.getController(controllerId);
+		if (controller == null) {
+			return null;
+		}
+
+		return controller.getSubController(subcontrollerId);
+	}
+
+	public static SubController getSubcontroller(String controllerId,
+			byte subcontrollerId) {
+		return getSubcontroller(controllerId,
+				String.valueOf(subcontrollerId & 0xff));
+	}
+	
+	
+
+	
+	/**
+	 * Load controllers, sub-controllers and devices from database.
+	 */
+	public static void loadDeviceBrands() {
+		ServerForm.showLog(MsgType.Debug, "Loading device type def from database...");
+		ResultSet resultSet = DB
+				.executeQuery("select devicetype, typename, logourl from AdDeviceTypeDef order by DeviceType");
+
+		Hashtable<Integer, DeviceTypeDef> deviceTypes = new Hashtable<>();
+		try {
+			while (resultSet.next()) {
+				int type = resultSet.getInt("DeviceType");
+				String name = resultSet.getString("TypeName");
+				String logoUrl = resultSet.getString("LOGOUrl");
+				DeviceTypeDef def =new DeviceTypeDef();				
+				def.setDeviceType(type);
+				def.setName(name);
+				def.setLogoUrl(logoUrl);
+				deviceTypes.put(type, def);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+			return;
+		} finally {
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		ServerForm
+				.showLog(MsgType.Info, "Done.");
+
+		ServerForm.showLog(MsgType.Info, "Loading brand info list from database...");
+		resultSet = DB
+				.executeQuery("select brandcode, brandname, logourl from adbranddef");
+		Hashtable<String, Brand> brands = new Hashtable<>();
+		try {
+			while (resultSet.next()) {
+				String brandCode = resultSet.getString("BrandCode");
+				String brandName = resultSet.getString("BrandName");
+				String logoUrl = resultSet.getString("LOGOUrl");
+				Brand brand = new Brand();				
+				brand.setBrandCode(brandCode);				
+				brand.setBrandName(brandName);
+				brand.setLogoUrl(logoUrl);
+				brands.put(brandCode, brand);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+			return;
+		} finally {
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		ServerForm.showLog("Done");
+		
+		ServerForm.showLog(MsgType.Info, "Loading releationship of type and brand from database...");
+		resultSet = DB
+				.executeQuery("select devicetype, brandcode from addevicetypebrandrelationship order by devicetype, brandcode");
+		
+		try {
+			while (resultSet.next()) {
+				int type = resultSet.getInt("DeviceType");
+				String brandCode = resultSet.getString("BrandCode");
+				DeviceTypeDef def = deviceTypes.get(type);
+				if (def==null){
+					ServerForm.warnMsg("Couldn't find device type: " + type);
+					continue;
+				}
+				
+				Brand brand=brands.get(brandCode);
+				if (brand==null){
+					ServerForm.warnMsg("Couldn't find brand: " + brandCode);
+					continue;
+				}
+				
+				def.addBrand(brand);
+			}
+
+		} catch (SQLException e) {
+			ServerForm.showLog(e);
+		} finally {
+			try {
+				resultSet.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		mDeviceTypes=deviceTypes;
+		ServerForm.showLog("Done");
+	}
+	
+	
+	public static DeviceTypeDef getDeviceTypeDef(int type){
+		return mDeviceTypes.get(type);
+	}
+	
+	public static Hashtable<Integer, DeviceTypeDef> getDeviceTypeList(){
+		return mDeviceTypes;
+	}
+}

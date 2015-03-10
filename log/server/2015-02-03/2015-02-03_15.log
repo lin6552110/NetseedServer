@@ -1,0 +1,259 @@
+[2015-02-03 15:16:58:096][com.switek.netseed.server.ui.ServerForm] Already delete [2014-12-15_15.log] file in [2014-12-15] folder.
+[2015-02-03 15:16:58:096][com.switek.netseed.server.ui.ServerForm] Already delete [2014-12-15] file folder.
+[2015-02-03 15:16:58:066][com.switek.netseed.server.ui.ServerForm] test
+[2015-02-03 15:16:58:097][com.switek.netseed.server.ui.ServerForm] T1-Starting the server...
+[2015-02-03 15:16:58:099][com.switek.netseed.server.ui.ServerForm] T1-Socket IO Processor: 64
+[2015-02-03 15:16:58:100][com.switek.netseed.server.ui.ServerForm] T1-Socket IO Pool: 64
+[2015-02-03 15:16:58:103][com.switek.netseed.server.ui.ServerForm] T10-Loading standard IR code list from database...
+[2015-02-03 15:16:58:118][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Configuring from reader: java.io.InputStreamReader@2b805296
+[2015-02-03 15:16:58:120][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] SAXParserFactory class: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
+[2015-02-03 15:16:58:131][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] sax parser classcom.sun.org.apache.xerces.internal.jaxp.SAXParserImpl
+[2015-02-03 15:16:58:132][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] XML reader class: com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+[2015-02-03 15:16:58:132][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespaces'. State: true.
+[2015-02-03 15:16:58:133][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespace-prefixes'. State: false.
+[2015-02-03 15:16:58:137][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: user=cziotappuser
+[2015-02-03 15:16:58:137][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: password=*******
+[2015-02-03 15:16:58:138][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.simultaneous-build-throttle' to value '5000'.
+[2015-02-03 15:16:58:138][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.maximum-connection-count' to value '2000'.
+[2015-02-03 15:16:58:138][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.maximum-new-connections' to value '100'.
+[2015-02-03 15:16:58:139][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.minimum-connection-count' to value '100'.
+[2015-02-03 15:16:58:139][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-sleep-time' to value '120000'.
+[2015-02-03 15:16:58:139][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.prototype-count' to value '50'.
+[2015-02-03 15:16:58:140][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.test-before-use' to value 'true'.
+[2015-02-03 15:16:58:140][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-test-sql' to value 'select 1'.
+[2015-02-03 15:16:58:140][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Created url: proxool.DBPool:com.mysql.jdbc.Driver:jdbc:mysql://localhost:13306/cziot
+[2015-02-03 15:16:58:144][org.logicalcobwebs.proxool.ProxoolFacade] Proxool 0.9.1 (23-Aug-2008 11:10)
+[2015-02-03 15:16:58:164][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.driver=com.mysql.jdbc.Driver
+[2015-02-03 15:16:58:165][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.url=jdbc:mysql://localhost:13306/cziot
+[2015-02-03 15:16:58:165][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.minimum-connection-count=100
+[2015-02-03 15:16:58:166][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.simultaneous-build-throttle=5000
+[2015-02-03 15:16:58:166][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.test-before-use=true
+[2015-02-03 15:16:58:166][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Use of proxool.maximum-new-connections is deprecated. Use more descriptive proxool.simultaneous-build-throttle instead.
+[2015-02-03 15:16:58:166][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.maximum-new-connections=100
+[2015-02-03 15:16:58:167][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: user=cziotappuser
+[2015-02-03 15:16:58:167][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-sleep-time=120000
+[2015-02-03 15:16:58:167][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.prototype-count=50
+[2015-02-03 15:16:58:168][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: password=********
+[2015-02-03 15:16:58:168][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.maximum-connection-count=2000
+[2015-02-03 15:16:58:169][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-test-sql=select 1
+[2015-02-03 15:16:58:180][org.logicalcobwebs.proxool.ShutdownHook] Registered shutdownHook
+[2015-02-03 15:16:58:183][org.logicalcobwebs.proxool.HouseKeeperController] Registering 'DBPool' house keeper
+[2015-02-03 15:16:58:185][org.logicalcobwebs.proxool.HouseKeeperController] Starting a house keeper thread
+[2015-02-03 15:16:58:373][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTransactionIsolation() = 4
+[2015-02-03 15:16:58:374][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getHoldability() = 2
+[2015-02-03 15:16:58:374][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getCatalog() = cziot
+[2015-02-03 15:16:58:375][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: isReadOnly() = false
+[2015-02-03 15:16:58:375][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTypeMap() = {}
+[2015-02-03 15:16:58:375][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2015-02-03 15:16:58:375][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2015-02-03 15:16:58:376][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #2 created on demand = ACTIVE
+[2015-02-03 15:16:58:376][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #1 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:377][org.logicalcobwebs.proxool.ConnectionPool] 000000 (01/02/00) - Connection #2 tested: OK
+[2015-02-03 15:16:58:394][org.logicalcobwebs.proxool.Prototyper] 000001 (01/03/00) - Connection #3 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:409][org.logicalcobwebs.proxool.Prototyper] 000001 (01/04/00) - Connection #4 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:417][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Connection
+[2015-02-03 15:16:58:417][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2015-02-03 15:16:58:418][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2015-02-03 15:16:58:418][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.io.Serializable
+[2015-02-03 15:16:58:419][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.ConnectionProperties
+[2015-02-03 15:16:58:419][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.MySQLConnection
+[2015-02-03 15:16:58:419][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Connection
+[2015-02-03 15:16:58:423][org.logicalcobwebs.proxool.Prototyper] 000001 (01/05/00) - Connection #5 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:436][org.logicalcobwebs.proxool.Prototyper] 000001 (01/06/00) - Connection #6 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:458][org.logicalcobwebs.proxool.Prototyper] 000001 (01/07/00) - Connection #7 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:470][org.logicalcobwebs.proxool.Prototyper] 000001 (01/08/00) - Connection #8 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:482][org.logicalcobwebs.proxool.Prototyper] 000001 (01/09/00) - Connection #9 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:493][org.logicalcobwebs.proxool.Prototyper] 000001 (01/10/00) - Connection #10 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:504][org.logicalcobwebs.proxool.Prototyper] 000001 (01/11/00) - Connection #11 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:527][org.logicalcobwebs.proxool.Prototyper] 000001 (01/12/00) - Connection #12 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:542][org.logicalcobwebs.proxool.Prototyper] 000001 (01/13/00) - Connection #13 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:553][org.logicalcobwebs.proxool.Prototyper] 000001 (01/14/00) - Connection #14 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:563][org.logicalcobwebs.proxool.Prototyper] 000001 (01/15/00) - Connection #15 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:579][org.logicalcobwebs.proxool.Prototyper] 000001 (01/16/00) - Connection #16 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:592][org.logicalcobwebs.proxool.Prototyper] 000001 (01/17/00) - Connection #17 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:607][org.logicalcobwebs.proxool.Prototyper] 000001 (01/18/00) - Connection #18 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:619][org.logicalcobwebs.proxool.Prototyper] 000001 (01/19/00) - Connection #19 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:632][org.logicalcobwebs.proxool.Prototyper] 000001 (01/20/00) - Connection #20 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:646][org.logicalcobwebs.proxool.Prototyper] 000001 (01/21/00) - Connection #21 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:661][org.logicalcobwebs.proxool.Prototyper] 000001 (01/22/00) - Connection #22 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:676][org.logicalcobwebs.proxool.Prototyper] 000001 (01/23/00) - Connection #23 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:687][org.logicalcobwebs.proxool.Prototyper] 000001 (01/24/00) - Connection #24 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:701][org.logicalcobwebs.proxool.Prototyper] 000001 (01/25/00) - Connection #25 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:711][org.logicalcobwebs.proxool.Prototyper] 000001 (01/26/00) - Connection #26 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:722][org.logicalcobwebs.proxool.Prototyper] 000001 (01/27/00) - Connection #27 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:732][org.logicalcobwebs.proxool.Prototyper] 000001 (01/28/00) - Connection #28 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:744][org.logicalcobwebs.proxool.Prototyper] 000001 (01/29/00) - Connection #29 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:758][org.logicalcobwebs.proxool.Prototyper] 000001 (01/30/00) - Connection #30 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:769][org.logicalcobwebs.proxool.Prototyper] 000001 (01/31/00) - Connection #31 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:782][org.logicalcobwebs.proxool.Prototyper] 000001 (01/32/00) - Connection #32 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:790][org.logicalcobwebs.proxool.Prototyper] 000001 (01/33/00) - Connection #33 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:800][org.logicalcobwebs.proxool.Prototyper] 000001 (01/34/00) - Connection #34 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:809][org.logicalcobwebs.proxool.Prototyper] 000001 (01/35/00) - Connection #35 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:817][org.logicalcobwebs.proxool.Prototyper] 000001 (01/36/00) - Connection #36 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:828][org.logicalcobwebs.proxool.Prototyper] 000001 (01/37/00) - Connection #37 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:838][org.logicalcobwebs.proxool.Prototyper] 000001 (01/38/00) - Connection #38 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:852][org.logicalcobwebs.proxool.Prototyper] 000001 (01/39/00) - Connection #39 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:862][org.logicalcobwebs.proxool.Prototyper] 000001 (01/40/00) - Connection #40 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:875][org.logicalcobwebs.proxool.Prototyper] 000001 (01/41/00) - Connection #41 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:887][org.logicalcobwebs.proxool.Prototyper] 000001 (01/42/00) - Connection #42 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:898][org.logicalcobwebs.proxool.Prototyper] 000001 (01/43/00) - Connection #43 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:909][org.logicalcobwebs.proxool.Prototyper] 000001 (01/44/00) - Connection #44 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:920][org.logicalcobwebs.proxool.Prototyper] 000001 (01/45/00) - Connection #45 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:930][org.logicalcobwebs.proxool.Prototyper] 000001 (01/46/00) - Connection #46 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:942][org.logicalcobwebs.proxool.Prototyper] 000001 (01/47/00) - Connection #47 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:952][org.logicalcobwebs.proxool.Prototyper] 000001 (01/48/00) - Connection #48 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:963][org.logicalcobwebs.proxool.Prototyper] 000001 (01/49/00) - Connection #49 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:974][org.logicalcobwebs.proxool.Prototyper] 000001 (01/50/00) - Connection #50 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:985][org.logicalcobwebs.proxool.Prototyper] 000001 (01/51/00) - Connection #51 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:58:995][org.logicalcobwebs.proxool.Prototyper] 000001 (01/52/00) - Connection #52 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:006][org.logicalcobwebs.proxool.Prototyper] 000001 (01/53/00) - Connection #53 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:018][org.logicalcobwebs.proxool.Prototyper] 000001 (01/54/00) - Connection #54 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:027][org.logicalcobwebs.proxool.Prototyper] 000001 (01/55/00) - Connection #55 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:028][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2015-02-03 15:16:59:028][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2015-02-03 15:16:59:028][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Statement
+[2015-02-03 15:16:59:028][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Statement
+[2015-02-03 15:16:59:036][org.logicalcobwebs.proxool.Prototyper] 000001 (01/56/00) - Connection #56 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:050][org.logicalcobwebs.proxool.Prototyper] 000001 (01/57/00) - Connection #57 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:061][org.logicalcobwebs.proxool.Prototyper] 000001 (01/58/00) - Connection #58 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:069][org.logicalcobwebs.proxool.Prototyper] 000001 (01/59/00) - Connection #59 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:079][org.logicalcobwebs.proxool.Prototyper] 000001 (01/60/00) - Connection #60 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:092][org.logicalcobwebs.proxool.Prototyper] 000001 (01/61/00) - Connection #61 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:100][org.logicalcobwebs.proxool.Prototyper] 000001 (01/62/00) - Connection #62 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:111][org.logicalcobwebs.proxool.Prototyper] 000001 (01/63/00) - Connection #63 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:121][org.logicalcobwebs.proxool.Prototyper] 000001 (01/64/00) - Connection #64 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:134][org.logicalcobwebs.proxool.Prototyper] 000001 (01/65/00) - Connection #65 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:143][org.logicalcobwebs.proxool.Prototyper] 000001 (01/66/00) - Connection #66 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:150][org.logicalcobwebs.proxool.Prototyper] 000001 (01/67/00) - Connection #67 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:161][org.logicalcobwebs.proxool.Prototyper] 000001 (01/68/00) - Connection #68 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:171][org.logicalcobwebs.proxool.Prototyper] 000001 (01/69/00) - Connection #69 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:180][org.logicalcobwebs.proxool.Prototyper] 000001 (01/70/00) - Connection #70 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:187][org.logicalcobwebs.proxool.Prototyper] 000001 (01/71/00) - Connection #71 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:189][com.switek.netseed.server.ui.ServerForm] T10-Loading device type def from database...
+[2015-02-03 15:16:59:194][org.logicalcobwebs.proxool.Prototyper] 000001 (01/72/00) - Connection #72 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:203][org.logicalcobwebs.proxool.Prototyper] 000001 (01/73/00) - Connection #73 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:204][com.switek.netseed.server.ui.ServerForm] T10-Done.
+[2015-02-03 15:16:59:205][com.switek.netseed.server.ui.ServerForm] T10-Loading brand info list from database...
+[2015-02-03 15:16:59:207][com.switek.netseed.server.ui.ServerForm] T10-Done
+[2015-02-03 15:16:59:208][com.switek.netseed.server.ui.ServerForm] T10-Loading releationship of type and brand from database...
+[2015-02-03 15:16:59:210][com.switek.netseed.server.ui.ServerForm] T10-Done
+[2015-02-03 15:16:59:210][com.switek.netseed.server.ui.ServerForm] T10-Loading controller list from database...
+[2015-02-03 15:16:59:212][org.logicalcobwebs.proxool.Prototyper] 000001 (01/74/00) - Connection #74 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:223][org.logicalcobwebs.proxool.Prototyper] 000001 (01/75/00) - Connection #75 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:224][com.switek.netseed.server.ui.ServerForm] T10-There are 1450 controller(s)
+[2015-02-03 15:16:59:224][com.switek.netseed.server.ui.ServerForm] T10-Loading subcontroller list from database...
+[2015-02-03 15:16:59:231][org.logicalcobwebs.proxool.Prototyper] 000001 (01/76/00) - Connection #76 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:241][org.logicalcobwebs.proxool.Prototyper] 000001 (01/77/00) - Connection #77 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:244][com.switek.netseed.server.ui.ServerForm] T10-There are 1570 subcontroler(s).
+[2015-02-03 15:16:59:245][com.switek.netseed.server.ui.ServerForm] T10-Loading device list from database...
+[2015-02-03 15:16:59:249][org.logicalcobwebs.proxool.Prototyper] 000001 (01/78/00) - Connection #78 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:257][org.logicalcobwebs.proxool.Prototyper] 000001 (01/79/00) - Connection #79 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:265][org.logicalcobwebs.proxool.Prototyper] 000001 (01/80/00) - Connection #80 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:274][org.logicalcobwebs.proxool.Prototyper] 000001 (01/81/00) - Connection #81 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:282][org.logicalcobwebs.proxool.Prototyper] 000001 (01/82/00) - Connection #82 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:289][org.logicalcobwebs.proxool.Prototyper] 000001 (01/83/00) - Connection #83 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:297][org.logicalcobwebs.proxool.Prototyper] 000001 (01/84/00) - Connection #84 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:304][org.logicalcobwebs.proxool.Prototyper] 000001 (01/85/00) - Connection #85 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:309][org.logicalcobwebs.proxool.Prototyper] 000001 (01/86/00) - Connection #86 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:309][com.switek.netseed.server.ui.ServerForm] T10-There are 1785 device(s).
+[2015-02-03 15:16:59:309][com.switek.netseed.server.ui.ServerForm] T10-Loading learned IR code from database...
+[2015-02-03 15:16:59:316][org.logicalcobwebs.proxool.Prototyper] 000001 (01/87/00) - Connection #87 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:322][org.logicalcobwebs.proxool.Prototyper] 000001 (01/88/00) - Connection #88 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:328][org.logicalcobwebs.proxool.Prototyper] 000001 (01/89/00) - Connection #89 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:333][org.logicalcobwebs.proxool.Prototyper] 000001 (01/90/00) - Connection #90 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:340][org.logicalcobwebs.proxool.Prototyper] 000001 (01/91/00) - Connection #91 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:346][org.logicalcobwebs.proxool.Prototyper] 000001 (01/92/00) - Connection #92 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:352][org.logicalcobwebs.proxool.Prototyper] 000001 (01/93/00) - Connection #93 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:358][org.logicalcobwebs.proxool.Prototyper] 000001 (01/94/00) - Connection #94 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:376][org.logicalcobwebs.proxool.Prototyper] 000001 (01/95/00) - Connection #95 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:382][org.logicalcobwebs.proxool.Prototyper] 000001 (01/96/00) - Connection #96 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:389][org.logicalcobwebs.proxool.Prototyper] 000001 (01/97/00) - Connection #97 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:395][org.logicalcobwebs.proxool.Prototyper] 000001 (01/98/00) - Connection #98 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:401][org.logicalcobwebs.proxool.Prototyper] 000001 (01/99/00) - Connection #99 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:408][org.logicalcobwebs.proxool.Prototyper] 000001 (01/100/00) - Connection #100 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:16:59:475][com.switek.netseed.server.ui.ServerForm] T10-Learned IR code are loaded!
+[2015-02-03 15:16:59:475][com.switek.netseed.server.ui.ServerForm] T10-Loading app list from database...
+[2015-02-03 15:16:59:487][com.switek.netseed.server.ui.ServerForm] T10-Loading timers...
+[2015-02-03 15:16:59:498][com.switek.netseed.server.ui.ServerForm] T10-There are 1 timer(s)
+[2015-02-03 15:16:59:498][com.switek.netseed.server.ui.ServerForm] T10-Loading timer steps...
+[2015-02-03 15:16:59:508][com.switek.netseed.server.ui.ServerForm] T10-Completed to load timers.
+[2015-02-03 15:16:59:509][com.switek.netseed.server.ui.ServerForm] T10-Setup schedule job engine.
+[2015-02-03 15:16:59:516][com.switek.netseed.server.ui.ServerForm] T10-MaxThread: 2048
+[2015-02-03 15:16:59:516][com.switek.netseed.server.ui.ServerForm] T10-Starting the Netseed server...
+[2015-02-03 15:17:00:059][com.switek.netseed.server.ui.ServerForm] T10-Netseed Server started, on LIN/192.168.169.100:38899
+[2015-02-03 15:17:58:041][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:01
+[2015-02-03 15:17:59:515][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:18:29:515][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:18:59:516][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:19:29:517][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:19:58:039][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:03
+[2015-02-03 15:19:59:517][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:20:25:974][org.apache.mina.filter.codec.ProtocolCodecFilter] Processing a MESSAGE_RECEIVED for session 1
+[2015-02-03 15:20:25:974][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_OPENED event for session 1
+[2015-02-03 15:20:25:975][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_OPENED has been fired for session 1
+[2015-02-03 15:20:25:980][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_RECEIVED event for session 1
+[2015-02-03 15:20:25:980][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_RECEIVED has been fired for session 1
+[2015-02-03 15:20:25:984][com.switek.netseed.server.ui.ServerForm] T20-****************************Received 0xF01_COMMAND_ID_QUERY_CTR: AA AA 57 00 00 00 00 00 00 01 01 01 0F 7B 22 42 6F 64 79 22 3A 5B 7B 22 43 6F 6E 74 72 6F 6C 6C 65 72 49 64 22 3A 22 30 37 44 45 30 31 30 32 30 30 30 32 22 7D 2C 7B 22 43 6F 6E 74 72 6F 6C 6C 65 72 49 64 22 3A 22 30 37 44 45 30 31 30 31 30 30 30 31 22 7D 5D 7D EE BC  from: (0x00000001: nio socket, server, /127.0.0.1:61329 => /127.0.0.1:38899)
+[2015-02-03 15:20:25:984][com.switek.netseed.server.ui.ServerForm] T20-Data: {"Body":[{"ControllerId":"07DE01020002"},{"ControllerId":"07DE01010001"}]}
+[2015-02-03 15:20:26:064][com.switek.netseed.server.ui.ServerForm] T20-null|null
+java.lang.NullPointerException
+	at com.switek.netseed.server.io.socket.strategy.QueryController.analysisPacket(QueryController.java:34)
+	at com.switek.netseed.server.io.socket.strategy.CommContext.analysisPacket(CommContext.java:113)
+	at com.switek.netseed.server.io.socket.AsyncSocketMsgHandler.handleMessage(AsyncSocketMsgHandler.java:78)
+	at com.switek.netseed.server.io.socket.AsyncSocketMsgHandler.run(AsyncSocketMsgHandler.java:35)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-02-03 15:20:26:089][com.switek.netseed.server.ui.ServerForm] T20-Sending msg [AA AA 5A 00 00 00 00 00 00 00 00 01 01 01 0F 7B 22 42 6F 64 79 22 3A 7B 22 45 72 72 6F 72 4D 73 67 22 3A 6E 75 6C 6C 7D 2C 22 52 65 73 75 6C 74 43 6F 64 65 22 3A 31 30 30 30 30 2C 22 4F 70 74 43 6F 64 65 22 3A 33 38 34 31 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 30 22 7D 7D 1B ] to (0x00000001: nio socket, server, /127.0.0.1:61329 => /127.0.0.1:38899)
+[2015-02-03 15:20:26:089][com.switek.netseed.server.ui.ServerForm] T20-Command data: {"Body":{"ErrorMsg":null},"ResultCode":10000,"OptCode":3841,"APIVer":"1.0"}
+[2015-02-03 15:20:26:096][com.switek.netseed.server.ui.ServerForm] T20-Msg has been sent
+[2015-02-03 15:20:26:096][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_SENT event for session 1
+[2015-02-03 15:20:26:096][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_SENT has been fired for session 1
+[2015-02-03 15:20:26:097][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_CLOSED event for session 1
+[2015-02-03 15:20:26:097][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_CLOSED has been fired for session 1
+[2015-02-03 15:20:29:518][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:20:58:039][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:04
+[2015-02-03 15:20:59:519][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:21:29:520][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:21:57:416][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_OPENED event for session 2
+[2015-02-03 15:21:57:417][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_OPENED has been fired for session 2
+[2015-02-03 15:21:57:428][org.apache.mina.filter.codec.ProtocolCodecFilter] Processing a MESSAGE_RECEIVED for session 2
+[2015-02-03 15:21:57:429][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_RECEIVED event for session 2
+[2015-02-03 15:21:57:430][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_RECEIVED has been fired for session 2
+[2015-02-03 15:21:57:433][com.switek.netseed.server.ui.ServerForm] T27-****************************Received 0xF01_COMMAND_ID_QUERY_CTR: AA AA 57 00 00 00 00 00 00 01 01 01 0F 7B 22 42 6F 64 79 22 3A 5B 7B 22 43 6F 6E 74 72 6F 6C 6C 65 72 49 44 22 3A 22 30 37 44 45 30 31 30 32 30 30 30 32 22 7D 2C 7B 22 43 6F 6E 74 72 6F 6C 6C 65 72 49 44 22 3A 22 30 37 44 45 30 31 30 31 30 30 30 31 22 7D 5D 7D A7 F3  from: (0x00000002: nio socket, server, /127.0.0.1:61394 => /127.0.0.1:38899)
+[2015-02-03 15:21:57:433][com.switek.netseed.server.ui.ServerForm] T27-Data: {"Body":[{"ControllerID":"07DE01020002"},{"ControllerID":"07DE01010001"}]}
+[2015-02-03 15:21:57:444][com.switek.netseed.server.ui.ServerForm] T27-Sending msg [AA AA 00 01 00 00 00 00 00 00 00 00 00 01 0F 7B 22 42 6F 64 79 22 3A 5B 7B 22 43 6F 6E 74 72 6F 6C 6C 65 72 49 64 22 3A 22 30 37 44 45 30 31 30 32 30 30 30 32 22 2C 22 53 74 61 74 75 73 22 3A 22 30 31 22 2C 22 4D 61 63 41 64 64 72 65 73 73 22 3A 22 43 38 39 33 34 36 34 30 42 44 33 37 22 2C 22 49 52 43 6F 64 65 55 70 64 61 74 65 44 54 22 3A 30 7D 2C 7B 22 43 6F 6E 74 72 6F 6C 6C 65 72 49 64 22 3A 22 30 37 44 45 30 31 30 31 30 30 30 31 22 2C 22 53 74 61 74 75 73 22 3A 22 30 31 22 2C 22 4D 61 63 41 64 64 72 65 73 73 22 3A 22 43 38 39 33 34 36 34 30 42 44 33 37 22 2C 22 49 52 43 6F 64 65 55 70 64 61 74 65 44 54 22 3A 30 7D 5D 2C 22 52 65 73 75 6C 74 43 6F 64 65 22 3A 30 2C 22 4F 70 74 43 6F 64 65 22 3A 33 38 34 31 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 30 22 7D 07 79 ] to (0x00000002: nio socket, server, /127.0.0.1:61394 => /127.0.0.1:38899)
+[2015-02-03 15:21:57:444][com.switek.netseed.server.ui.ServerForm] T27-Command data: {"Body":[{"ControllerId":"07DE01020002","Status":"01","MacAddress":"C8934640BD37","IRCodeUpdateDT":0},{"ControllerId":"07DE01010001","Status":"01","MacAddress":"C8934640BD37","IRCodeUpdateDT":0}],"ResultCode":0,"OptCode":3841,"APIVer":"1.0"}
+[2015-02-03 15:21:57:453][com.switek.netseed.server.ui.ServerForm] T27-Msg has been sent
+[2015-02-03 15:21:57:453][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_SENT event for session 2
+[2015-02-03 15:21:57:454][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_SENT has been fired for session 2
+[2015-02-03 15:21:57:454][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_CLOSED event for session 2
+[2015-02-03 15:21:57:454][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_CLOSED has been fired for session 2
+[2015-02-03 15:21:58:039][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:05
+[2015-02-03 15:21:59:520][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:22:29:521][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:22:58:040][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:06
+[2015-02-03 15:22:58:334][org.logicalcobwebs.proxool.ConnectionPool] 000001 (00/99/00) - #0002 removed because it has been active for too long.
+[2015-02-03 15:22:58:335][org.logicalcobwebs.proxool.HouseKeeper] #0002 was active for 359959 milliseconds and has been removed automaticaly. The Thread responsible was named 'Thread-1', but the last SQL it performed is unknown because the trace property is not enabled.
+[2015-02-03 15:22:58:350][org.logicalcobwebs.proxool.Prototyper] 000001 (00/99/01) - Connection #101 created to achieve minimum of 100 = AVAILABLE
+[2015-02-03 15:22:59:522][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:23:29:522][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:23:58:040][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:07
+[2015-02-03 15:23:59:523][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:24:29:524][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:24:58:041][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:08
+[2015-02-03 15:24:59:525][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:25:29:525][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:25:58:042][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:09
+[2015-02-03 15:25:59:526][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:26:29:527][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:26:59:527][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:27:29:528][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:27:58:042][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:11
+[2015-02-03 15:27:59:529][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:28:29:530][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:28:58:042][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:12
+[2015-02-03 15:28:59:530][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:29:29:531][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-02-03 15:29:58:043][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:13
+[2015-02-03 15:29:59:532][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...

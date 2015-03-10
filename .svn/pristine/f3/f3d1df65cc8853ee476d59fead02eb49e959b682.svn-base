@@ -1,0 +1,19 @@
+package com.switek.netseed.server.dal;
+
+import com.switek.netseed.server.bean.Device;
+import com.switek.netseed.server.bean.LearnIRCode;
+import com.switek.netseed.server.bean.SubController;
+
+public interface IDAL {
+	boolean addDevice(Device device);
+	boolean addSubcontroller(SubController subcontroller);
+	boolean updateDevice(Device device);
+	boolean updateDeviceLastPressKey(Device device, int lastPressedKey);
+	boolean deleteDevice(Device device);
+	
+	boolean deleteSubController(SubController subcontroller);
+	boolean registerController(String id, String name, String macAddress, boolean isReregister);
+	boolean addLearnedIRCode(Device device, LearnIRCode learnIRCode);
+	boolean updateLearnedIRCode(Device device, LearnIRCode learnIRCode);
+	
+}

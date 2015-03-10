@@ -1,0 +1,439 @@
+package com.switek.netseed.server.ui;
+
+import java.util.Date;
+
+import org.apache.log4j.Logger;
+import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionAdapter;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.ShellAdapter;
+import org.eclipse.swt.events.ShellEvent;
+import org.eclipse.swt.layout.FormAttachment;
+import org.eclipse.swt.layout.FormData;
+import org.eclipse.swt.layout.FormLayout;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.Hyperlink;
+
+import com.ibm.icu.text.SimpleDateFormat;
+import com.switek.netseed.server.AppManager;
+import com.switek.netseed.server.DeviceManager;
+import com.switek.netseed.server.DeviceManager.DeviceManagerListener;
+import com.switek.netseed.server.PackageVersion;
+import com.switek.netseed.server.Settings;
+import com.switek.netseed.server.bean.Controller;
+import com.switek.netseed.server.io.socket.AsyncSocketServer;
+import com.switek.netseed.server.ui.MessageBox.MessageType;
+
+public class ServerForm {
+
+	protected Shell shlCzIotServer;
+	private static Logger log = Logger.getLogger(ServerForm.class);
+
+	
+
+	static Display display = null;
+
+	/**
+	 * Open the window.
+	 */
+	public void open() {
+		display = Display.getDefault();
+		createContents();
+		shlCzIotServer.open();
+		shlCzIotServer.layout();
+		log.info("test");
+
+		startSocketServer();
+		while (!shlCzIotServer.isDisposed()) {
+			if (!display.readAndDispatch()) {
+				display.sleep();
+			}
+		}
+
+		stopSocketServer();
+
+		System.exit(0);
+	}
+
+	AsyncSocketServer socketServer = null;
+	Thread socketThread = null;
+	private static Text tbxLog;
+
+	private void startSocketServer() {
+		showLog(MsgType.Info, "Starting the server...");
+		String portString = Settings.getSetting("port");
+		setText(tbxPort, portString);
+		final int port = Integer.valueOf(portString);
+		
+		String socketprocessorString = Settings.getSetting("socketprocessor");
+		final int socketprocessor = Integer.valueOf(socketprocessorString);		
+		showLog("Socket IO Processor: " + socketprocessor);
+		
+		String socketiopoolString = Settings.getSetting("socketiopool");
+		final int socketiopool = Integer.valueOf(socketiopoolString);
+		
+		showLog("Socket IO Pool: " + socketiopool);
+		
+		socketThread = new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				try {
+
+					
+					DeviceManager.addListener(new DeviceManagerListener() {
+
+						@Override
+						public void onControllerAdded(Controller controller) {
+							try {
+								showCountInfo();
+							} catch (Exception e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
+					});
+					loadList();
+
+					socketServer = new AsyncSocketServer(port, socketprocessor, socketiopool);
+					socketServer.listen();
+				} catch (Exception e) {
+					String msgString = "Can't start the server. "
+							+ e.getLocalizedMessage();
+					errorMsg(e);
+					MessageBox.show(msgString, MessageType.Warn);
+				}
+			}
+		});
+		socketThread.start();
+
+	}
+
+	protected void loadList() {
+		try {
+			DeviceManager.loadControllers();
+			DeviceManager.loadStandardIRCode();
+			DeviceManager.loadDeviceBrands();
+			AppManager.refreshAppList();
+			showCountInfo();
+		} catch (Exception ex) {
+			showLog(ex);
+		}
+	}
+
+	void showCountInfo() {
+		String ctrlCount = String.valueOf(DeviceManager.getAllControllers()
+				.size());
+		setText(hprlnkCtrlCount, ctrlCount);
+	}
+
+	void setText(final Hyperlink control, final String value) {
+		if (isUIThread()) {
+			_setText(control, value);
+		} else {
+			display.asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					_setText(control, value);
+				}
+			});
+		}
+	}
+
+	void _setText(Hyperlink control, String value) {
+		control.setText(value);
+	}
+
+	void setText(final Text control, final String value) {
+		if (isUIThread()) {
+			_setText(control, value);
+		} else {
+			display.asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					_setText(control, value);
+				}
+			});
+		}
+	}
+
+	void _setText(Text control, String value) {
+		control.setText(value);
+	}
+
+	private void stopSocketServer() {
+
+		showLog("Stoping the server...");
+		if (socketServer != null) {
+			socketServer.stop();
+			socketServer = null;
+		}
+
+		if (socketThread != null) {
+			socketThread.interrupt();
+		}
+
+		showLog("Stoped!");
+	}
+
+	/**
+	 * Create contents of the window.
+	 */
+	protected void createContents() {
+		shlCzIotServer = new Shell();
+		shlCzIotServer.setSize(821, 527);
+		shlCzIotServer.setText(Settings.getAppName() + " - "
+				+ PackageVersion.getVersion());
+		shlCzIotServer.setLayout(new FormLayout());
+		shlCzIotServer.addShellListener(new ShellAdapter() {
+			@Override
+			public void shellClosed(ShellEvent e) {
+				if (!MessageDialog.openConfirm(shlCzIotServer, "Quit",
+						"Are you sure you want to quit?")) {
+					e.doit = false;
+				}
+			}
+		});
+
+		tbxLog = new Text(shlCzIotServer, SWT.BORDER | SWT.WRAP | SWT.H_SCROLL
+				| SWT.V_SCROLL | SWT.CANCEL | SWT.MULTI);
+		FormData fd_tbxLog = new FormData();
+		fd_tbxLog.left = new FormAttachment(0, 5);
+		tbxLog.setLayoutData(fd_tbxLog);
+		tbxLog.setEditable(false);
+
+		Label lblLog = new Label(shlCzIotServer, SWT.NONE);
+		fd_tbxLog.top = new FormAttachment(0, 91);
+		FormData fd_lblLog = new FormData();
+		fd_lblLog.bottom = new FormAttachment(tbxLog, -6);
+		fd_lblLog.left = new FormAttachment(tbxLog, 0, SWT.LEFT);
+		fd_lblLog.right = new FormAttachment(0, 60);
+		lblLog.setLayoutData(fd_lblLog);
+		lblLog.setText("Log:");
+
+		Button btnClearLog = new Button(shlCzIotServer, SWT.NONE);
+		fd_tbxLog.bottom = new FormAttachment(btnClearLog, -6);
+		fd_tbxLog.right = new FormAttachment(btnClearLog, 0, SWT.RIGHT);
+		btnClearLog.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				tbxLog.setText("");
+			}
+		});
+		FormData fd_btnClearLog = new FormData();
+		fd_btnClearLog.top = new FormAttachment(100, -35);
+		fd_btnClearLog.bottom = new FormAttachment(100, -10);
+		fd_btnClearLog.right = new FormAttachment(100, -10);
+		btnClearLog.setLayoutData(fd_btnClearLog);
+		btnClearLog.setText("Clear Log");
+
+		btnScrollLock = new Button(shlCzIotServer, SWT.NONE);
+		btnScrollLock.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				scrollLock = !scrollLock;
+				btnScrollLock.setText(scrollLock ? "Scroll Unlock"
+						: "Scroll Lock");
+			}
+		});
+		btnScrollLock.setText("Scroll Lock");
+		FormData fd_btnScrollLock = new FormData();
+		fd_btnScrollLock.left = new FormAttachment(btnClearLog, -98, SWT.LEFT);
+		fd_btnScrollLock.bottom = new FormAttachment(btnClearLog, 0, SWT.BOTTOM);
+		fd_btnScrollLock.right = new FormAttachment(btnClearLog, -10);
+		btnScrollLock.setLayoutData(fd_btnScrollLock);
+
+		Group grpStatus = new Group(shlCzIotServer, SWT.NONE);
+		grpStatus.setText("Status:");
+		grpStatus.setLayout(new FormLayout());
+		FormData fd_grpStatus = new FormData();
+		fd_grpStatus.bottom = new FormAttachment(0, 64);
+		fd_grpStatus.right = new FormAttachment(tbxLog, 0, SWT.RIGHT);
+		fd_grpStatus.left = new FormAttachment(tbxLog, 0, SWT.LEFT);
+		fd_grpStatus.top = new FormAttachment(0, 10);
+		grpStatus.setLayoutData(fd_grpStatus);
+		formToolkit.adapt(grpStatus);
+		formToolkit.paintBordersFor(grpStatus);
+
+		Label lblNewLabel = new Label(grpStatus, SWT.NONE);
+		FormData fd_lblNewLabel = new FormData();
+		fd_lblNewLabel.right = new FormAttachment(0, 42);
+		fd_lblNewLabel.top = new FormAttachment(0, 4);
+		fd_lblNewLabel.left = new FormAttachment(0, 7);
+		lblNewLabel.setLayoutData(fd_lblNewLabel);
+		lblNewLabel.setAlignment(SWT.RIGHT);
+		formToolkit.adapt(lblNewLabel, true, true);
+		lblNewLabel.setText("Port:");
+
+		tbxPort = new Text(grpStatus, SWT.BORDER);
+		FormData fd_tbxPort = new FormData();
+		fd_tbxPort.top = new FormAttachment(0, 1);
+		fd_tbxPort.left = new FormAttachment(0, 48);
+		tbxPort.setLayoutData(fd_tbxPort);
+		tbxPort.setEditable(false);
+		formToolkit.adapt(tbxPort, true, true);
+
+		Label lblControllerCount = new Label(grpStatus, SWT.NONE);
+		FormData fd_lblControllerCount = new FormData();
+		fd_lblControllerCount.right = new FormAttachment(0, 229);
+		fd_lblControllerCount.top = new FormAttachment(0, 4);
+		fd_lblControllerCount.left = new FormAttachment(0, 130);
+		lblControllerCount.setLayoutData(fd_lblControllerCount);
+		lblControllerCount.setText("Controller Count:");
+		lblControllerCount.setAlignment(SWT.RIGHT);
+		formToolkit.adapt(lblControllerCount, true, true);
+
+		hprlnkCtrlCount = formToolkit.createHyperlink(grpStatus, "0", SWT.NONE);
+		FormData fd_hprlnkCtrlCount = new FormData();
+		fd_hprlnkCtrlCount.right = new FormAttachment(0, 315);
+		fd_hprlnkCtrlCount.top = new FormAttachment(0, 2);
+		fd_hprlnkCtrlCount.left = new FormAttachment(0, 235);
+		hprlnkCtrlCount.setLayoutData(fd_hprlnkCtrlCount);
+		formToolkit.paintBordersFor(hprlnkCtrlCount);
+
+		Button btnReloadController = formToolkit.createButton(grpStatus,
+				"Reload Controller", SWT.NONE);
+		btnReloadController.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				loadList();
+			}
+		});
+		FormData fd_btnReloadController = new FormData();
+		fd_btnReloadController.left = new FormAttachment(100, -117);
+		fd_btnReloadController.right = new FormAttachment(100, -13);
+		fd_btnReloadController.top = new FormAttachment(0, 4);
+		btnReloadController.setLayoutData(fd_btnReloadController);
+
+	}
+
+	Hyperlink hprlnkCtrlCount = null;
+	private static boolean scrollLock = false;
+
+	public enum MsgType {
+		Debug, Info, Warn, Error, Fatal
+	}
+
+	private static final SimpleDateFormat sdf = new SimpleDateFormat(
+			"[yyyy-MM-dd HH:mm:ss sss] ");
+	private Button btnScrollLock;
+	private final FormToolkit formToolkit = new FormToolkit(
+			Display.getDefault());
+	private Text tbxPort;
+
+	public static void debugMsg(final String msg) {
+		showLog(MsgType.Debug, msg);
+	}
+
+	public static void warnMsg(final String msg) {
+		showLog(MsgType.Warn, msg);
+	}
+
+	public static void errorMsg(final String msg) {
+		showLog(MsgType.Error, msg);
+	}
+	
+	public static void errorMsg(Throwable throwable) {
+		showLog(MsgType.Error, throwable.getLocalizedMessage(), throwable);
+	}
+
+	public static void showLog(final String msg) {
+		showLog(MsgType.Info, msg);
+	}
+
+	public static void showLog(Exception e) {
+		showLog(MsgType.Error, e.getLocalizedMessage(), e);
+	}
+
+	public static void showLog(final MsgType type, final String msg) {
+		showLog(type, msg, null);
+	}
+
+	public static void showLog(final MsgType type, final String msg2,
+			Throwable e) {
+
+		final String msg = "T" + Thread.currentThread().getId() + "-" + msg2;
+
+		if (type == MsgType.Debug) {
+			log.debug(msg);
+		} else if (type == MsgType.Info) {
+			log.info(msg);
+		} else if (type == MsgType.Error) {
+			if (e != null) {
+				log.error(msg + "|" + e.getLocalizedMessage(), e);
+			} else {
+				log.error(msg);
+			}
+		} else if (type == MsgType.Warn) {
+			log.warn(msg);
+		}
+
+		if (type == MsgType.Debug && !log.isDebugEnabled()) {
+			return;
+		}
+
+		if (isUIThread()) {
+			_showLog(type, msg, null);
+		} else {
+			if (display == null) {
+				return;
+			}
+
+			display.asyncExec(new Runnable() {
+
+				@Override
+				public void run() {
+					_showLog(type, msg, null);
+				}
+			});
+		}
+	}
+
+	private static void _showLog(final MsgType type, final String msg,
+			Exception e) {
+		try {
+			if (tbxLog == null) {
+				return;
+			}
+
+			if (display == null) {
+				return;
+			}
+
+			if (tbxLog.isDisposed()) {
+				return;
+			}
+
+			if (tbxLog.getLineCount() > 2000) {
+				tbxLog.setText("");
+			}
+
+			int curTopIndex = tbxLog.getTopIndex();
+			tbxLog.append(sdf.format(new Date()) + "[" + type + "] " + msg
+					+ "\r\n");
+
+			if (!scrollLock) {
+				tbxLog.setTopIndex(Integer.MAX_VALUE);
+			} else {
+				tbxLog.setTopIndex(curTopIndex);
+			}
+		} catch (Exception ex) {
+			// TODO Auto-generated catch block
+			ex.printStackTrace();
+		}
+
+	}
+
+	private static boolean isUIThread() {
+		return Display.getCurrent() != null;
+	}
+}

@@ -1,0 +1,37 @@
+[2015-02-10 15:56:42:893][org.slf4j.impl.Log4jLoggerAdapter] Already delete [2014-12-26_14.log] file in [2014-12-26] folder.
+[2015-02-10 15:56:42:894][org.slf4j.impl.Log4jLoggerAdapter] Already delete [2014-12-26_15.log] file in [2014-12-26] folder.
+[2015-02-10 15:56:42:894][org.slf4j.impl.Log4jLoggerAdapter] Already delete [2014-12-26_16.log] file in [2014-12-26] folder.
+[2015-02-10 15:56:42:895][org.slf4j.impl.Log4jLoggerAdapter] Already delete [2014-12-26_17.log] file in [2014-12-26] folder.
+[2015-02-10 15:56:42:896][org.slf4j.impl.Log4jLoggerAdapter] Already delete [2014-12-26_18.log] file in [2014-12-26] folder.
+[2015-02-10 15:56:42:897][org.slf4j.impl.Log4jLoggerAdapter] Already delete [2014-12-26] file folder.
+[2015-02-10 15:56:42:865][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:56:43:059][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:56:43:061][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:56:43:169][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-10 15:56:43:178][cn.jpush.api.common.connection.NativeHttpClient] Send request - POST https://api.jpush.cn/v3/push
+[2015-02-10 15:56:43:178][cn.jpush.api.common.connection.NativeHttpClient] Request Content - {"platform":"all","audience":{"registration_id":["111111"]},"notification":{"android":{"alert":"Hello world!","title":"NetSeed!"}},"options":{"sendno":956464811,"apns_production":false}}
+[2015-02-10 15:56:43:670][cn.jpush.api.common.resp.ResponseWrapper] JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+[2015-02-10 15:56:43:671][cn.jpush.api.common.connection.NativeHttpClient] Got error response - responseCode:400, responseContent:{"msg_id": 1172667448, "error": {"message": "cannot find user by this audience", "code": 1011}}
+[2015-02-10 15:56:43:671][cn.jpush.api.common.connection.NativeHttpClient] Your request params is invalid. Please check them according to error message.
+[2015-02-10 15:57:27:324][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:57:27:497][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:57:27:500][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:57:27:545][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-10 15:57:27:555][cn.jpush.api.common.connection.NativeHttpClient] Send request - POST https://api.jpush.cn/v3/push
+[2015-02-10 15:57:27:556][cn.jpush.api.common.connection.NativeHttpClient] Request Content - {"platform":"all","audience":"all","notification":{"android":{"alert":"Hello world!","title":"NetSeed!"}},"options":{"sendno":1224381124,"apns_production":false}}
+[2015-02-10 15:57:29:071][cn.jpush.api.common.resp.ResponseWrapper] JPush API Rate Limiting params - quota:600, remaining:598, reset:15
+[2015-02-10 15:57:29:071][cn.jpush.api.common.connection.NativeHttpClient] Succeed to get response - 200 OK
+[2015-02-10 15:57:29:071][cn.jpush.api.common.connection.NativeHttpClient] Response Content - {"sendno":"1224381124","msg_id":"1172671313"}
+[2015-02-10 15:57:29:092][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-10 15:57:29:093][com.lin.test.JpushTest] Got result{"msg_id":1172671313,"sendno":1224381124}
+[2015-02-10 15:58:54:283][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:58:54:451][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:58:54:454][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-10 15:58:54:500][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-10 15:58:54:510][cn.jpush.api.common.connection.NativeHttpClient] Send request - POST https://api.jpush.cn/v3/push
+[2015-02-10 15:58:54:510][cn.jpush.api.common.connection.NativeHttpClient] Request Content - {"platform":"all","audience":"all","notification":{"android":{"alert":"Hello world!","title":"NetSeed!"}},"options":{"sendno":277291058,"apns_production":false}}
+[2015-02-10 15:58:54:850][cn.jpush.api.common.resp.ResponseWrapper] JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+[2015-02-10 15:58:54:850][cn.jpush.api.common.connection.NativeHttpClient] Succeed to get response - 200 OK
+[2015-02-10 15:58:54:850][cn.jpush.api.common.connection.NativeHttpClient] Response Content - {"sendno":"277291058","msg_id":"747326401"}
+[2015-02-10 15:58:54:869][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-10 15:58:54:870][com.lin.test.JpushTest] Got result{"msg_id":747326401,"sendno":277291058}

@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.8.4
+Created-By: 1.7.0_67-b01 (Oracle Corporation)
+Built-By: Administrator
+Built-Date: 2015-03-09 21:07:09
+Implementation-Vendor: Switek
+Implementation-Title: NetseedServer
+Implementation-Version: 1.8.1 (build 307)
+Main-Class: com.switek.netseed.server.Main
+Class-Path: . lib/aopalliance-1.0.jar lib/aspectjweaver-1.7.2.jar lib/
+ com.ibm.icu_4.4.2.v20110823.jar lib/commons-beanutils-1.7.0.jar lib/c
+ ommons-codec-1.9.jar lib/commons-collections-3.2.jar lib/commons-dbcp
+ -1.4.jar lib/commons-io-2.4.jar lib/commons-lang-2.4.jar lib/commons-
+ logging-1.1.1.jar lib/commons-pool-1.5.4.jar lib/ezmorph-1.0.4.jar li
+ b/json-lib-2.2.2-jdk15.jar lib/log4j-1.2.15.jar lib/mysql-connector-j
+ ava-5.1.18-bin.jar lib/org.eclipse.core.commands_3.6.2.v20130123-1626
+ 58.jar lib/org.eclipse.core.runtime_3.8.0.v20120912-155025.jar lib/or
+ g.eclipse.equinox.common_3.6.100.v20120522-1841.jar lib/org.eclipse.e
+ quinox.registry_3.5.200.v20120522-1841.jar lib/org.eclipse.jface.text
+ _3.8.2.v20121126-164145.jar lib/org.eclipse.jface_3.8.102.v20130123-1
+ 62658.jar lib/org.eclipse.osgi_3.8.2.v20130124-134944.jar lib/swt.jar
+  lib/org.eclipse.text_3.5.200.v20120523-1310.jar lib/org.eclipse.ui.f
+ orms_3.5.200.v20120705-114351.jar lib/org.eclipse.ui.workbench_3.104.
+ 0.v20130204-164612.jar lib/proxool-0.9.1.jar lib/proxool-cglib.jar li
+ b/mina-core-2.0.7.jar lib/slf4j-api-1.6.1.jar lib/slf4j-log4j12-1.6.0
+ .jar lib/jpush-client-3.2.3.jar lib/gson-2.2.4.jar
+
+Name: com.switek.netseed.server
+Sealed: false
+

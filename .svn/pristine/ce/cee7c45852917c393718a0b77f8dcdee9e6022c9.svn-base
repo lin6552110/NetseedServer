@@ -1,0 +1,161 @@
+/**
+ * This class is just only for testing
+ */
+package com.switek.netseed.server.io.socket;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.nio.channels.CancelledKeyException;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeoutException;
+
+import org.apache.log4j.Logger;
+
+import com.switek.netseed.server.Settings;
+import com.switek.netseed.server.bean.SocketPacket;
+import com.switek.netseed.server.ui.ServerForm;
+import com.switek.netseed.server.ui.ServerForm.MsgType;
+
+/**
+ * @author F1008570 This class is just only for testing
+ */
+public class AsyncSocketServer {
+	private static Logger logger = Logger.getLogger(AsyncSocketServer.class);
+	ExecutorService mThreadPool = null;
+	ServerSocketChannel serverSocket = null;
+	
+	int port = 0;
+	boolean stop = false;
+	String head = "";
+	String sn = "";
+
+	public AsyncSocketServer(int port) throws IOException {
+		this.port = port;
+
+		String maxThread = Settings.getSetting("maxthreads");
+		ServerForm.debugMsg("MaxThread: " + maxThread);
+		mThreadPool = Executors.newFixedThreadPool(Integer.valueOf(maxThread));
+		
+		//打开服务端的套接字通道
+		serverSocket = ServerSocketChannel.open();
+		//将服务端套接字通道连接方式调整为非阻塞模式  
+		serverSocket.configureBlocking(false);
+		//将服务端套接字通道绑定到本机服务端端口  
+		serverSocket.socket().bind(new InetSocketAddress(port));
+	}
+
+	public void stop() {
+		stop = true;
+		if (null != serverSocket && serverSocket.isOpen()) {
+			try {
+				serverSocket.close();
+			} catch (IOException e) {
+				logger.error(e.getLocalizedMessage(), e);
+			}
+		}
+
+		mThreadPool.shutdownNow();
+	}
+
+	public void listen() {
+		while (!stop) {
+			try {
+
+				ServerForm.showLog(MsgType.Debug, "Waiting for connection. "
+						+ InetAddress.getLocalHost() + "-" + port);
+				//NIO的通道channel中内容读取到字节缓冲区ByteBuffer时是字节方式存储的，  
+				//对于以字符方式读取和处理的数据必须要进行字符集编码和解码  
+				String encoding = "utf-8";
+				//加载字节编码集  
+				Charset cs = Charset.forName(encoding);
+
+				//打开通道选择器  
+				Selector sel = Selector.open();
+				//将服务端套接字通道OP_ACCEP事件注册到通道选择器上  
+				serverSocket.register(sel, SelectionKey.OP_ACCEPT);
+				ServerForm.debugMsg("Server on port:" + port);
+				while (!stop) {
+					System.out.println("A-" + System.currentTimeMillis());
+					//通道选择器开始轮询通道事件  
+					sel.select();
+					Iterator<SelectionKey> it = sel.selectedKeys().iterator();
+					while (it.hasNext()) {
+						System.out.println("B-" + System.currentTimeMillis());
+						//获取通道选择器事件键  
+						SelectionKey skey = it.next();
+						it.remove();
+						//服务端套接字通道发送客户端连接事件，客户端套接字通道尚未连接  
+						SocketChannel ch = null;
+						try {
+							if (skey.isAcceptable()) {
+								//获取服务端套接字通道上连接的客户端套接字通道  
+								ch = serverSocket.accept();
+								ServerForm.debugMsg("Accepted connection from:"
+										+ ch.socket());
+								//将客户端套接字通过连接模式调整为非阻塞模式  
+								ch.configureBlocking(false);
+								//将客户端套接字通道OP_READ事件注册到通道选择器上  
+								ch.register(sel, SelectionKey.OP_READ);								
+							}
+							//客户端套接字通道已经连接  
+							else if (skey.isReadable()) {
+								//获取创建此通道选择器事件键的套接字通道  
+								ch = (SocketChannel) skey.channel();
+
+//								ServerForm.debugMsg("reading from "
+//										+ ch.socket());
+								SocketPacket packet = AsyncSocketMsgHandler
+										.readPacket(ch);
+								AsyncSocketMsgHandler handler = new AsyncSocketMsgHandler(
+										packet);
+//								AsyncSocketMsgHandler2 handler = new AsyncSocketMsgHandler2(
+//										ch);
+								mThreadPool.execute(handler);
+							}
+						} catch (CancelledKeyException ce) {
+							skey.cancel();
+						} catch (IOException ie){							
+							if (ch!=null){
+								ch.close();
+								ServerForm.showLog(MsgType.Error, "IO Exception: " + ie.getLocalizedMessage() + ch, ie);								
+							}else{
+								ServerForm.showLog(ie);
+							}
+						} 
+					}
+				}
+
+			} catch (Exception e) {
+				logger.error(e.getLocalizedMessage(), e);
+			}
+
+		}
+	}
+
+	public static boolean isConnected(Socket socket) {
+		if (socket == null || socket.isConnected() == false
+				|| socket.isClosed()) {
+			return false;
+		}
+
+		try {
+			synchronized (socket) {
+				socket.sendUrgentData(0xFF);
+			}
+			return true;
+		} catch (Exception ex) {
+			logger.error(ex);
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,65 @@
+[2015-01-30 17:00:19:153][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:00:47:973][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:03
+[2015-01-30 17:00:49:159][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:01:19:161][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:01:47:974][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:04
+[2015-01-30 17:01:49:171][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:02:19:187][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:02:47:985][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:05
+[2015-01-30 17:02:49:187][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:03:19:188][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:03:47:986][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:06
+[2015-01-30 17:03:48:674][org.logicalcobwebs.proxool.ConnectionPool] 000001 (00/99/00) - #0002 removed because it has been active for too long.
+[2015-01-30 17:03:48:674][org.logicalcobwebs.proxool.HouseKeeper] #0002 was active for 360478 milliseconds and has been removed automaticaly. The Thread responsible was named 'Thread-1', but the last SQL it performed is unknown because the trace property is not enabled.
+[2015-01-30 17:03:48:689][org.logicalcobwebs.proxool.Prototyper] 000001 (00/99/01) - Connection #101 created to achieve minimum of 100 = AVAILABLE
+[2015-01-30 17:03:49:188][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:04:19:201][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:04:37:700][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_OPENED event for session 1
+[2015-01-30 17:04:37:700][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_OPENED has been fired for session 1
+[2015-01-30 17:04:37:700][org.apache.mina.filter.codec.ProtocolCodecFilter] Processing a MESSAGE_RECEIVED for session 1
+[2015-01-30 17:04:37:700][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_RECEIVED event for session 1
+[2015-01-30 17:04:37:700][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_RECEIVED has been fired for session 1
+[2015-01-30 17:04:37:715][com.switek.netseed.server.ui.ServerForm] T20-****************************Received 0xF20_COMMAND_ID_CHECK_MOBILEAPP_VERSION: AA AA 7A 00 00 00 00 00 00 01 01 20 0F 7B 22 4F 70 74 43 6F 64 65 22 3A 33 38 37 32 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 31 22 2C 22 42 6F 64 79 22 3A 7B 22 50 6C 61 74 66 6F 72 6D 22 3A 22 41 6E 64 72 6F 69 64 22 2C 22 43 75 72 72 65 6E 74 56 65 72 73 69 6F 6E 22 3A 22 32 2E 35 22 2C 22 4C 61 6E 67 75 61 67 65 22 3A 22 7A 68 22 2C 22 54 79 70 65 22 3A 31 7D 7D 9A 38  from: (0x00000001: nio socket, server, /127.0.0.1:57370 => /127.0.0.1:38899)
+[2015-01-30 17:04:37:715][com.switek.netseed.server.ui.ServerForm] T20-Data: {"OptCode":3872,"APIVer":"1.1","Body":{"Platform":"Android","CurrentVersion":"2.5","Language":"zh","Type":1}}
+[2015-01-30 17:04:37:779][com.switek.netseed.server.ui.ServerForm] T20-Sending msg [AA AA C4 00 00 00 00 00 00 00 00 01 01 20 0F 7B 22 42 6F 64 79 22 3A 7B 22 52 65 6C 65 61 73 65 4E 6F 74 65 73 22 3A 22 22 2C 22 44 6F 77 6E 50 61 74 68 22 3A 22 68 74 74 70 3A 2F 2F 77 77 77 2E 6E 65 74 73 65 65 64 63 6E 2E 63 6F 6D 2F 61 70 70 2F 6E 65 74 73 65 65 64 2F 61 6E 64 72 6F 69 64 2F 6E 65 74 73 65 65 64 2E 61 70 6B 22 2C 22 56 65 72 73 69 6F 6E 22 3A 22 32 2E 35 22 2C 22 68 61 73 4E 65 77 56 65 72 73 69 6F 6E 22 3A 66 61 6C 73 65 7D 2C 22 52 65 73 75 6C 74 43 6F 64 65 22 3A 30 2C 22 4F 70 74 43 6F 64 65 22 3A 33 38 37 32 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 30 22 7D 64 FE ] to (0x00000001: nio socket, server, /127.0.0.1:57370 => /127.0.0.1:38899)
+[2015-01-30 17:04:37:779][com.switek.netseed.server.ui.ServerForm] T20-Command data: {"Body":{"ReleaseNotes":"","DownPath":"http://www.netseedcn.com/app/netseed/android/netseed.apk","Version":"2.5","hasNewVersion":false},"ResultCode":0,"OptCode":3872,"APIVer":"1.0"}
+[2015-01-30 17:04:37:794][com.switek.netseed.server.ui.ServerForm] T20-Msg has been sent
+[2015-01-30 17:04:37:794][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_SENT event for session 1
+[2015-01-30 17:04:37:794][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_SENT has been fired for session 1
+[2015-01-30 17:04:37:794][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_CLOSED event for session 1
+[2015-01-30 17:04:37:794][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_CLOSED has been fired for session 1
+[2015-01-30 17:04:47:997][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:07
+[2015-01-30 17:04:49:215][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:05:19:230][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:05:46:065][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_OPENED event for session 2
+[2015-01-30 17:05:46:065][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_OPENED has been fired for session 2
+[2015-01-30 17:05:46:081][org.apache.mina.filter.codec.ProtocolCodecFilter] Processing a MESSAGE_RECEIVED for session 2
+[2015-01-30 17:05:46:081][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_RECEIVED event for session 2
+[2015-01-30 17:05:46:081][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_RECEIVED has been fired for session 2
+[2015-01-30 17:05:46:081][com.switek.netseed.server.ui.ServerForm] T27-****************************Received 0xF20_COMMAND_ID_CHECK_MOBILEAPP_VERSION: AA AA 7A 00 00 00 00 00 00 01 01 20 0F 7B 22 4F 70 74 43 6F 64 65 22 3A 33 38 37 32 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 31 22 2C 22 42 6F 64 79 22 3A 7B 22 50 6C 61 74 66 6F 72 6D 22 3A 22 41 6E 64 72 6F 69 64 22 2C 22 43 75 72 72 65 6E 74 56 65 72 73 69 6F 6E 22 3A 22 32 2E 35 22 2C 22 4C 61 6E 67 75 61 67 65 22 3A 22 7A 68 22 2C 22 54 79 70 65 22 3A 30 7D 7D AA 0F  from: (0x00000002: nio socket, server, /127.0.0.1:57376 => /127.0.0.1:38899)
+[2015-01-30 17:05:46:081][com.switek.netseed.server.ui.ServerForm] T27-Data: {"OptCode":3872,"APIVer":"1.1","Body":{"Platform":"Android","CurrentVersion":"2.5","Language":"zh","Type":0}}
+[2015-01-30 17:05:46:081][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_CLOSED event for session 2
+[2015-01-30 17:05:46:081][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_CLOSED has been fired for session 2
+[2015-01-30 17:05:48:003][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:08
+[2015-01-30 17:05:49:236][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:06:19:241][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:06:48:010][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:09
+[2015-01-30 17:06:49:243][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:07:19:244][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:07:34:370][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_OPENED event for session 3
+[2015-01-30 17:07:34:370][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_OPENED has been fired for session 3
+[2015-01-30 17:07:34:370][org.apache.mina.filter.codec.ProtocolCodecFilter] Processing a MESSAGE_RECEIVED for session 3
+[2015-01-30 17:07:34:370][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_RECEIVED event for session 3
+[2015-01-30 17:07:34:370][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_RECEIVED has been fired for session 3
+[2015-01-30 17:07:34:370][com.switek.netseed.server.ui.ServerForm] T33-****************************Received 0xF20_COMMAND_ID_CHECK_MOBILEAPP_VERSION: AA AA 64 00 00 00 00 00 00 01 01 20 0F 7B 22 4F 70 74 43 6F 64 65 22 3A 33 38 37 32 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 31 22 2C 22 42 6F 64 79 22 3A 7B 22 50 6C 61 74 66 6F 72 6D 22 3A 22 69 4F 53 22 2C 22 43 75 72 72 65 6E 74 56 65 72 73 69 6F 6E 22 3A 22 32 2E 31 2E 30 2E 36 39 33 33 22 7D 7D E0 DD  from: (0x00000003: nio socket, server, /127.0.0.1:57392 => /127.0.0.1:38899)
+[2015-01-30 17:07:34:370][com.switek.netseed.server.ui.ServerForm] T33-Data: {"OptCode":3872,"APIVer":"1.1","Body":{"Platform":"iOS","CurrentVersion":"2.1.0.6933"}}
+[2015-01-30 17:07:34:386][com.switek.netseed.server.ui.ServerForm] T33-Sending msg [AA AA 85 00 00 00 00 00 00 00 00 01 01 20 0F 7B 22 42 6F 64 79 22 3A 7B 22 52 65 6C 65 61 73 65 4E 6F 74 65 73 22 3A 22 22 2C 22 56 65 72 73 69 6F 6E 22 3A 22 32 2E 31 2E 30 2E 36 39 33 33 22 2C 22 68 61 73 4E 65 77 56 65 72 73 69 6F 6E 22 3A 66 61 6C 73 65 7D 2C 22 52 65 73 75 6C 74 43 6F 64 65 22 3A 30 2C 22 4F 70 74 43 6F 64 65 22 3A 33 38 37 32 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 30 22 7D A2 34 ] to (0x00000003: nio socket, server, /127.0.0.1:57392 => /127.0.0.1:38899)
+[2015-01-30 17:07:34:386][com.switek.netseed.server.ui.ServerForm] T33-Command data: {"Body":{"ReleaseNotes":"","Version":"2.1.0.6933","hasNewVersion":false},"ResultCode":0,"OptCode":3872,"APIVer":"1.0"}
+[2015-01-30 17:07:34:386][com.switek.netseed.server.ui.ServerForm] T33-Msg has been sent
+[2015-01-30 17:07:34:386][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_SENT event for session 3
+[2015-01-30 17:07:34:386][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_SENT has been fired for session 3
+[2015-01-30 17:07:34:386][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_CLOSED event for session 3
+[2015-01-30 17:07:34:386][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_CLOSED has been fired for session 3
+[2015-01-30 17:07:48:025][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:10
+[2015-01-30 17:07:49:258][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-01-30 17:08:19:267][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...

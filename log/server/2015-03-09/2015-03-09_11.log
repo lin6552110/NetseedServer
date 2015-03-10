@@ -1,0 +1,438 @@
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_10.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_11.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_12.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_13.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_14.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_15.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14_16.log] file in [2015-01-14] folder.
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] Already delete [2015-01-14] file folder.
+[2015-03-09 11:33:59:421][com.switek.netseed.server.ui.ServerForm] test
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] T1-Starting the server...
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] T1-Socket IO Processor: 64
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] T1-Socket IO Pool: 64
+[2015-03-09 11:33:59:468][com.switek.netseed.server.ui.ServerForm] T10-Loading standard IR code list from database...
+[2015-03-09 11:33:59:484][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Configuring from reader: java.io.InputStreamReader@15b734b
+[2015-03-09 11:33:59:484][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] SAXParserFactory class: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] sax parser classcom.sun.org.apache.xerces.internal.jaxp.SAXParserImpl
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] XML reader class: com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespaces'. State: true.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespace-prefixes'. State: false.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: user=cziotappuser
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: password=*******
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.simultaneous-build-throttle' to value '5000'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.maximum-connection-count' to value '2000'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.maximum-new-connections' to value '100'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.minimum-connection-count' to value '100'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-sleep-time' to value '120000'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.prototype-count' to value '50'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.test-before-use' to value 'true'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-test-sql' to value 'select 1'.
+[2015-03-09 11:33:59:499][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Created url: proxool.DBPool:com.mysql.jdbc.Driver:jdbc:mysql://localhost:13306/cziot
+[2015-03-09 11:33:59:515][org.logicalcobwebs.proxool.ProxoolFacade] Proxool 0.9.1 (23-Aug-2008 11:10)
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.driver=com.mysql.jdbc.Driver
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.url=jdbc:mysql://localhost:13306/cziot
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.minimum-connection-count=100
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.simultaneous-build-throttle=5000
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.test-before-use=true
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Use of proxool.maximum-new-connections is deprecated. Use more descriptive proxool.simultaneous-build-throttle instead.
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.maximum-new-connections=100
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: user=cziotappuser
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-sleep-time=120000
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.prototype-count=50
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: password=********
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.maximum-connection-count=2000
+[2015-03-09 11:33:59:531][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-test-sql=select 1
+[2015-03-09 11:33:59:546][org.logicalcobwebs.proxool.ShutdownHook] Registered shutdownHook
+[2015-03-09 11:33:59:546][org.logicalcobwebs.proxool.HouseKeeperController] Registering 'DBPool' house keeper
+[2015-03-09 11:33:59:546][org.logicalcobwebs.proxool.HouseKeeperController] Starting a house keeper thread
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTransactionIsolation() = 4
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getHoldability() = 2
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getCatalog() = cziot
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: isReadOnly() = false
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTypeMap() = {}
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #2 created on demand = ACTIVE
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #1 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:733][org.logicalcobwebs.proxool.ConnectionPool] 000000 (01/02/00) - Connection #2 tested: OK
+[2015-03-09 11:33:59:749][org.logicalcobwebs.proxool.Prototyper] 000001 (01/03/00) - Connection #3 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.Prototyper] 000001 (01/04/00) - Connection #4 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.MySQLConnection
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.ConnectionProperties
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Connection
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Connection
+[2015-03-09 11:33:59:766][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.io.Serializable
+[2015-03-09 11:33:59:781][org.logicalcobwebs.proxool.Prototyper] 000001 (01/05/00) - Connection #5 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:781][org.logicalcobwebs.proxool.Prototyper] 000001 (01/06/00) - Connection #6 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:797][org.logicalcobwebs.proxool.Prototyper] 000001 (01/07/00) - Connection #7 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:812][org.logicalcobwebs.proxool.Prototyper] 000001 (01/08/00) - Connection #8 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:828][org.logicalcobwebs.proxool.Prototyper] 000001 (01/09/00) - Connection #9 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:844][org.logicalcobwebs.proxool.Prototyper] 000001 (01/10/00) - Connection #10 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:859][org.logicalcobwebs.proxool.Prototyper] 000001 (01/11/00) - Connection #11 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:875][org.logicalcobwebs.proxool.Prototyper] 000001 (01/12/00) - Connection #12 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:890][org.logicalcobwebs.proxool.Prototyper] 000001 (01/13/00) - Connection #13 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:906][org.logicalcobwebs.proxool.Prototyper] 000001 (01/14/00) - Connection #14 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:906][org.logicalcobwebs.proxool.Prototyper] 000001 (01/15/00) - Connection #15 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:922][org.logicalcobwebs.proxool.Prototyper] 000001 (01/16/00) - Connection #16 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:937][org.logicalcobwebs.proxool.Prototyper] 000001 (01/17/00) - Connection #17 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:953][org.logicalcobwebs.proxool.Prototyper] 000001 (01/18/00) - Connection #18 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:968][org.logicalcobwebs.proxool.Prototyper] 000001 (01/19/00) - Connection #19 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:968][org.logicalcobwebs.proxool.Prototyper] 000001 (01/20/00) - Connection #20 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:33:59:984][org.logicalcobwebs.proxool.Prototyper] 000001 (01/21/00) - Connection #21 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:000][org.logicalcobwebs.proxool.Prototyper] 000001 (01/22/00) - Connection #22 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:015][org.logicalcobwebs.proxool.Prototyper] 000001 (01/23/00) - Connection #23 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:015][org.logicalcobwebs.proxool.Prototyper] 000001 (01/24/00) - Connection #24 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:031][org.logicalcobwebs.proxool.Prototyper] 000001 (01/25/00) - Connection #25 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:031][org.logicalcobwebs.proxool.Prototyper] 000001 (01/26/00) - Connection #26 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:046][org.logicalcobwebs.proxool.Prototyper] 000001 (01/27/00) - Connection #27 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:062][org.logicalcobwebs.proxool.Prototyper] 000001 (01/28/00) - Connection #28 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:062][org.logicalcobwebs.proxool.Prototyper] 000001 (01/29/00) - Connection #29 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:078][org.logicalcobwebs.proxool.Prototyper] 000001 (01/30/00) - Connection #30 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:093][org.logicalcobwebs.proxool.Prototyper] 000001 (01/31/00) - Connection #31 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:093][org.logicalcobwebs.proxool.Prototyper] 000001 (01/32/00) - Connection #32 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:109][org.logicalcobwebs.proxool.Prototyper] 000001 (01/33/00) - Connection #33 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:124][org.logicalcobwebs.proxool.Prototyper] 000001 (01/34/00) - Connection #34 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:140][org.logicalcobwebs.proxool.Prototyper] 000001 (01/35/00) - Connection #35 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:140][org.logicalcobwebs.proxool.Prototyper] 000001 (01/36/00) - Connection #36 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:156][org.logicalcobwebs.proxool.Prototyper] 000001 (01/37/00) - Connection #37 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:171][org.logicalcobwebs.proxool.Prototyper] 000001 (01/38/00) - Connection #38 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:171][org.logicalcobwebs.proxool.Prototyper] 000001 (01/39/00) - Connection #39 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:187][org.logicalcobwebs.proxool.Prototyper] 000001 (01/40/00) - Connection #40 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:202][org.logicalcobwebs.proxool.Prototyper] 000001 (01/41/00) - Connection #41 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:202][org.logicalcobwebs.proxool.Prototyper] 000001 (01/42/00) - Connection #42 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:218][org.logicalcobwebs.proxool.Prototyper] 000001 (01/43/00) - Connection #43 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:234][org.logicalcobwebs.proxool.Prototyper] 000001 (01/44/00) - Connection #44 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:249][org.logicalcobwebs.proxool.Prototyper] 000001 (01/45/00) - Connection #45 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:249][org.logicalcobwebs.proxool.Prototyper] 000001 (01/46/00) - Connection #46 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:265][org.logicalcobwebs.proxool.Prototyper] 000001 (01/47/00) - Connection #47 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:280][org.logicalcobwebs.proxool.Prototyper] 000001 (01/48/00) - Connection #48 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:296][org.logicalcobwebs.proxool.Prototyper] 000001 (01/49/00) - Connection #49 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:296][org.logicalcobwebs.proxool.Prototyper] 000001 (01/50/00) - Connection #50 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:296][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Statement
+[2015-03-09 11:34:00:296][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Statement
+[2015-03-09 11:34:00:296][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2015-03-09 11:34:00:296][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2015-03-09 11:34:00:312][org.logicalcobwebs.proxool.Prototyper] 000001 (01/51/00) - Connection #51 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:312][org.logicalcobwebs.proxool.Prototyper] 000001 (01/52/00) - Connection #52 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:327][org.logicalcobwebs.proxool.Prototyper] 000001 (01/53/00) - Connection #53 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:343][org.logicalcobwebs.proxool.Prototyper] 000001 (01/54/00) - Connection #54 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:343][org.logicalcobwebs.proxool.Prototyper] 000001 (01/55/00) - Connection #55 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:358][org.logicalcobwebs.proxool.Prototyper] 000001 (01/56/00) - Connection #56 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:358][org.logicalcobwebs.proxool.Prototyper] 000001 (01/57/00) - Connection #57 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:374][org.logicalcobwebs.proxool.Prototyper] 000001 (01/58/00) - Connection #58 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:374][org.logicalcobwebs.proxool.Prototyper] 000001 (01/59/00) - Connection #59 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:390][org.logicalcobwebs.proxool.Prototyper] 000001 (01/60/00) - Connection #60 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:405][org.logicalcobwebs.proxool.Prototyper] 000001 (01/61/00) - Connection #61 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:405][org.logicalcobwebs.proxool.Prototyper] 000001 (01/62/00) - Connection #62 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:421][org.logicalcobwebs.proxool.Prototyper] 000001 (01/63/00) - Connection #63 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:421][org.logicalcobwebs.proxool.Prototyper] 000001 (01/64/00) - Connection #64 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:436][org.logicalcobwebs.proxool.Prototyper] 000001 (01/65/00) - Connection #65 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:452][org.logicalcobwebs.proxool.Prototyper] 000001 (01/66/00) - Connection #66 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:452][org.logicalcobwebs.proxool.Prototyper] 000001 (01/67/00) - Connection #67 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:468][com.switek.netseed.server.ui.ServerForm] T10-Loading device type def from database...
+[2015-03-09 11:34:00:468][org.logicalcobwebs.proxool.Prototyper] 000001 (01/68/00) - Connection #68 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:468][com.switek.netseed.server.ui.ServerForm] T10-Done.
+[2015-03-09 11:34:00:468][com.switek.netseed.server.ui.ServerForm] T10-Loading brand info list from database...
+[2015-03-09 11:34:00:468][org.logicalcobwebs.proxool.Prototyper] 000001 (01/69/00) - Connection #69 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:483][org.logicalcobwebs.proxool.Prototyper] 000001 (01/70/00) - Connection #70 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:483][com.switek.netseed.server.ui.ServerForm] T10-Done
+[2015-03-09 11:34:00:483][com.switek.netseed.server.ui.ServerForm] T10-Loading releationship of type and brand from database...
+[2015-03-09 11:34:00:483][com.switek.netseed.server.ui.ServerForm] T10-Done
+[2015-03-09 11:34:00:483][com.switek.netseed.server.ui.ServerForm] T10-Loading controller list from database...
+[2015-03-09 11:34:00:483][org.logicalcobwebs.proxool.Prototyper] 000001 (01/71/00) - Connection #71 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:499][org.logicalcobwebs.proxool.Prototyper] 000001 (01/72/00) - Connection #72 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:499][org.logicalcobwebs.proxool.Prototyper] 000001 (01/73/00) - Connection #73 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:514][org.logicalcobwebs.proxool.Prototyper] 000001 (01/74/00) - Connection #74 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:514][org.logicalcobwebs.proxool.Prototyper] 000001 (01/75/00) - Connection #75 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:514][com.switek.netseed.server.ui.ServerForm] T10-There are 1450 controller(s)
+[2015-03-09 11:34:00:514][com.switek.netseed.server.ui.ServerForm] T10-Loading subcontroller list from database...
+[2015-03-09 11:34:00:514][org.logicalcobwebs.proxool.Prototyper] 000001 (01/76/00) - Connection #76 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:530][org.logicalcobwebs.proxool.Prototyper] 000001 (01/77/00) - Connection #77 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:530][org.logicalcobwebs.proxool.Prototyper] 000001 (01/78/00) - Connection #78 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:546][org.logicalcobwebs.proxool.Prototyper] 000001 (01/79/00) - Connection #79 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:546][org.logicalcobwebs.proxool.Prototyper] 000001 (01/80/00) - Connection #80 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:546][com.switek.netseed.server.ui.ServerForm] T10-There are 1570 subcontroler(s).
+[2015-03-09 11:34:00:546][com.switek.netseed.server.ui.ServerForm] T10-Loading device list from database...
+[2015-03-09 11:34:00:561][org.logicalcobwebs.proxool.Prototyper] 000001 (01/81/00) - Connection #81 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:561][org.logicalcobwebs.proxool.Prototyper] 000001 (01/82/00) - Connection #82 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:561][org.logicalcobwebs.proxool.Prototyper] 000001 (01/83/00) - Connection #83 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:577][org.logicalcobwebs.proxool.Prototyper] 000001 (01/84/00) - Connection #84 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:577][org.logicalcobwebs.proxool.Prototyper] 000001 (01/85/00) - Connection #85 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:577][org.logicalcobwebs.proxool.Prototyper] 000001 (01/86/00) - Connection #86 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:592][org.logicalcobwebs.proxool.Prototyper] 000001 (01/87/00) - Connection #87 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:592][org.logicalcobwebs.proxool.Prototyper] 000001 (01/88/00) - Connection #88 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:592][com.switek.netseed.server.ui.ServerForm] T10-There are 1786 device(s).
+[2015-03-09 11:34:00:592][com.switek.netseed.server.ui.ServerForm] T10-Loading learned IR code from database...
+[2015-03-09 11:34:00:608][org.logicalcobwebs.proxool.Prototyper] 000001 (01/89/00) - Connection #89 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:608][org.logicalcobwebs.proxool.Prototyper] 000001 (01/90/00) - Connection #90 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:608][org.logicalcobwebs.proxool.Prototyper] 000001 (01/91/00) - Connection #91 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:624][org.logicalcobwebs.proxool.Prototyper] 000001 (01/92/00) - Connection #92 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:624][org.logicalcobwebs.proxool.Prototyper] 000001 (01/93/00) - Connection #93 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:639][org.logicalcobwebs.proxool.Prototyper] 000001 (01/94/00) - Connection #94 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:655][org.logicalcobwebs.proxool.Prototyper] 000001 (01/95/00) - Connection #95 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:655][org.logicalcobwebs.proxool.Prototyper] 000001 (01/96/00) - Connection #96 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:670][org.logicalcobwebs.proxool.Prototyper] 000001 (01/97/00) - Connection #97 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:670][org.logicalcobwebs.proxool.Prototyper] 000001 (01/98/00) - Connection #98 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:670][org.logicalcobwebs.proxool.Prototyper] 000001 (01/99/00) - Connection #99 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:686][org.logicalcobwebs.proxool.Prototyper] 000001 (01/100/00) - Connection #100 created to achieve minimum of 100 = AVAILABLE
+[2015-03-09 11:34:00:780][com.switek.netseed.server.ui.ServerForm] T10-Learned IR code are loaded!
+[2015-03-09 11:34:00:780][com.switek.netseed.server.ui.ServerForm] T10-Loading app list from database...
+[2015-03-09 11:34:00:811][com.switek.netseed.server.ui.ServerForm] T10-Loading timers...
+[2015-03-09 11:34:00:811][com.switek.netseed.server.ui.ServerForm] T10-There are 1 timer(s)
+[2015-03-09 11:34:00:811][com.switek.netseed.server.ui.ServerForm] T10-Loading timer steps...
+[2015-03-09 11:34:00:843][com.switek.netseed.server.ui.ServerForm] T10-Completed to load timers.
+[2015-03-09 11:34:00:843][com.switek.netseed.server.ui.ServerForm] T10-Setup schedule job engine.
+[2015-03-09 11:34:00:843][com.switek.netseed.server.ui.ServerForm] T10-MaxThread: 2048
+[2015-03-09 11:34:00:843][com.switek.netseed.server.ui.ServerForm] T10-Starting the Netseed server...
+[2015-03-09 11:34:01:358][com.switek.netseed.server.ui.ServerForm] T10-Netseed Server started, on LIN/192.168.169.107:38899
+[2015-03-09 11:34:14:961][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_OPENED event for session 1
+[2015-03-09 11:34:14:961][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_OPENED has been fired for session 1
+[2015-03-09 11:34:14:961][org.apache.mina.filter.codec.ProtocolCodecFilter] Processing a MESSAGE_RECEIVED for session 1
+[2015-03-09 11:34:14:961][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_RECEIVED event for session 1
+[2015-03-09 11:34:14:961][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_RECEIVED has been fired for session 1
+[2015-03-09 11:34:14:961][com.switek.netseed.server.ui.ServerForm] T20-****************************Received 0xF38_COMMAND_ID_AS_ADD_SAPDEVICE: AA AA 8A 00 DE 07 05 07 E0 09 00 38 0F 7B 22 41 50 49 56 65 72 22 3A 22 31 2E 30 22 2C 42 6F 64 79 3A 7B 22 44 65 76 69 63 65 49 64 22 3A 22 44 45 30 30 30 35 30 30 31 31 22 2C 22 44 65 76 69 63 65 4E 61 6D 65 22 3A 22 E9 97 A8 E7 A3 81 22 2C 20 22 54 79 70 65 22 3A 32 30 30 2C 22 42 72 61 6E 64 43 6F 64 65 22 3A 22 53 41 50 22 2C 22 43 6F 6D 6D 61 6E 64 22 3A 30 2C 22 53 74 61 74 75 73 22 3A 22 30 30 22 7D 7D 64 2C  from: (0x00000001: nio socket, server, /127.0.0.1:52796 => /127.0.0.1:38899)
+[2015-03-09 11:34:14:961][com.switek.netseed.server.ui.ServerForm] T20-Data: {"APIVer":"1.0",Body:{"DeviceId":"DE00050011","DeviceName":"门磁", "Type":200,"BrandCode":"SAP","Command":0,"Status":"00"}}
+[2015-03-09 11:34:15:040][org.logicalcobwebs.proxool.ConnectionPool] 000001 (02/100/00) - Connection #1 tested: OK
+[2015-03-09 11:34:15:056][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Statement
+[2015-03-09 11:34:15:056][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Statement
+[2015-03-09 11:34:15:056][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.PreparedStatement
+[2015-03-09 11:34:15:056][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2015-03-09 11:34:15:056][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2015-03-09 11:34:15:087][com.switek.netseed.server.ui.ServerForm] T20-Connect 2 controller DE070507E009
+[2015-03-09 11:34:15:087][com.switek.netseed.server.ui.ServerForm] T20-The controller is offline!
+[2015-03-09 11:34:15:087][com.switek.netseed.server.ui.ServerForm] T20-null|null
+java.lang.NullPointerException
+	at com.switek.netseed.server.io.socket.sendPacket.SendPacket.sendPacket(SendPacket.java:150)
+	at com.switek.netseed.server.io.socket.sendPacket.SendPacket.sendPacket(SendPacket.java:44)
+	at com.switek.netseed.server.io.socket.strategy.CommAddSAPDevice.connect2Controller(CommAddSAPDevice.java:98)
+	at com.switek.netseed.server.io.socket.strategy.CommAddSAPDevice.addSAPDevice(CommAddSAPDevice.java:71)
+	at com.switek.netseed.server.io.socket.strategy.CommAddSAPDevice.analysisPacket(CommAddSAPDevice.java:54)
+	at com.switek.netseed.server.io.socket.strategy.CommContext.analysisPacket(CommContext.java:133)
+	at com.switek.netseed.server.io.socket.AsyncSocketMsgHandler.handleMessage(AsyncSocketMsgHandler.java:78)
+	at com.switek.netseed.server.io.socket.AsyncSocketMsgHandler.run(AsyncSocketMsgHandler.java:35)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[2015-03-09 11:34:15:102][com.switek.netseed.server.ui.ServerForm] T20-Sending msg [AA AA 5A 00 00 00 DE 07 05 07 E0 09 00 38 0F 7B 22 42 6F 64 79 22 3A 7B 22 44 65 76 69 63 65 49 6E 64 65 78 22 3A 30 7D 2C 22 52 65 73 75 6C 74 43 6F 64 65 22 3A 31 30 30 30 32 2C 22 4F 70 74 43 6F 64 65 22 3A 33 38 39 36 2C 22 41 50 49 56 65 72 22 3A 22 31 2E 30 22 7D 77 E6 ] to (0x00000001: nio socket, server, /127.0.0.1:52796 => /127.0.0.1:38899)
+[2015-03-09 11:34:15:102][com.switek.netseed.server.ui.ServerForm] T20-Command data: {"Body":{"DeviceIndex":0},"ResultCode":10002,"OptCode":3896,"APIVer":"1.0"}
+[2015-03-09 11:34:15:102][com.switek.netseed.server.ui.ServerForm] T20-Msg has been sent
+[2015-03-09 11:34:15:102][org.apache.mina.core.filterchain.IoFilterEvent] Firing a MESSAGE_SENT event for session 1
+[2015-03-09 11:34:15:102][org.apache.mina.core.filterchain.IoFilterEvent] Event MESSAGE_SENT has been fired for session 1
+[2015-03-09 11:34:15:102][org.apache.mina.core.filterchain.IoFilterEvent] Firing a SESSION_CLOSED event for session 1
+[2015-03-09 11:34:15:102][org.apache.mina.core.filterchain.IoFilterEvent] Event SESSION_CLOSED has been fired for session 1
+[2015-03-09 11:34:59:392][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:01
+[2015-03-09 11:35:00:844][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-03-09 11:35:30:859][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-03-09 11:35:59:395][com.switek.netseed.server.ui.ServerForm] T1-System run time: 0d 00:02
+[2015-03-09 11:36:00:862][com.switek.netseed.server.ui.ServerForm] T14-Starting schedule job engine...
+[2015-03-09 11:36:02:064][com.switek.netseed.server.ui.ServerForm] T1-Stoping the server...
+[2015-03-09 11:36:02:064][com.switek.netseed.server.ui.ServerForm] T1-Stoped!
+[2015-03-09 11:36:02:064][org.logicalcobwebs.proxool.ShutdownHook] Running ShutdownHook
+[2015-03-09 11:36:02:064][org.logicalcobwebs.proxool.ConnectionPool] Shutting down 'DBPool' pool immediately [Shutdown Hook]
+[2015-03-09 11:36:02:064][org.logicalcobwebs.proxool.ConnectionPool] Waiting until Mon Mar 09 11:36:02 CST 2015 for all connections to become inactive (active count is 1).
+[2015-03-09 11:36:02:064][org.logicalcobwebs.proxool.ConnectionPool] Shutdown waited for 0 milliseconds for all the connections to become inactive but the active count is still 1. Shutting down anyway.
+[2015-03-09 11:36:02:064][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/99/00) - #0100 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #100 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/98/00) - #0099 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #99 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/97/00) - #0098 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #98 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/96/00) - #0097 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #97 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/95/00) - #0096 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #96 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/94/00) - #0095 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #95 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/93/00) - #0094 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #94 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/92/00) - #0093 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #93 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/91/00) - #0092 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #92 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/90/00) - #0091 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #91 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/89/00) - #0090 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #90 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/88/00) - #0089 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #89 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/87/00) - #0088 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #88 closed
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/86/00) - #0087 removed because of shutdown.
+[2015-03-09 11:36:02:080][org.logicalcobwebs.proxool.ConnectionPool] Connection #87 closed
+[2015-03-09 11:36:02:096][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/85/00) - #0086 removed because of shutdown.
+[2015-03-09 11:36:02:096][org.logicalcobwebs.proxool.ConnectionPool] Connection #86 closed
+[2015-03-09 11:36:02:097][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/84/00) - #0085 removed because of shutdown.
+[2015-03-09 11:36:02:097][org.logicalcobwebs.proxool.ConnectionPool] Connection #85 closed
+[2015-03-09 11:36:02:099][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/83/00) - #0084 removed because of shutdown.
+[2015-03-09 11:36:02:099][org.logicalcobwebs.proxool.ConnectionPool] Connection #84 closed
+[2015-03-09 11:36:02:100][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/82/00) - #0083 removed because of shutdown.
+[2015-03-09 11:36:02:100][org.logicalcobwebs.proxool.ConnectionPool] Connection #83 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/81/00) - #0082 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #82 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/80/00) - #0081 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #81 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/79/00) - #0080 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #80 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/78/00) - #0079 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #79 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/77/00) - #0078 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #78 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/76/00) - #0077 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #77 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/75/00) - #0076 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #76 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/74/00) - #0075 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #75 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/73/00) - #0074 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #74 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/72/00) - #0073 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #73 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/71/00) - #0072 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #72 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/70/00) - #0071 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #71 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/69/00) - #0070 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #70 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/68/00) - #0069 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #69 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/67/00) - #0068 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #68 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/66/00) - #0067 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #67 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/65/00) - #0066 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #66 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/64/00) - #0065 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #65 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/63/00) - #0064 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #64 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/62/00) - #0063 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #63 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/61/00) - #0062 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #62 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/60/00) - #0061 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #61 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/59/00) - #0060 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #60 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/58/00) - #0059 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #59 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/57/00) - #0058 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #58 closed
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/56/00) - #0057 removed because of shutdown.
+[2015-03-09 11:36:02:101][org.logicalcobwebs.proxool.ConnectionPool] Connection #57 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/55/00) - #0056 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #56 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/54/00) - #0055 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #55 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/53/00) - #0054 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #54 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/52/00) - #0053 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #53 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/51/00) - #0052 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #52 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/50/00) - #0051 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #51 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/49/00) - #0050 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #50 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/48/00) - #0049 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #49 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/47/00) - #0048 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #48 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/46/00) - #0047 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #47 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/45/00) - #0046 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #46 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/44/00) - #0045 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #45 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/43/00) - #0044 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #44 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/42/00) - #0043 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #43 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/41/00) - #0042 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #42 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/40/00) - #0041 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #41 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/39/00) - #0040 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #40 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/38/00) - #0039 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #39 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/37/00) - #0038 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #38 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/36/00) - #0037 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #37 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/35/00) - #0036 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #36 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/34/00) - #0035 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #35 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/33/00) - #0034 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #34 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/32/00) - #0033 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #33 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/31/00) - #0032 removed because of shutdown.
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] Connection #32 closed
+[2015-03-09 11:36:02:116][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/30/00) - #0031 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #31 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/29/00) - #0030 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #30 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/28/00) - #0029 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #29 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/27/00) - #0028 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #28 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/26/00) - #0027 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #27 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/25/00) - #0026 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #26 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/24/00) - #0025 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #25 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/23/00) - #0024 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #24 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/22/00) - #0023 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #23 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/21/00) - #0022 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #22 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/20/00) - #0021 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #21 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/19/00) - #0020 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #20 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/18/00) - #0019 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #19 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/17/00) - #0018 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #18 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/16/00) - #0017 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #17 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/15/00) - #0016 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #16 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/14/00) - #0015 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #15 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/13/00) - #0014 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #14 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/12/00) - #0013 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #13 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/11/00) - #0012 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #12 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/10/00) - #0011 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #11 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/09/00) - #0010 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #10 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/08/00) - #0009 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #9 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/07/00) - #0008 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #8 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/06/00) - #0007 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #7 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/05/00) - #0006 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #6 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/04/00) - #0005 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #5 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/03/00) - #0004 removed because of shutdown.
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] Connection #4 closed
+[2015-03-09 11:36:02:132][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/02/00) - #0003 removed because of shutdown.
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.ConnectionPool] Connection #3 closed
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/01/00) - #0001 removed because of shutdown.
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.ConnectionPool] Connection #1 closed
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.ConnectionPool] 000002 (00/00/00) - #0002 removed because of shutdown.
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.ConnectionPool] Connection #2 closed
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.ConnectionPool] 'DBPool' pool has been closed down by Shutdown Hook in 83 milliseconds.
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.PrototyperController] Stopping Prototyper thread
+[2015-03-09 11:36:02:147][org.logicalcobwebs.proxool.HouseKeeperController] Stopping HouseKeeper thread

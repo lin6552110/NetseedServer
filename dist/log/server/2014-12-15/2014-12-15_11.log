@@ -1,0 +1,841 @@
+[2014-12-15 11:18:10:479][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Configuring from reader: java.io.InputStreamReader@103c0cfb
+[2014-12-15 11:18:10:487][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] SAXParserFactory class: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
+[2014-12-15 11:18:10:498][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] sax parser classcom.sun.org.apache.xerces.internal.jaxp.SAXParserImpl
+[2014-12-15 11:18:10:499][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] XML reader class: com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+[2014-12-15 11:18:10:500][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespaces'. State: true.
+[2014-12-15 11:18:10:500][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespace-prefixes'. State: false.
+[2014-12-15 11:18:10:505][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: user=cziotappuser
+[2014-12-15 11:18:10:506][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: password=*******
+[2014-12-15 11:18:10:507][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.simultaneous-build-throttle' to value '5000'.
+[2014-12-15 11:18:10:507][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.maximum-connection-count' to value '2000'.
+[2014-12-15 11:18:10:508][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.minimum-connection-count' to value '100'.
+[2014-12-15 11:18:10:509][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-sleep-time' to value '120000'.
+[2014-12-15 11:18:10:509][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.prototype-count' to value '50'.
+[2014-12-15 11:18:10:510][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.test-before-use' to value 'true'.
+[2014-12-15 11:18:10:511][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-test-sql' to value 'select 1'.
+[2014-12-15 11:18:10:511][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Created url: proxool.DBPool:com.mysql.jdbc.Driver:jdbc:mysql://localhost:13306/cziot
+[2014-12-15 11:18:10:516][org.logicalcobwebs.proxool.ProxoolFacade] Proxool 0.9.1 (23-Aug-2008 11:10)
+[2014-12-15 11:18:10:541][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.driver=com.mysql.jdbc.Driver
+[2014-12-15 11:18:10:542][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.url=jdbc:mysql://localhost:13306/cziot
+[2014-12-15 11:18:10:542][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.minimum-connection-count=100
+[2014-12-15 11:18:10:543][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.simultaneous-build-throttle=5000
+[2014-12-15 11:18:10:544][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.test-before-use=true
+[2014-12-15 11:18:10:545][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: user=cziotappuser
+[2014-12-15 11:18:10:546][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-sleep-time=120000
+[2014-12-15 11:18:10:547][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.prototype-count=50
+[2014-12-15 11:18:10:547][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: password=********
+[2014-12-15 11:18:10:548][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.maximum-connection-count=2000
+[2014-12-15 11:18:10:548][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-test-sql=select 1
+[2014-12-15 11:18:10:561][org.logicalcobwebs.proxool.ShutdownHook] Registered shutdownHook
+[2014-12-15 11:18:10:564][org.logicalcobwebs.proxool.HouseKeeperController] Registering 'DBPool' house keeper
+[2014-12-15 11:18:10:566][org.logicalcobwebs.proxool.HouseKeeperController] Starting a house keeper thread
+[2014-12-15 11:18:10:789][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTransactionIsolation() = 4
+[2014-12-15 11:18:10:790][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getHoldability() = 2
+[2014-12-15 11:18:10:791][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getCatalog() = cziot
+[2014-12-15 11:18:10:792][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: isReadOnly() = false
+[2014-12-15 11:18:10:792][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTypeMap() = {}
+[2014-12-15 11:18:10:792][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2014-12-15 11:18:10:792][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2014-12-15 11:18:10:794][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #1 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:795][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #2 created on demand = ACTIVE
+[2014-12-15 11:18:10:797][org.logicalcobwebs.proxool.ConnectionPool] 000000 (01/02/00) - Connection #2 tested: OK
+[2014-12-15 11:18:10:809][org.logicalcobwebs.proxool.Prototyper] 000001 (01/03/00) - Connection #3 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:825][org.logicalcobwebs.proxool.Prototyper] 000001 (01/04/00) - Connection #4 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:840][org.logicalcobwebs.proxool.Prototyper] 000001 (01/05/00) - Connection #5 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:841][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.ConnectionProperties
+[2014-12-15 11:18:10:842][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Connection
+[2014-12-15 11:18:10:843][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.MySQLConnection
+[2014-12-15 11:18:10:844][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2014-12-15 11:18:10:844][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Connection
+[2014-12-15 11:18:10:845][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2014-12-15 11:18:10:845][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.io.Serializable
+[2014-12-15 11:18:10:856][org.logicalcobwebs.proxool.Prototyper] 000001 (01/06/00) - Connection #6 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:868][org.logicalcobwebs.proxool.Prototyper] 000001 (01/07/00) - Connection #7 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:883][org.logicalcobwebs.proxool.Prototyper] 000001 (01/08/00) - Connection #8 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:896][org.logicalcobwebs.proxool.Prototyper] 000001 (01/09/00) - Connection #9 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:907][org.logicalcobwebs.proxool.Prototyper] 000001 (01/10/00) - Connection #10 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:919][org.logicalcobwebs.proxool.Prototyper] 000001 (01/11/00) - Connection #11 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:930][org.logicalcobwebs.proxool.Prototyper] 000001 (01/12/00) - Connection #12 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:942][org.logicalcobwebs.proxool.Prototyper] 000001 (01/13/00) - Connection #13 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:952][org.logicalcobwebs.proxool.Prototyper] 000001 (01/14/00) - Connection #14 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:960][org.logicalcobwebs.proxool.Prototyper] 000001 (01/15/00) - Connection #15 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:972][org.logicalcobwebs.proxool.Prototyper] 000001 (01/16/00) - Connection #16 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:985][org.logicalcobwebs.proxool.Prototyper] 000001 (01/17/00) - Connection #17 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:10:996][org.logicalcobwebs.proxool.Prototyper] 000001 (01/18/00) - Connection #18 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:005][org.logicalcobwebs.proxool.Prototyper] 000001 (01/19/00) - Connection #19 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:014][org.logicalcobwebs.proxool.Prototyper] 000001 (01/20/00) - Connection #20 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:024][org.logicalcobwebs.proxool.Prototyper] 000001 (01/21/00) - Connection #21 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:032][org.logicalcobwebs.proxool.Prototyper] 000001 (01/22/00) - Connection #22 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:044][org.logicalcobwebs.proxool.Prototyper] 000001 (01/23/00) - Connection #23 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:053][org.logicalcobwebs.proxool.Prototyper] 000001 (01/24/00) - Connection #24 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:062][org.logicalcobwebs.proxool.Prototyper] 000001 (01/25/00) - Connection #25 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:073][org.logicalcobwebs.proxool.Prototyper] 000001 (01/26/00) - Connection #26 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:082][org.logicalcobwebs.proxool.Prototyper] 000001 (01/27/00) - Connection #27 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:093][org.logicalcobwebs.proxool.Prototyper] 000001 (01/28/00) - Connection #28 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:106][org.logicalcobwebs.proxool.Prototyper] 000001 (01/29/00) - Connection #29 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:117][org.logicalcobwebs.proxool.Prototyper] 000001 (01/30/00) - Connection #30 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:126][org.logicalcobwebs.proxool.Prototyper] 000001 (01/31/00) - Connection #31 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:139][org.logicalcobwebs.proxool.Prototyper] 000001 (01/32/00) - Connection #32 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:150][org.logicalcobwebs.proxool.Prototyper] 000001 (01/33/00) - Connection #33 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:161][org.logicalcobwebs.proxool.Prototyper] 000001 (01/34/00) - Connection #34 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:174][org.logicalcobwebs.proxool.Prototyper] 000001 (01/35/00) - Connection #35 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:190][org.logicalcobwebs.proxool.Prototyper] 000001 (01/36/00) - Connection #36 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:214][org.logicalcobwebs.proxool.Prototyper] 000001 (01/37/00) - Connection #37 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:226][org.logicalcobwebs.proxool.Prototyper] 000001 (01/38/00) - Connection #38 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:235][org.logicalcobwebs.proxool.Prototyper] 000001 (01/39/00) - Connection #39 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:247][org.logicalcobwebs.proxool.Prototyper] 000001 (01/40/00) - Connection #40 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:260][org.logicalcobwebs.proxool.Prototyper] 000001 (01/41/00) - Connection #41 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:271][org.logicalcobwebs.proxool.Prototyper] 000001 (01/42/00) - Connection #42 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:281][org.logicalcobwebs.proxool.Prototyper] 000001 (01/43/00) - Connection #43 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:294][org.logicalcobwebs.proxool.Prototyper] 000001 (01/44/00) - Connection #44 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:304][org.logicalcobwebs.proxool.Prototyper] 000001 (01/45/00) - Connection #45 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:317][org.logicalcobwebs.proxool.Prototyper] 000001 (01/46/00) - Connection #46 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:326][org.logicalcobwebs.proxool.Prototyper] 000001 (01/47/00) - Connection #47 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:337][org.logicalcobwebs.proxool.Prototyper] 000001 (01/48/00) - Connection #48 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:347][org.logicalcobwebs.proxool.Prototyper] 000001 (01/49/00) - Connection #49 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:356][org.logicalcobwebs.proxool.Prototyper] 000001 (01/50/00) - Connection #50 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:369][org.logicalcobwebs.proxool.Prototyper] 000001 (01/51/00) - Connection #51 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:377][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Statement
+[2014-12-15 11:18:11:378][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2014-12-15 11:18:11:378][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.PreparedStatement
+[2014-12-15 11:18:11:379][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2014-12-15 11:18:11:379][org.logicalcobwebs.proxool.Prototyper] 000001 (01/52/00) - Connection #52 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:379][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Statement
+[2014-12-15 11:18:11:388][org.logicalcobwebs.proxool.Prototyper] 000001 (01/53/00) - Connection #53 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:398][org.logicalcobwebs.proxool.Prototyper] 000001 (01/54/00) - Connection #54 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:408][org.logicalcobwebs.proxool.Prototyper] 000001 (01/55/00) - Connection #55 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:415][org.logicalcobwebs.proxool.Prototyper] 000001 (01/56/00) - Connection #56 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:423][org.logicalcobwebs.proxool.Prototyper] 000001 (01/57/00) - Connection #57 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:431][org.logicalcobwebs.proxool.Prototyper] 000001 (01/58/00) - Connection #58 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:441][org.logicalcobwebs.proxool.Prototyper] 000001 (01/59/00) - Connection #59 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:448][org.logicalcobwebs.proxool.Prototyper] 000001 (01/60/00) - Connection #60 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:452][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 2648543 (belonging to connection 2) automatically
+[2014-12-15 11:18:11:454][org.logicalcobwebs.proxool.ConnectionPool] 000001 (01/60/00) - Connection #1 tested: OK
+[2014-12-15 11:18:11:456][org.logicalcobwebs.proxool.Prototyper] 000002 (01/61/00) - Connection #61 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:463][org.logicalcobwebs.proxool.Prototyper] 000002 (01/62/00) - Connection #62 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:471][org.logicalcobwebs.proxool.Prototyper] 000002 (01/63/00) - Connection #63 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:477][org.logicalcobwebs.proxool.Prototyper] 000002 (01/64/00) - Connection #64 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:483][org.logicalcobwebs.proxool.Prototyper] 000002 (01/65/00) - Connection #65 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:485][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 8cbc8f2 (belonging to connection 1) automatically
+[2014-12-15 11:18:11:486][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/65/00) - Connection #2 tested: OK
+[2014-12-15 11:18:11:487][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 2fa374f8 (belonging to connection 2) automatically
+[2014-12-15 11:18:11:488][org.logicalcobwebs.proxool.ConnectionPool] 000003 (01/65/00) - Connection #3 tested: OK
+[2014-12-15 11:18:11:492][org.logicalcobwebs.proxool.Prototyper] 000004 (01/66/00) - Connection #66 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:498][org.logicalcobwebs.proxool.Prototyper] 000004 (01/67/00) - Connection #67 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:504][org.logicalcobwebs.proxool.Prototyper] 000004 (01/68/00) - Connection #68 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:510][org.logicalcobwebs.proxool.Prototyper] 000004 (01/69/00) - Connection #69 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:516][org.logicalcobwebs.proxool.Prototyper] 000004 (01/70/00) - Connection #70 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:521][org.logicalcobwebs.proxool.Prototyper] 000004 (01/71/00) - Connection #71 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:526][org.logicalcobwebs.proxool.Prototyper] 000004 (01/72/00) - Connection #72 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:532][org.logicalcobwebs.proxool.Prototyper] 000004 (01/73/00) - Connection #73 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:536][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1da30a58 (belonging to connection 3) automatically
+[2014-12-15 11:18:11:538][org.logicalcobwebs.proxool.ConnectionPool] 000004 (01/73/00) - Connection #4 tested: OK
+[2014-12-15 11:18:11:539][org.logicalcobwebs.proxool.Prototyper] 000005 (01/74/00) - Connection #74 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:539][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 511c627c (belonging to connection 4) automatically
+[2014-12-15 11:18:11:540][org.logicalcobwebs.proxool.ConnectionPool] 000005 (01/74/00) - Connection #5 tested: OK
+[2014-12-15 11:18:11:545][org.logicalcobwebs.proxool.Prototyper] 000006 (01/75/00) - Connection #75 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:550][org.logicalcobwebs.proxool.Prototyper] 000006 (01/76/00) - Connection #76 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:555][org.logicalcobwebs.proxool.Prototyper] 000006 (01/77/00) - Connection #77 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:561][org.logicalcobwebs.proxool.Prototyper] 000006 (01/78/00) - Connection #78 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:565][org.logicalcobwebs.proxool.Prototyper] 000006 (01/79/00) - Connection #79 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:568][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5ae1a5c7 (belonging to connection 5) automatically
+[2014-12-15 11:18:11:569][org.logicalcobwebs.proxool.ConnectionPool] 000006 (01/79/00) - Connection #6 tested: OK
+[2014-12-15 11:18:11:570][org.logicalcobwebs.proxool.Prototyper] 000006 (01/80/00) - Connection #80 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:571][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3c4bb879 (belonging to connection 6) automatically
+[2014-12-15 11:18:11:572][org.logicalcobwebs.proxool.ConnectionPool] 000007 (01/80/00) - Connection #7 tested: OK
+[2014-12-15 11:18:11:575][org.logicalcobwebs.proxool.Prototyper] 000008 (01/81/00) - Connection #81 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:581][org.logicalcobwebs.proxool.Prototyper] 000008 (01/82/00) - Connection #82 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:585][org.logicalcobwebs.proxool.Prototyper] 000008 (01/83/00) - Connection #83 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:589][org.logicalcobwebs.proxool.Prototyper] 000008 (01/84/00) - Connection #84 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:595][org.logicalcobwebs.proxool.Prototyper] 000008 (01/85/00) - Connection #85 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:600][org.logicalcobwebs.proxool.Prototyper] 000008 (01/86/00) - Connection #86 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:603][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 248e68a2 (belonging to connection 7) automatically
+[2014-12-15 11:18:11:604][org.logicalcobwebs.proxool.ConnectionPool] 000008 (01/86/00) - Connection #8 tested: OK
+[2014-12-15 11:18:11:605][org.logicalcobwebs.proxool.Prototyper] 000009 (01/87/00) - Connection #87 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:605][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7a597692 (belonging to connection 8) automatically
+[2014-12-15 11:18:11:606][org.logicalcobwebs.proxool.ConnectionPool] 000009 (01/87/00) - Connection #9 tested: OK
+[2014-12-15 11:18:11:610][org.logicalcobwebs.proxool.Prototyper] 000010 (01/88/00) - Connection #88 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:616][org.logicalcobwebs.proxool.Prototyper] 000010 (01/89/00) - Connection #89 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:621][org.logicalcobwebs.proxool.Prototyper] 000010 (01/90/00) - Connection #90 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:626][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 14fcef50 (belonging to connection 9) automatically
+[2014-12-15 11:18:11:627][org.logicalcobwebs.proxool.ConnectionPool] 000010 (01/90/00) - Connection #10 tested: OK
+[2014-12-15 11:18:11:627][org.logicalcobwebs.proxool.Prototyper] 000010 (01/91/00) - Connection #91 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:628][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 492249c8 (belonging to connection 10) automatically
+[2014-12-15 11:18:11:629][org.logicalcobwebs.proxool.ConnectionPool] 000011 (01/91/00) - Connection #11 tested: OK
+[2014-12-15 11:18:11:633][org.logicalcobwebs.proxool.Prototyper] 000012 (01/92/00) - Connection #92 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:640][org.logicalcobwebs.proxool.Prototyper] 000012 (01/93/00) - Connection #93 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:647][org.logicalcobwebs.proxool.Prototyper] 000012 (01/94/00) - Connection #94 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:651][org.logicalcobwebs.proxool.Prototyper] 000012 (01/95/00) - Connection #95 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:653][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5a0b0303 (belonging to connection 11) automatically
+[2014-12-15 11:18:11:654][org.logicalcobwebs.proxool.ConnectionPool] 000012 (01/95/00) - Connection #12 tested: OK
+[2014-12-15 11:18:11:656][org.logicalcobwebs.proxool.Prototyper] 000013 (01/96/00) - Connection #96 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:661][org.logicalcobwebs.proxool.Prototyper] 000013 (01/97/00) - Connection #97 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:665][org.logicalcobwebs.proxool.Prototyper] 000013 (01/98/00) - Connection #98 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:669][org.logicalcobwebs.proxool.Prototyper] 000013 (01/99/00) - Connection #99 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:674][org.logicalcobwebs.proxool.Prototyper] 000013 (01/100/00) - Connection #100 created to achieve minimum of 100 = AVAILABLE
+[2014-12-15 11:18:11:676][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5f8551ae (belonging to connection 12) automatically
+[2014-12-15 11:18:11:677][org.logicalcobwebs.proxool.ConnectionPool] 000013 (01/100/00) - Connection #13 tested: OK
+[2014-12-15 11:18:11:703][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 24f3a7d9 (belonging to connection 13) automatically
+[2014-12-15 11:18:11:705][org.logicalcobwebs.proxool.ConnectionPool] 000014 (01/100/00) - Connection #14 tested: OK
+[2014-12-15 11:18:11:707][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 39aaadc6 (belonging to connection 14) automatically
+[2014-12-15 11:18:11:708][org.logicalcobwebs.proxool.ConnectionPool] 000015 (01/100/00) - Connection #15 tested: OK
+[2014-12-15 11:18:11:768][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 54dc2b4c (belonging to connection 15) automatically
+[2014-12-15 11:18:11:772][org.logicalcobwebs.proxool.ConnectionPool] 000016 (01/100/00) - Connection #16 tested: OK
+[2014-12-15 11:18:11:774][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3a6749fd (belonging to connection 16) automatically
+[2014-12-15 11:18:11:776][org.logicalcobwebs.proxool.ConnectionPool] 000017 (01/100/00) - Connection #17 tested: OK
+[2014-12-15 11:18:11:803][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 690c3515 (belonging to connection 17) automatically
+[2014-12-15 11:18:11:805][org.logicalcobwebs.proxool.ConnectionPool] 000018 (01/100/00) - Connection #18 tested: OK
+[2014-12-15 11:18:11:807][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7913938a (belonging to connection 18) automatically
+[2014-12-15 11:18:11:809][org.logicalcobwebs.proxool.ConnectionPool] 000019 (01/100/00) - Connection #19 tested: OK
+[2014-12-15 11:18:11:851][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7a400a86 (belonging to connection 19) automatically
+[2014-12-15 11:18:11:854][org.logicalcobwebs.proxool.ConnectionPool] 000020 (01/100/00) - Connection #20 tested: OK
+[2014-12-15 11:18:11:856][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4cc4ee24 (belonging to connection 20) automatically
+[2014-12-15 11:18:11:858][org.logicalcobwebs.proxool.ConnectionPool] 000021 (01/100/00) - Connection #21 tested: OK
+[2014-12-15 11:18:11:959][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6a153a08 (belonging to connection 21) automatically
+[2014-12-15 11:18:11:961][org.logicalcobwebs.proxool.ConnectionPool] 000022 (01/100/00) - Connection #22 tested: OK
+[2014-12-15 11:18:11:963][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6e838fb4 (belonging to connection 22) automatically
+[2014-12-15 11:18:11:965][org.logicalcobwebs.proxool.ConnectionPool] 000023 (01/100/00) - Connection #23 tested: OK
+[2014-12-15 11:18:11:994][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6145f12f (belonging to connection 23) automatically
+[2014-12-15 11:18:11:997][org.logicalcobwebs.proxool.ConnectionPool] 000024 (01/100/00) - Connection #24 tested: OK
+[2014-12-15 11:18:11:999][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 15a00d25 (belonging to connection 24) automatically
+[2014-12-15 11:18:12:000][org.logicalcobwebs.proxool.ConnectionPool] 000025 (01/100/00) - Connection #25 tested: OK
+[2014-12-15 11:18:12:026][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 43f40067 (belonging to connection 25) automatically
+[2014-12-15 11:18:12:028][org.logicalcobwebs.proxool.ConnectionPool] 000026 (01/100/00) - Connection #26 tested: OK
+[2014-12-15 11:18:12:031][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 540a9292 (belonging to connection 26) automatically
+[2014-12-15 11:18:12:032][org.logicalcobwebs.proxool.ConnectionPool] 000027 (01/100/00) - Connection #27 tested: OK
+[2014-12-15 11:18:12:094][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 24608d4e (belonging to connection 27) automatically
+[2014-12-15 11:18:12:097][org.logicalcobwebs.proxool.ConnectionPool] 000028 (01/100/00) - Connection #28 tested: OK
+[2014-12-15 11:18:12:099][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 234c0ad0 (belonging to connection 28) automatically
+[2014-12-15 11:18:12:101][org.logicalcobwebs.proxool.ConnectionPool] 000029 (01/100/00) - Connection #29 tested: OK
+[2014-12-15 11:18:12:126][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 303be7e8 (belonging to connection 29) automatically
+[2014-12-15 11:18:12:128][org.logicalcobwebs.proxool.ConnectionPool] 000030 (01/100/00) - Connection #30 tested: OK
+[2014-12-15 11:18:12:129][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 55da4a70 (belonging to connection 30) automatically
+[2014-12-15 11:18:12:131][org.logicalcobwebs.proxool.ConnectionPool] 000031 (01/100/00) - Connection #31 tested: OK
+[2014-12-15 11:18:12:176][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 79ddcef0 (belonging to connection 31) automatically
+[2014-12-15 11:18:12:179][org.logicalcobwebs.proxool.ConnectionPool] 000032 (01/100/00) - Connection #32 tested: OK
+[2014-12-15 11:18:12:181][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4bac1460 (belonging to connection 32) automatically
+[2014-12-15 11:18:12:183][org.logicalcobwebs.proxool.ConnectionPool] 000033 (01/100/00) - Connection #33 tested: OK
+[2014-12-15 11:18:12:211][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 45c4d981 (belonging to connection 33) automatically
+[2014-12-15 11:18:12:213][org.logicalcobwebs.proxool.ConnectionPool] 000034 (01/100/00) - Connection #34 tested: OK
+[2014-12-15 11:18:12:216][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4eb29cb5 (belonging to connection 34) automatically
+[2014-12-15 11:18:12:218][org.logicalcobwebs.proxool.ConnectionPool] 000035 (01/100/00) - Connection #35 tested: OK
+[2014-12-15 11:18:12:242][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3ab770c0 (belonging to connection 35) automatically
+[2014-12-15 11:18:12:244][org.logicalcobwebs.proxool.ConnectionPool] 000036 (01/100/00) - Connection #36 tested: OK
+[2014-12-15 11:18:12:246][org.logicalcobwebs.proxool.ProxyConnection] Closing statement e0fab91 (belonging to connection 36) automatically
+[2014-12-15 11:18:12:248][org.logicalcobwebs.proxool.ConnectionPool] 000037 (01/100/00) - Connection #37 tested: OK
+[2014-12-15 11:18:12:277][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3894ef06 (belonging to connection 37) automatically
+[2014-12-15 11:18:12:279][org.logicalcobwebs.proxool.ConnectionPool] 000038 (01/100/00) - Connection #38 tested: OK
+[2014-12-15 11:18:12:281][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 38d50345 (belonging to connection 38) automatically
+[2014-12-15 11:18:12:282][org.logicalcobwebs.proxool.ConnectionPool] 000039 (01/100/00) - Connection #39 tested: OK
+[2014-12-15 11:18:12:309][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5af3ad6a (belonging to connection 39) automatically
+[2014-12-15 11:18:12:311][org.logicalcobwebs.proxool.ConnectionPool] 000040 (01/100/00) - Connection #40 tested: OK
+[2014-12-15 11:18:12:313][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 21c47b30 (belonging to connection 40) automatically
+[2014-12-15 11:18:12:315][org.logicalcobwebs.proxool.ConnectionPool] 000041 (01/100/00) - Connection #41 tested: OK
+[2014-12-15 11:18:12:344][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 486f40bd (belonging to connection 41) automatically
+[2014-12-15 11:18:12:346][org.logicalcobwebs.proxool.ConnectionPool] 000042 (01/100/00) - Connection #42 tested: OK
+[2014-12-15 11:18:12:348][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5223588b (belonging to connection 42) automatically
+[2014-12-15 11:18:12:350][org.logicalcobwebs.proxool.ConnectionPool] 000043 (01/100/00) - Connection #43 tested: OK
+[2014-12-15 11:18:12:375][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5fe63cb6 (belonging to connection 43) automatically
+[2014-12-15 11:18:12:378][org.logicalcobwebs.proxool.ConnectionPool] 000044 (01/100/00) - Connection #44 tested: OK
+[2014-12-15 11:18:12:380][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5b48760d (belonging to connection 44) automatically
+[2014-12-15 11:18:12:382][org.logicalcobwebs.proxool.ConnectionPool] 000045 (01/100/00) - Connection #45 tested: OK
+[2014-12-15 11:18:12:410][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 727aecc3 (belonging to connection 45) automatically
+[2014-12-15 11:18:12:413][org.logicalcobwebs.proxool.ConnectionPool] 000046 (01/100/00) - Connection #46 tested: OK
+[2014-12-15 11:18:12:415][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 53a49bfa (belonging to connection 46) automatically
+[2014-12-15 11:18:12:417][org.logicalcobwebs.proxool.ConnectionPool] 000047 (01/100/00) - Connection #47 tested: OK
+[2014-12-15 11:18:12:442][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 2703469 (belonging to connection 47) automatically
+[2014-12-15 11:18:12:444][org.logicalcobwebs.proxool.ConnectionPool] 000048 (01/100/00) - Connection #48 tested: OK
+[2014-12-15 11:18:12:446][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 238cfdf (belonging to connection 48) automatically
+[2014-12-15 11:18:12:448][org.logicalcobwebs.proxool.ConnectionPool] 000049 (01/100/00) - Connection #49 tested: OK
+[2014-12-15 11:18:12:477][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6c07153 (belonging to connection 49) automatically
+[2014-12-15 11:18:12:479][org.logicalcobwebs.proxool.ConnectionPool] 000050 (01/100/00) - Connection #50 tested: OK
+[2014-12-15 11:18:12:481][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 11aa3bbc (belonging to connection 50) automatically
+[2014-12-15 11:18:12:483][org.logicalcobwebs.proxool.ConnectionPool] 000051 (01/100/00) - Connection #51 tested: OK
+[2014-12-15 11:18:12:509][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3cc0bc4f (belonging to connection 51) automatically
+[2014-12-15 11:18:12:511][org.logicalcobwebs.proxool.ConnectionPool] 000052 (01/100/00) - Connection #52 tested: OK
+[2014-12-15 11:18:12:513][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 262adc9a (belonging to connection 52) automatically
+[2014-12-15 11:18:12:514][org.logicalcobwebs.proxool.ConnectionPool] 000053 (01/100/00) - Connection #53 tested: OK
+[2014-12-15 11:18:12:544][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 33c2d176 (belonging to connection 53) automatically
+[2014-12-15 11:18:12:547][org.logicalcobwebs.proxool.ConnectionPool] 000054 (01/100/00) - Connection #54 tested: OK
+[2014-12-15 11:18:12:549][org.logicalcobwebs.proxool.ProxyConnection] Closing statement bf362ad (belonging to connection 54) automatically
+[2014-12-15 11:18:12:551][org.logicalcobwebs.proxool.ConnectionPool] 000055 (01/100/00) - Connection #55 tested: OK
+[2014-12-15 11:18:12:575][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5a5a7c64 (belonging to connection 55) automatically
+[2014-12-15 11:18:12:578][org.logicalcobwebs.proxool.ConnectionPool] 000056 (01/100/00) - Connection #56 tested: OK
+[2014-12-15 11:18:12:602][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 54d1e54f (belonging to connection 56) automatically
+[2014-12-15 11:18:12:604][org.logicalcobwebs.proxool.ConnectionPool] 000057 (01/100/00) - Connection #57 tested: OK
+[2014-12-15 11:18:12:625][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6ef167bb (belonging to connection 57) automatically
+[2014-12-15 11:18:12:627][org.logicalcobwebs.proxool.ConnectionPool] 000058 (01/100/00) - Connection #58 tested: OK
+[2014-12-15 11:18:12:652][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6c911796 (belonging to connection 58) automatically
+[2014-12-15 11:18:12:654][org.logicalcobwebs.proxool.ConnectionPool] 000059 (01/100/00) - Connection #59 tested: OK
+[2014-12-15 11:18:12:717][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 77c234c8 (belonging to connection 59) automatically
+[2014-12-15 11:18:12:719][org.logicalcobwebs.proxool.ConnectionPool] 000060 (01/100/00) - Connection #60 tested: OK
+[2014-12-15 11:18:12:743][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 18ab6cbb (belonging to connection 60) automatically
+[2014-12-15 11:18:12:745][org.logicalcobwebs.proxool.ConnectionPool] 000061 (01/100/00) - Connection #61 tested: OK
+[2014-12-15 11:18:12:767][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5ec02cb2 (belonging to connection 61) automatically
+[2014-12-15 11:18:12:769][org.logicalcobwebs.proxool.ConnectionPool] 000062 (01/100/00) - Connection #62 tested: OK
+[2014-12-15 11:18:12:813][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 26eec635 (belonging to connection 62) automatically
+[2014-12-15 11:18:12:815][org.logicalcobwebs.proxool.ConnectionPool] 000063 (01/100/00) - Connection #63 tested: OK
+[2014-12-15 11:18:12:858][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4bcb43d9 (belonging to connection 63) automatically
+[2014-12-15 11:18:12:860][org.logicalcobwebs.proxool.ConnectionPool] 000064 (01/100/00) - Connection #64 tested: OK
+[2014-12-15 11:18:12:885][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 13a2ffb7 (belonging to connection 64) automatically
+[2014-12-15 11:18:12:887][org.logicalcobwebs.proxool.ConnectionPool] 000065 (01/100/00) - Connection #65 tested: OK
+[2014-12-15 11:18:12:908][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 281f2a40 (belonging to connection 65) automatically
+[2014-12-15 11:18:12:910][org.logicalcobwebs.proxool.ConnectionPool] 000066 (01/100/00) - Connection #66 tested: OK
+[2014-12-15 11:18:12:912][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7cbecd86 (belonging to connection 66) automatically
+[2014-12-15 11:18:12:913][org.logicalcobwebs.proxool.ConnectionPool] 000067 (01/100/00) - Connection #67 tested: OK
+[2014-12-15 11:18:12:943][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4de4e6c6 (belonging to connection 67) automatically
+[2014-12-15 11:18:12:946][org.logicalcobwebs.proxool.ConnectionPool] 000068 (01/100/00) - Connection #68 tested: OK
+[2014-12-15 11:18:12:948][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 2c170a23 (belonging to connection 68) automatically
+[2014-12-15 11:18:12:950][org.logicalcobwebs.proxool.ConnectionPool] 000069 (01/100/00) - Connection #69 tested: OK
+[2014-12-15 11:18:13:010][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7d391b1a (belonging to connection 69) automatically
+[2014-12-15 11:18:13:013][org.logicalcobwebs.proxool.ConnectionPool] 000070 (01/100/00) - Connection #70 tested: OK
+[2014-12-15 11:18:13:015][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7f74a932 (belonging to connection 70) automatically
+[2014-12-15 11:18:13:016][org.logicalcobwebs.proxool.ConnectionPool] 000071 (01/100/00) - Connection #71 tested: OK
+[2014-12-15 11:18:13:041][org.logicalcobwebs.proxool.ProxyConnection] Closing statement fe13df3 (belonging to connection 71) automatically
+[2014-12-15 11:18:13:043][org.logicalcobwebs.proxool.ConnectionPool] 000072 (01/100/00) - Connection #72 tested: OK
+[2014-12-15 11:18:13:045][org.logicalcobwebs.proxool.ProxyConnection] Closing statement bf313f4 (belonging to connection 72) automatically
+[2014-12-15 11:18:13:047][org.logicalcobwebs.proxool.ConnectionPool] 000073 (01/100/00) - Connection #73 tested: OK
+[2014-12-15 11:18:13:076][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 43cfc1ef (belonging to connection 73) automatically
+[2014-12-15 11:18:13:079][org.logicalcobwebs.proxool.ConnectionPool] 000074 (01/100/00) - Connection #74 tested: OK
+[2014-12-15 11:18:13:081][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 40421350 (belonging to connection 74) automatically
+[2014-12-15 11:18:13:083][org.logicalcobwebs.proxool.ConnectionPool] 000075 (01/100/00) - Connection #75 tested: OK
+[2014-12-15 11:18:13:113][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 8c7bf6b (belonging to connection 75) automatically
+[2014-12-15 11:18:13:115][org.logicalcobwebs.proxool.ConnectionPool] 000076 (01/100/00) - Connection #76 tested: OK
+[2014-12-15 11:18:13:117][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 666c5994 (belonging to connection 76) automatically
+[2014-12-15 11:18:13:119][org.logicalcobwebs.proxool.ConnectionPool] 000077 (01/100/00) - Connection #77 tested: OK
+[2014-12-15 11:18:13:143][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6e9799d1 (belonging to connection 77) automatically
+[2014-12-15 11:18:13:145][org.logicalcobwebs.proxool.ConnectionPool] 000078 (01/100/00) - Connection #78 tested: OK
+[2014-12-15 11:18:13:147][org.logicalcobwebs.proxool.ProxyConnection] Closing statement d9326df (belonging to connection 78) automatically
+[2014-12-15 11:18:13:149][org.logicalcobwebs.proxool.ConnectionPool] 000079 (01/100/00) - Connection #79 tested: OK
+[2014-12-15 11:18:13:176][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 27dbb592 (belonging to connection 79) automatically
+[2014-12-15 11:18:13:178][org.logicalcobwebs.proxool.ConnectionPool] 000080 (01/100/00) - Connection #80 tested: OK
+[2014-12-15 11:18:13:180][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5d1090b2 (belonging to connection 80) automatically
+[2014-12-15 11:18:13:182][org.logicalcobwebs.proxool.ConnectionPool] 000081 (01/100/00) - Connection #81 tested: OK
+[2014-12-15 11:18:13:324][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 58093909 (belonging to connection 81) automatically
+[2014-12-15 11:18:13:327][org.logicalcobwebs.proxool.ConnectionPool] 000082 (01/100/00) - Connection #82 tested: OK
+[2014-12-15 11:18:13:329][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 65ed7aba (belonging to connection 82) automatically
+[2014-12-15 11:18:13:330][org.logicalcobwebs.proxool.ConnectionPool] 000083 (01/100/00) - Connection #83 tested: OK
+[2014-12-15 11:18:13:360][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 72f8a19f (belonging to connection 83) automatically
+[2014-12-15 11:18:13:362][org.logicalcobwebs.proxool.ConnectionPool] 000084 (01/100/00) - Connection #84 tested: OK
+[2014-12-15 11:18:13:364][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4843fd4 (belonging to connection 84) automatically
+[2014-12-15 11:18:13:365][org.logicalcobwebs.proxool.ConnectionPool] 000085 (01/100/00) - Connection #85 tested: OK
+[2014-12-15 11:18:13:396][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1ba6b924 (belonging to connection 85) automatically
+[2014-12-15 11:18:13:398][org.logicalcobwebs.proxool.ConnectionPool] 000086 (01/100/00) - Connection #86 tested: OK
+[2014-12-15 11:18:13:401][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 752ab82e (belonging to connection 86) automatically
+[2014-12-15 11:18:13:403][org.logicalcobwebs.proxool.ConnectionPool] 000087 (01/100/00) - Connection #87 tested: OK
+[2014-12-15 11:18:13:435][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 13e7748c (belonging to connection 87) automatically
+[2014-12-15 11:18:13:437][org.logicalcobwebs.proxool.ConnectionPool] 000088 (01/100/00) - Connection #88 tested: OK
+[2014-12-15 11:18:13:438][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 458cb6f6 (belonging to connection 88) automatically
+[2014-12-15 11:18:13:440][org.logicalcobwebs.proxool.ConnectionPool] 000089 (01/100/00) - Connection #89 tested: OK
+[2014-12-15 11:18:13:466][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 397daeda (belonging to connection 89) automatically
+[2014-12-15 11:18:13:468][org.logicalcobwebs.proxool.ConnectionPool] 000090 (01/100/00) - Connection #90 tested: OK
+[2014-12-15 11:18:13:470][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 71512c2e (belonging to connection 90) automatically
+[2014-12-15 11:18:13:472][org.logicalcobwebs.proxool.ConnectionPool] 000091 (01/100/00) - Connection #91 tested: OK
+[2014-12-15 11:18:13:501][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7afa745c (belonging to connection 91) automatically
+[2014-12-15 11:18:13:504][org.logicalcobwebs.proxool.ConnectionPool] 000092 (01/100/00) - Connection #92 tested: OK
+[2014-12-15 11:18:13:506][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3fd69f44 (belonging to connection 92) automatically
+[2014-12-15 11:18:13:508][org.logicalcobwebs.proxool.ConnectionPool] 000093 (01/100/00) - Connection #93 tested: OK
+[2014-12-15 11:18:13:533][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5cdeb323 (belonging to connection 93) automatically
+[2014-12-15 11:19:08:835][org.logicalcobwebs.proxool.ShutdownHook] Running ShutdownHook
+[2014-12-15 11:19:08:836][org.logicalcobwebs.proxool.ConnectionPool] Shutting down 'DBPool' pool immediately [Shutdown Hook]
+[2014-12-15 11:19:08:839][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/99/00) - #0100 removed because of shutdown.
+[2014-12-15 11:19:08:840][org.logicalcobwebs.proxool.ConnectionPool] Connection #100 closed
+[2014-12-15 11:19:08:841][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/98/00) - #0099 removed because of shutdown.
+[2014-12-15 11:19:08:841][org.logicalcobwebs.proxool.ConnectionPool] Connection #99 closed
+[2014-12-15 11:19:08:842][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/97/00) - #0098 removed because of shutdown.
+[2014-12-15 11:19:08:842][org.logicalcobwebs.proxool.ConnectionPool] Connection #98 closed
+[2014-12-15 11:19:08:843][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/96/00) - #0097 removed because of shutdown.
+[2014-12-15 11:19:08:844][org.logicalcobwebs.proxool.ConnectionPool] Connection #97 closed
+[2014-12-15 11:19:08:845][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/95/00) - #0096 removed because of shutdown.
+[2014-12-15 11:19:08:845][org.logicalcobwebs.proxool.ConnectionPool] Connection #96 closed
+[2014-12-15 11:19:08:846][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/94/00) - #0095 removed because of shutdown.
+[2014-12-15 11:19:08:846][org.logicalcobwebs.proxool.ConnectionPool] Connection #95 closed
+[2014-12-15 11:19:08:848][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/93/00) - #0094 removed because of shutdown.
+[2014-12-15 11:19:08:848][org.logicalcobwebs.proxool.ConnectionPool] Connection #94 closed
+[2014-12-15 11:19:08:850][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/92/00) - #0093 removed because of shutdown.
+[2014-12-15 11:19:08:850][org.logicalcobwebs.proxool.ConnectionPool] Connection #93 closed
+[2014-12-15 11:19:08:852][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/91/00) - #0092 removed because of shutdown.
+[2014-12-15 11:19:08:852][org.logicalcobwebs.proxool.ConnectionPool] Connection #92 closed
+[2014-12-15 11:19:08:853][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/90/00) - #0091 removed because of shutdown.
+[2014-12-15 11:19:08:853][org.logicalcobwebs.proxool.ConnectionPool] Connection #91 closed
+[2014-12-15 11:19:08:855][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/89/00) - #0090 removed because of shutdown.
+[2014-12-15 11:19:08:855][org.logicalcobwebs.proxool.ConnectionPool] Connection #90 closed
+[2014-12-15 11:19:08:857][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/88/00) - #0089 removed because of shutdown.
+[2014-12-15 11:19:08:858][org.logicalcobwebs.proxool.ConnectionPool] Connection #89 closed
+[2014-12-15 11:19:08:859][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/87/00) - #0088 removed because of shutdown.
+[2014-12-15 11:19:08:859][org.logicalcobwebs.proxool.ConnectionPool] Connection #88 closed
+[2014-12-15 11:19:08:861][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/86/00) - #0087 removed because of shutdown.
+[2014-12-15 11:19:08:861][org.logicalcobwebs.proxool.ConnectionPool] Connection #87 closed
+[2014-12-15 11:19:08:862][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/85/00) - #0086 removed because of shutdown.
+[2014-12-15 11:19:08:863][org.logicalcobwebs.proxool.ConnectionPool] Connection #86 closed
+[2014-12-15 11:19:08:864][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/84/00) - #0085 removed because of shutdown.
+[2014-12-15 11:19:08:864][org.logicalcobwebs.proxool.ConnectionPool] Connection #85 closed
+[2014-12-15 11:19:08:865][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/83/00) - #0084 removed because of shutdown.
+[2014-12-15 11:19:08:866][org.logicalcobwebs.proxool.ConnectionPool] Connection #84 closed
+[2014-12-15 11:19:08:867][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/82/00) - #0083 removed because of shutdown.
+[2014-12-15 11:19:08:867][org.logicalcobwebs.proxool.ConnectionPool] Connection #83 closed
+[2014-12-15 11:19:08:868][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/81/00) - #0082 removed because of shutdown.
+[2014-12-15 11:19:08:869][org.logicalcobwebs.proxool.ConnectionPool] Connection #82 closed
+[2014-12-15 11:19:08:870][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/80/00) - #0081 removed because of shutdown.
+[2014-12-15 11:19:08:870][org.logicalcobwebs.proxool.ConnectionPool] Connection #81 closed
+[2014-12-15 11:19:08:871][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/79/00) - #0080 removed because of shutdown.
+[2014-12-15 11:19:08:871][org.logicalcobwebs.proxool.ConnectionPool] Connection #80 closed
+[2014-12-15 11:19:08:873][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/78/00) - #0079 removed because of shutdown.
+[2014-12-15 11:19:08:873][org.logicalcobwebs.proxool.ConnectionPool] Connection #79 closed
+[2014-12-15 11:19:08:875][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/77/00) - #0078 removed because of shutdown.
+[2014-12-15 11:19:08:875][org.logicalcobwebs.proxool.ConnectionPool] Connection #78 closed
+[2014-12-15 11:19:08:876][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/76/00) - #0077 removed because of shutdown.
+[2014-12-15 11:19:08:877][org.logicalcobwebs.proxool.ConnectionPool] Connection #77 closed
+[2014-12-15 11:19:08:878][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/75/00) - #0076 removed because of shutdown.
+[2014-12-15 11:19:08:878][org.logicalcobwebs.proxool.ConnectionPool] Connection #76 closed
+[2014-12-15 11:19:08:880][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/74/00) - #0075 removed because of shutdown.
+[2014-12-15 11:19:08:880][org.logicalcobwebs.proxool.ConnectionPool] Connection #75 closed
+[2014-12-15 11:19:08:881][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/73/00) - #0074 removed because of shutdown.
+[2014-12-15 11:19:08:881][org.logicalcobwebs.proxool.ConnectionPool] Connection #74 closed
+[2014-12-15 11:19:08:882][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/72/00) - #0073 removed because of shutdown.
+[2014-12-15 11:19:08:882][org.logicalcobwebs.proxool.ConnectionPool] Connection #73 closed
+[2014-12-15 11:19:08:883][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/71/00) - #0072 removed because of shutdown.
+[2014-12-15 11:19:08:883][org.logicalcobwebs.proxool.ConnectionPool] Connection #72 closed
+[2014-12-15 11:19:08:884][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/70/00) - #0071 removed because of shutdown.
+[2014-12-15 11:19:08:884][org.logicalcobwebs.proxool.ConnectionPool] Connection #71 closed
+[2014-12-15 11:19:08:884][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/69/00) - #0070 removed because of shutdown.
+[2014-12-15 11:19:08:885][org.logicalcobwebs.proxool.ConnectionPool] Connection #70 closed
+[2014-12-15 11:19:08:885][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/68/00) - #0069 removed because of shutdown.
+[2014-12-15 11:19:08:885][org.logicalcobwebs.proxool.ConnectionPool] Connection #69 closed
+[2014-12-15 11:19:08:886][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/67/00) - #0068 removed because of shutdown.
+[2014-12-15 11:19:08:886][org.logicalcobwebs.proxool.ConnectionPool] Connection #68 closed
+[2014-12-15 11:19:08:886][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/66/00) - #0067 removed because of shutdown.
+[2014-12-15 11:19:08:887][org.logicalcobwebs.proxool.ConnectionPool] Connection #67 closed
+[2014-12-15 11:19:08:887][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/65/00) - #0066 removed because of shutdown.
+[2014-12-15 11:19:08:887][org.logicalcobwebs.proxool.ConnectionPool] Connection #66 closed
+[2014-12-15 11:19:08:888][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/64/00) - #0065 removed because of shutdown.
+[2014-12-15 11:19:08:888][org.logicalcobwebs.proxool.ConnectionPool] Connection #65 closed
+[2014-12-15 11:19:08:889][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/63/00) - #0064 removed because of shutdown.
+[2014-12-15 11:19:08:889][org.logicalcobwebs.proxool.ConnectionPool] Connection #64 closed
+[2014-12-15 11:19:08:890][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/62/00) - #0063 removed because of shutdown.
+[2014-12-15 11:19:08:890][org.logicalcobwebs.proxool.ConnectionPool] Connection #63 closed
+[2014-12-15 11:19:08:891][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/61/00) - #0062 removed because of shutdown.
+[2014-12-15 11:19:08:891][org.logicalcobwebs.proxool.ConnectionPool] Connection #62 closed
+[2014-12-15 11:19:08:892][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/60/00) - #0061 removed because of shutdown.
+[2014-12-15 11:19:08:892][org.logicalcobwebs.proxool.ConnectionPool] Connection #61 closed
+[2014-12-15 11:19:08:893][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/59/00) - #0060 removed because of shutdown.
+[2014-12-15 11:19:08:893][org.logicalcobwebs.proxool.ConnectionPool] Connection #60 closed
+[2014-12-15 11:19:08:894][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/58/00) - #0059 removed because of shutdown.
+[2014-12-15 11:19:08:894][org.logicalcobwebs.proxool.ConnectionPool] Connection #59 closed
+[2014-12-15 11:19:08:895][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/57/00) - #0058 removed because of shutdown.
+[2014-12-15 11:19:08:895][org.logicalcobwebs.proxool.ConnectionPool] Connection #58 closed
+[2014-12-15 11:19:08:896][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/56/00) - #0057 removed because of shutdown.
+[2014-12-15 11:19:08:896][org.logicalcobwebs.proxool.ConnectionPool] Connection #57 closed
+[2014-12-15 11:19:08:897][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/55/00) - #0056 removed because of shutdown.
+[2014-12-15 11:19:08:897][org.logicalcobwebs.proxool.ConnectionPool] Connection #56 closed
+[2014-12-15 11:19:08:897][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/54/00) - #0055 removed because of shutdown.
+[2014-12-15 11:19:08:898][org.logicalcobwebs.proxool.ConnectionPool] Connection #55 closed
+[2014-12-15 11:19:08:898][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/53/00) - #0054 removed because of shutdown.
+[2014-12-15 11:19:08:898][org.logicalcobwebs.proxool.ConnectionPool] Connection #54 closed
+[2014-12-15 11:19:08:899][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/52/00) - #0053 removed because of shutdown.
+[2014-12-15 11:19:08:899][org.logicalcobwebs.proxool.ConnectionPool] Connection #53 closed
+[2014-12-15 11:19:08:900][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/51/00) - #0052 removed because of shutdown.
+[2014-12-15 11:19:08:900][org.logicalcobwebs.proxool.ConnectionPool] Connection #52 closed
+[2014-12-15 11:19:08:900][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/50/00) - #0051 removed because of shutdown.
+[2014-12-15 11:19:08:900][org.logicalcobwebs.proxool.ConnectionPool] Connection #51 closed
+[2014-12-15 11:19:08:901][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/49/00) - #0050 removed because of shutdown.
+[2014-12-15 11:19:08:901][org.logicalcobwebs.proxool.ConnectionPool] Connection #50 closed
+[2014-12-15 11:19:08:901][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/48/00) - #0049 removed because of shutdown.
+[2014-12-15 11:19:08:902][org.logicalcobwebs.proxool.ConnectionPool] Connection #49 closed
+[2014-12-15 11:19:08:902][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/47/00) - #0048 removed because of shutdown.
+[2014-12-15 11:19:08:902][org.logicalcobwebs.proxool.ConnectionPool] Connection #48 closed
+[2014-12-15 11:19:08:903][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/46/00) - #0047 removed because of shutdown.
+[2014-12-15 11:19:08:903][org.logicalcobwebs.proxool.ConnectionPool] Connection #47 closed
+[2014-12-15 11:19:08:904][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/45/00) - #0046 removed because of shutdown.
+[2014-12-15 11:19:08:905][org.logicalcobwebs.proxool.ConnectionPool] Connection #46 closed
+[2014-12-15 11:19:08:906][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/44/00) - #0045 removed because of shutdown.
+[2014-12-15 11:19:08:906][org.logicalcobwebs.proxool.ConnectionPool] Connection #45 closed
+[2014-12-15 11:19:08:907][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/43/00) - #0044 removed because of shutdown.
+[2014-12-15 11:19:08:907][org.logicalcobwebs.proxool.ConnectionPool] Connection #44 closed
+[2014-12-15 11:19:08:908][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/42/00) - #0043 removed because of shutdown.
+[2014-12-15 11:19:08:909][org.logicalcobwebs.proxool.ConnectionPool] Connection #43 closed
+[2014-12-15 11:19:08:909][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/41/00) - #0042 removed because of shutdown.
+[2014-12-15 11:19:08:909][org.logicalcobwebs.proxool.ConnectionPool] Connection #42 closed
+[2014-12-15 11:19:08:910][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/40/00) - #0041 removed because of shutdown.
+[2014-12-15 11:19:08:910][org.logicalcobwebs.proxool.ConnectionPool] Connection #41 closed
+[2014-12-15 11:19:08:911][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/39/00) - #0040 removed because of shutdown.
+[2014-12-15 11:19:08:911][org.logicalcobwebs.proxool.ConnectionPool] Connection #40 closed
+[2014-12-15 11:19:08:912][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/38/00) - #0039 removed because of shutdown.
+[2014-12-15 11:19:08:912][org.logicalcobwebs.proxool.ConnectionPool] Connection #39 closed
+[2014-12-15 11:19:08:912][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/37/00) - #0038 removed because of shutdown.
+[2014-12-15 11:19:08:913][org.logicalcobwebs.proxool.ConnectionPool] Connection #38 closed
+[2014-12-15 11:19:08:913][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/36/00) - #0037 removed because of shutdown.
+[2014-12-15 11:19:08:914][org.logicalcobwebs.proxool.ConnectionPool] Connection #37 closed
+[2014-12-15 11:19:08:914][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/35/00) - #0036 removed because of shutdown.
+[2014-12-15 11:19:08:914][org.logicalcobwebs.proxool.ConnectionPool] Connection #36 closed
+[2014-12-15 11:19:08:915][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/34/00) - #0035 removed because of shutdown.
+[2014-12-15 11:19:08:915][org.logicalcobwebs.proxool.ConnectionPool] Connection #35 closed
+[2014-12-15 11:19:08:915][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/33/00) - #0034 removed because of shutdown.
+[2014-12-15 11:19:08:916][org.logicalcobwebs.proxool.ConnectionPool] Connection #34 closed
+[2014-12-15 11:19:08:916][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/32/00) - #0033 removed because of shutdown.
+[2014-12-15 11:19:08:916][org.logicalcobwebs.proxool.ConnectionPool] Connection #33 closed
+[2014-12-15 11:19:08:917][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/31/00) - #0032 removed because of shutdown.
+[2014-12-15 11:19:08:917][org.logicalcobwebs.proxool.ConnectionPool] Connection #32 closed
+[2014-12-15 11:19:08:917][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/30/00) - #0031 removed because of shutdown.
+[2014-12-15 11:19:08:917][org.logicalcobwebs.proxool.ConnectionPool] Connection #31 closed
+[2014-12-15 11:19:08:918][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/29/00) - #0030 removed because of shutdown.
+[2014-12-15 11:19:08:918][org.logicalcobwebs.proxool.ConnectionPool] Connection #30 closed
+[2014-12-15 11:19:08:919][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/28/00) - #0029 removed because of shutdown.
+[2014-12-15 11:19:08:919][org.logicalcobwebs.proxool.ConnectionPool] Connection #29 closed
+[2014-12-15 11:19:08:919][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/27/00) - #0028 removed because of shutdown.
+[2014-12-15 11:19:08:920][org.logicalcobwebs.proxool.ConnectionPool] Connection #28 closed
+[2014-12-15 11:19:08:920][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/26/00) - #0027 removed because of shutdown.
+[2014-12-15 11:19:08:920][org.logicalcobwebs.proxool.ConnectionPool] Connection #27 closed
+[2014-12-15 11:19:08:921][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/25/00) - #0026 removed because of shutdown.
+[2014-12-15 11:19:08:921][org.logicalcobwebs.proxool.ConnectionPool] Connection #26 closed
+[2014-12-15 11:19:08:922][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/24/00) - #0025 removed because of shutdown.
+[2014-12-15 11:19:08:922][org.logicalcobwebs.proxool.ConnectionPool] Connection #25 closed
+[2014-12-15 11:19:08:922][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/23/00) - #0024 removed because of shutdown.
+[2014-12-15 11:19:08:923][org.logicalcobwebs.proxool.ConnectionPool] Connection #24 closed
+[2014-12-15 11:19:08:923][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/22/00) - #0023 removed because of shutdown.
+[2014-12-15 11:19:08:924][org.logicalcobwebs.proxool.ConnectionPool] Connection #23 closed
+[2014-12-15 11:19:08:924][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/21/00) - #0022 removed because of shutdown.
+[2014-12-15 11:19:08:924][org.logicalcobwebs.proxool.ConnectionPool] Connection #22 closed
+[2014-12-15 11:19:08:925][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/20/00) - #0021 removed because of shutdown.
+[2014-12-15 11:19:08:925][org.logicalcobwebs.proxool.ConnectionPool] Connection #21 closed
+[2014-12-15 11:19:08:925][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/19/00) - #0020 removed because of shutdown.
+[2014-12-15 11:19:08:926][org.logicalcobwebs.proxool.ConnectionPool] Connection #20 closed
+[2014-12-15 11:19:08:926][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/18/00) - #0019 removed because of shutdown.
+[2014-12-15 11:19:08:926][org.logicalcobwebs.proxool.ConnectionPool] Connection #19 closed
+[2014-12-15 11:19:08:927][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/17/00) - #0018 removed because of shutdown.
+[2014-12-15 11:19:08:927][org.logicalcobwebs.proxool.ConnectionPool] Connection #18 closed
+[2014-12-15 11:19:08:927][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/16/00) - #0017 removed because of shutdown.
+[2014-12-15 11:19:08:927][org.logicalcobwebs.proxool.ConnectionPool] Connection #17 closed
+[2014-12-15 11:19:08:928][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/15/00) - #0016 removed because of shutdown.
+[2014-12-15 11:19:08:928][org.logicalcobwebs.proxool.ConnectionPool] Connection #16 closed
+[2014-12-15 11:19:08:929][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/14/00) - #0015 removed because of shutdown.
+[2014-12-15 11:19:08:929][org.logicalcobwebs.proxool.ConnectionPool] Connection #15 closed
+[2014-12-15 11:19:08:929][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/13/00) - #0014 removed because of shutdown.
+[2014-12-15 11:19:08:929][org.logicalcobwebs.proxool.ConnectionPool] Connection #14 closed
+[2014-12-15 11:19:08:929][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/12/00) - #0013 removed because of shutdown.
+[2014-12-15 11:19:08:930][org.logicalcobwebs.proxool.ConnectionPool] Connection #13 closed
+[2014-12-15 11:19:08:930][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/11/00) - #0012 removed because of shutdown.
+[2014-12-15 11:19:08:930][org.logicalcobwebs.proxool.ConnectionPool] Connection #12 closed
+[2014-12-15 11:19:08:931][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/10/00) - #0011 removed because of shutdown.
+[2014-12-15 11:19:08:931][org.logicalcobwebs.proxool.ConnectionPool] Connection #11 closed
+[2014-12-15 11:19:08:931][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/09/00) - #0010 removed because of shutdown.
+[2014-12-15 11:19:08:931][org.logicalcobwebs.proxool.ConnectionPool] Connection #10 closed
+[2014-12-15 11:19:08:932][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/08/00) - #0009 removed because of shutdown.
+[2014-12-15 11:19:08:932][org.logicalcobwebs.proxool.ConnectionPool] Connection #9 closed
+[2014-12-15 11:19:08:932][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/07/00) - #0008 removed because of shutdown.
+[2014-12-15 11:19:08:932][org.logicalcobwebs.proxool.ConnectionPool] Connection #8 closed
+[2014-12-15 11:19:08:933][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/06/00) - #0007 removed because of shutdown.
+[2014-12-15 11:19:08:933][org.logicalcobwebs.proxool.ConnectionPool] Connection #7 closed
+[2014-12-15 11:19:08:933][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/05/00) - #0006 removed because of shutdown.
+[2014-12-15 11:19:08:933][org.logicalcobwebs.proxool.ConnectionPool] Connection #6 closed
+[2014-12-15 11:19:08:934][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/04/00) - #0005 removed because of shutdown.
+[2014-12-15 11:19:08:934][org.logicalcobwebs.proxool.ConnectionPool] Connection #5 closed
+[2014-12-15 11:19:08:935][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/03/00) - #0004 removed because of shutdown.
+[2014-12-15 11:19:08:935][org.logicalcobwebs.proxool.ConnectionPool] Connection #4 closed
+[2014-12-15 11:19:08:936][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/02/00) - #0003 removed because of shutdown.
+[2014-12-15 11:19:08:936][org.logicalcobwebs.proxool.ConnectionPool] Connection #3 closed
+[2014-12-15 11:19:08:937][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/01/00) - #0002 removed because of shutdown.
+[2014-12-15 11:19:08:937][org.logicalcobwebs.proxool.ConnectionPool] Connection #2 closed
+[2014-12-15 11:19:08:938][org.logicalcobwebs.proxool.ConnectionPool] 000094 (00/00/00) - #0001 removed because of shutdown.
+[2014-12-15 11:19:08:938][org.logicalcobwebs.proxool.ConnectionPool] Connection #1 closed
+[2014-12-15 11:19:08:938][org.logicalcobwebs.proxool.ConnectionPool] 'DBPool' pool has been closed down by Shutdown Hook in 102 milliseconds.
+[2014-12-15 11:19:08:939][org.logicalcobwebs.proxool.PrototyperController] Stopping Prototyper thread
+[2014-12-15 11:19:08:939][org.logicalcobwebs.proxool.HouseKeeperController] Stopping HouseKeeper thread
+[2014-12-15 11:20:01:569][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613601568
+[2014-12-15 11:20:06:567][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613606567
+[2014-12-15 11:20:11:567][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613611567
+[2014-12-15 11:20:16:567][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613616567
+[2014-12-15 11:20:21:568][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613621568
+[2014-12-15 11:20:26:568][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613626568
+[2014-12-15 11:20:27:562][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Configuring from reader: java.io.InputStreamReader@3f669e7f
+[2014-12-15 11:20:27:567][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] SAXParserFactory class: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
+[2014-12-15 11:20:27:581][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] sax parser classcom.sun.org.apache.xerces.internal.jaxp.SAXParserImpl
+[2014-12-15 11:20:27:582][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] XML reader class: com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser
+[2014-12-15 11:20:27:583][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespaces'. State: true.
+[2014-12-15 11:20:27:584][org.logicalcobwebs.proxool.configuration.JAXPConfigurator] Setting sax feature: 'http://xml.org/sax/features/namespace-prefixes'. State: false.
+[2014-12-15 11:20:27:588][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: user=cziotappuser
+[2014-12-15 11:20:27:589][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Adding driver property: password=*******
+[2014-12-15 11:20:27:590][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.simultaneous-build-throttle' to value '10'.
+[2014-12-15 11:20:27:592][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.maximum-connection-count' to value '5'.
+[2014-12-15 11:20:27:593][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.minimum-connection-count' to value '2'.
+[2014-12-15 11:20:27:593][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-sleep-time' to value '120000'.
+[2014-12-15 11:20:27:594][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.prototype-count' to value '2'.
+[2014-12-15 11:20:27:595][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.test-before-use' to value 'true'.
+[2014-12-15 11:20:27:596][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Setting property 'proxool.house-keeping-test-sql' to value 'select 1'.
+[2014-12-15 11:20:27:596][org.logicalcobwebs.proxool.configuration.XMLConfigurator] Created url: proxool.DBPool:com.mysql.jdbc.Driver:jdbc:mysql://localhost:13306/cziot
+[2014-12-15 11:20:27:601][org.logicalcobwebs.proxool.ProxoolFacade] Proxool 0.9.1 (23-Aug-2008 11:10)
+[2014-12-15 11:20:27:612][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.driver=com.mysql.jdbc.Driver
+[2014-12-15 11:20:27:613][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.url=jdbc:mysql://localhost:13306/cziot
+[2014-12-15 11:20:27:614][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.minimum-connection-count=2
+[2014-12-15 11:20:27:615][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.test-before-use=true
+[2014-12-15 11:20:27:615][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: user=cziotappuser
+[2014-12-15 11:20:27:616][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-sleep-time=120000
+[2014-12-15 11:20:27:616][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.prototype-count=2
+[2014-12-15 11:20:27:617][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Delegating property to driver: password=********
+[2014-12-15 11:20:27:617][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.maximum-connection-count=5
+[2014-12-15 11:20:27:618][org.logicalcobwebs.proxool.ConnectionPoolDefinition] Recognised proxool property: proxool.house-keeping-test-sql=select 1
+[2014-12-15 11:20:27:630][org.logicalcobwebs.proxool.ShutdownHook] Registered shutdownHook
+[2014-12-15 11:20:27:633][org.logicalcobwebs.proxool.HouseKeeperController] Registering 'DBPool' house keeper
+[2014-12-15 11:20:27:635][org.logicalcobwebs.proxool.HouseKeeperController] Starting a house keeper thread
+[2014-12-15 11:20:27:791][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTransactionIsolation() = 4
+[2014-12-15 11:20:27:791][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getHoldability() = 2
+[2014-12-15 11:20:27:792][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getCatalog() = cziot
+[2014-12-15 11:20:27:793][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: isReadOnly() = false
+[2014-12-15 11:20:27:793][org.logicalcobwebs.proxool.ConnectionResetter] Remembering default value: getTypeMap() = {}
+[2014-12-15 11:20:27:794][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2014-12-15 11:20:27:794][org.logicalcobwebs.proxool.ConnectionPool] Proxool statistics legend: "s - r  (a/t/o)" > s=served, r=refused (only shown if non-zero), a=active, t=total, o=offline (being tested)
+[2014-12-15 11:20:27:796][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #2 created on demand = ACTIVE
+[2014-12-15 11:20:27:796][org.logicalcobwebs.proxool.Prototyper] 000000 (01/02/00) - Connection #1 created to achieve minimum of 2 = AVAILABLE
+[2014-12-15 11:20:27:797][org.logicalcobwebs.proxool.ConnectionPool] 000000 (01/02/00) - Connection #2 tested: OK
+[2014-12-15 11:20:27:808][org.logicalcobwebs.proxool.Prototyper] 000001 (01/03/00) - Connection #3 created to keep 2 available = AVAILABLE
+[2014-12-15 11:20:27:839][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2014-12-15 11:20:27:839][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.MySQLConnection
+[2014-12-15 11:20:27:840][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.io.Serializable
+[2014-12-15 11:20:27:841][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.ConnectionProperties
+[2014-12-15 11:20:27:842][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Connection
+[2014-12-15 11:20:27:842][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2014-12-15 11:20:27:842][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Connection
+[2014-12-15 11:20:28:264][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.lang.AutoCloseable
+[2014-12-15 11:20:28:264][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.PreparedStatement
+[2014-12-15 11:20:28:264][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Wrapper
+[2014-12-15 11:20:28:265][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface java.sql.Statement
+[2014-12-15 11:20:28:265][org.logicalcobwebs.proxool.ProxyFactory] Implementing interface com.mysql.jdbc.Statement
+[2014-12-15 11:20:28:371][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 67003266 (belonging to connection 2) automatically
+[2014-12-15 11:20:28:372][org.logicalcobwebs.proxool.ConnectionPool] 000001 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:394][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1321202e (belonging to connection 2) automatically
+[2014-12-15 11:20:28:395][org.logicalcobwebs.proxool.ConnectionPool] 000002 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:429][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 19c21cf9 (belonging to connection 1) automatically
+[2014-12-15 11:20:28:431][org.logicalcobwebs.proxool.ConnectionPool] 000003 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:28:494][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6a168fc1 (belonging to connection 3) automatically
+[2014-12-15 11:20:28:496][org.logicalcobwebs.proxool.ConnectionPool] 000004 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:521][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 48de8ca (belonging to connection 2) automatically
+[2014-12-15 11:20:28:523][org.logicalcobwebs.proxool.ConnectionPool] 000005 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:552][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1dc59111 (belonging to connection 1) automatically
+[2014-12-15 11:20:28:553][org.logicalcobwebs.proxool.ConnectionPool] 000006 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:28:579][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1de33ab9 (belonging to connection 3) automatically
+[2014-12-15 11:20:28:581][org.logicalcobwebs.proxool.ConnectionPool] 000007 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:610][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7c68b91c (belonging to connection 2) automatically
+[2014-12-15 11:20:28:613][org.logicalcobwebs.proxool.ConnectionPool] 000008 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:637][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 615807eb (belonging to connection 1) automatically
+[2014-12-15 11:20:28:639][org.logicalcobwebs.proxool.ConnectionPool] 000009 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:28:669][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1c9ce3e0 (belonging to connection 3) automatically
+[2014-12-15 11:20:28:671][org.logicalcobwebs.proxool.ConnectionPool] 000010 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:695][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 76eb7293 (belonging to connection 2) automatically
+[2014-12-15 11:20:28:698][org.logicalcobwebs.proxool.ConnectionPool] 000011 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:718][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 12799446 (belonging to connection 1) automatically
+[2014-12-15 11:20:28:720][org.logicalcobwebs.proxool.ConnectionPool] 000012 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:28:745][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 74dcd458 (belonging to connection 3) automatically
+[2014-12-15 11:20:28:747][org.logicalcobwebs.proxool.ConnectionPool] 000013 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:768][org.logicalcobwebs.proxool.ProxyConnection] Closing statement cff654c (belonging to connection 2) automatically
+[2014-12-15 11:20:28:771][org.logicalcobwebs.proxool.ConnectionPool] 000014 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:804][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 77584abf (belonging to connection 1) automatically
+[2014-12-15 11:20:28:805][org.logicalcobwebs.proxool.ConnectionPool] 000015 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:28:860][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 61a27a13 (belonging to connection 3) automatically
+[2014-12-15 11:20:28:862][org.logicalcobwebs.proxool.ConnectionPool] 000016 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:887][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4c352ca9 (belonging to connection 2) automatically
+[2014-12-15 11:20:28:889][org.logicalcobwebs.proxool.ConnectionPool] 000017 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:910][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7f422265 (belonging to connection 1) automatically
+[2014-12-15 11:20:28:912][org.logicalcobwebs.proxool.ConnectionPool] 000018 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:28:937][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 683d57c4 (belonging to connection 3) automatically
+[2014-12-15 11:20:28:939][org.logicalcobwebs.proxool.ConnectionPool] 000019 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:28:960][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1f90d293 (belonging to connection 2) automatically
+[2014-12-15 11:20:28:962][org.logicalcobwebs.proxool.ConnectionPool] 000020 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:28:987][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 360ab552 (belonging to connection 1) automatically
+[2014-12-15 11:20:28:988][org.logicalcobwebs.proxool.ConnectionPool] 000021 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:040][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3e04e1e4 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:043][org.logicalcobwebs.proxool.ConnectionPool] 000022 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:070][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6209ae8f (belonging to connection 2) automatically
+[2014-12-15 11:20:29:072][org.logicalcobwebs.proxool.ConnectionPool] 000023 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:093][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7d76591 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:094][org.logicalcobwebs.proxool.ConnectionPool] 000024 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:120][org.logicalcobwebs.proxool.ProxyConnection] Closing statement f372724 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:121][org.logicalcobwebs.proxool.ConnectionPool] 000025 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:143][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 70509f13 (belonging to connection 2) automatically
+[2014-12-15 11:20:29:144][org.logicalcobwebs.proxool.ConnectionPool] 000026 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:170][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 2ea161e0 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:171][org.logicalcobwebs.proxool.ConnectionPool] 000027 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:256][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3fd3a3bc (belonging to connection 3) automatically
+[2014-12-15 11:20:29:258][org.logicalcobwebs.proxool.ConnectionPool] 000028 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:310][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5d97da5f (belonging to connection 2) automatically
+[2014-12-15 11:20:29:312][org.logicalcobwebs.proxool.ConnectionPool] 000029 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:337][org.logicalcobwebs.proxool.ProxyConnection] Closing statement f3e7829 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:339][org.logicalcobwebs.proxool.ConnectionPool] 000030 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:359][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 33dc80f5 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:361][org.logicalcobwebs.proxool.ConnectionPool] 000031 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:386][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1f3ae95d (belonging to connection 2) automatically
+[2014-12-15 11:20:29:389][org.logicalcobwebs.proxool.ConnectionPool] 000032 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:409][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1ae8346 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:411][org.logicalcobwebs.proxool.ConnectionPool] 000033 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:445][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 220c45e6 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:448][org.logicalcobwebs.proxool.ConnectionPool] 000034 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:476][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4085f7ff (belonging to connection 2) automatically
+[2014-12-15 11:20:29:478][org.logicalcobwebs.proxool.ConnectionPool] 000035 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:503][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 187d9bc8 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:505][org.logicalcobwebs.proxool.ConnectionPool] 000036 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:534][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 678c7d58 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:536][org.logicalcobwebs.proxool.ConnectionPool] 000037 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:561][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 51a2cfbc (belonging to connection 2) automatically
+[2014-12-15 11:20:29:564][org.logicalcobwebs.proxool.ConnectionPool] 000038 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:584][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 23d022f5 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:586][org.logicalcobwebs.proxool.ConnectionPool] 000039 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:611][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6b6f2fc1 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:613][org.logicalcobwebs.proxool.ConnectionPool] 000040 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:634][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 53638bd (belonging to connection 2) automatically
+[2014-12-15 11:20:29:637][org.logicalcobwebs.proxool.ConnectionPool] 000041 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:669][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 57931be2 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:671][org.logicalcobwebs.proxool.ConnectionPool] 000042 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:701][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5665b20e (belonging to connection 3) automatically
+[2014-12-15 11:20:29:702][org.logicalcobwebs.proxool.ConnectionPool] 000043 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:728][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 288e26fe (belonging to connection 2) automatically
+[2014-12-15 11:20:29:730][org.logicalcobwebs.proxool.ConnectionPool] 000044 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:751][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1561435 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:752][org.logicalcobwebs.proxool.ConnectionPool] 000045 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:778][org.logicalcobwebs.proxool.ProxyConnection] Closing statement d27b1b3 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:779][org.logicalcobwebs.proxool.ConnectionPool] 000046 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:801][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3c6f2344 (belonging to connection 2) automatically
+[2014-12-15 11:20:29:803][org.logicalcobwebs.proxool.ConnectionPool] 000047 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:828][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 12aed009 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:829][org.logicalcobwebs.proxool.ConnectionPool] 000048 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:859][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6b5d30b6 (belonging to connection 3) automatically
+[2014-12-15 11:20:29:861][org.logicalcobwebs.proxool.ConnectionPool] 000049 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:886][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 597e9be9 (belonging to connection 2) automatically
+[2014-12-15 11:20:29:888][org.logicalcobwebs.proxool.ConnectionPool] 000050 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:909][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4cdd7469 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:910][org.logicalcobwebs.proxool.ConnectionPool] 000051 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:29:936][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3948166e (belonging to connection 3) automatically
+[2014-12-15 11:20:29:938][org.logicalcobwebs.proxool.ConnectionPool] 000052 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:29:959][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 28ec8597 (belonging to connection 2) automatically
+[2014-12-15 11:20:29:961][org.logicalcobwebs.proxool.ConnectionPool] 000053 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:29:986][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 9990da7 (belonging to connection 1) automatically
+[2014-12-15 11:20:29:988][org.logicalcobwebs.proxool.ConnectionPool] 000054 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:017][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4139feec (belonging to connection 3) automatically
+[2014-12-15 11:20:30:019][org.logicalcobwebs.proxool.ConnectionPool] 000055 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:052][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3e3d6c70 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:055][org.logicalcobwebs.proxool.ConnectionPool] 000056 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:075][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3ee4e848 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:077][org.logicalcobwebs.proxool.ConnectionPool] 000057 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:102][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 34322abb (belonging to connection 3) automatically
+[2014-12-15 11:20:30:104][org.logicalcobwebs.proxool.ConnectionPool] 000058 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:125][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 166355f1 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:127][org.logicalcobwebs.proxool.ConnectionPool] 000059 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:152][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3bfd1313 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:154][org.logicalcobwebs.proxool.ConnectionPool] 000060 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:175][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1a5c8b53 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:177][org.logicalcobwebs.proxool.ConnectionPool] 000061 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:202][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 57cf81e (belonging to connection 2) automatically
+[2014-12-15 11:20:30:205][org.logicalcobwebs.proxool.ConnectionPool] 000062 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:225][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7ddc8095 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:227][org.logicalcobwebs.proxool.ConnectionPool] 000063 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:252][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 61470479 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:254][org.logicalcobwebs.proxool.ConnectionPool] 000064 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:275][org.logicalcobwebs.proxool.ProxyConnection] Closing statement a072d8c (belonging to connection 2) automatically
+[2014-12-15 11:20:30:277][org.logicalcobwebs.proxool.ConnectionPool] 000065 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:302][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6be578b5 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:304][org.logicalcobwebs.proxool.ConnectionPool] 000066 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:325][org.logicalcobwebs.proxool.ProxyConnection] Closing statement c3e122 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:327][org.logicalcobwebs.proxool.ConnectionPool] 000067 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:352][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 30145ea6 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:355][org.logicalcobwebs.proxool.ConnectionPool] 000068 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:375][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 75328b7e (belonging to connection 1) automatically
+[2014-12-15 11:20:30:377][org.logicalcobwebs.proxool.ConnectionPool] 000069 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:402][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7aab767d (belonging to connection 3) automatically
+[2014-12-15 11:20:30:404][org.logicalcobwebs.proxool.ConnectionPool] 000070 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:425][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7a538050 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:427][org.logicalcobwebs.proxool.ConnectionPool] 000071 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:452][org.logicalcobwebs.proxool.ProxyConnection] Closing statement c61a8f8 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:453][org.logicalcobwebs.proxool.ConnectionPool] 000072 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:475][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5771c6d6 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:476][org.logicalcobwebs.proxool.ConnectionPool] 000073 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:502][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6765e467 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:503][org.logicalcobwebs.proxool.ConnectionPool] 000074 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:525][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 3fabb84d (belonging to connection 1) automatically
+[2014-12-15 11:20:30:526][org.logicalcobwebs.proxool.ConnectionPool] 000075 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:552][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5c74b704 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:554][org.logicalcobwebs.proxool.ConnectionPool] 000076 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:573][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1bf5df6a (belonging to connection 2) automatically
+[2014-12-15 11:20:30:574][org.logicalcobwebs.proxool.ConnectionPool] 000077 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:602][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 239494f6 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:604][org.logicalcobwebs.proxool.ConnectionPool] 000078 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:652][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 6b9b9f57 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:653][org.logicalcobwebs.proxool.ConnectionPool] 000079 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:702][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 2ddf0c3 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:704][org.logicalcobwebs.proxool.ConnectionPool] 000080 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:733][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 48e24332 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:734][org.logicalcobwebs.proxool.ConnectionPool] 000081 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:760][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 80cfb87 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:762][org.logicalcobwebs.proxool.ConnectionPool] 000082 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:783][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5e0fdd3e (belonging to connection 2) automatically
+[2014-12-15 11:20:30:785][org.logicalcobwebs.proxool.ConnectionPool] 000083 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:810][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 50f36fcb (belonging to connection 1) automatically
+[2014-12-15 11:20:30:812][org.logicalcobwebs.proxool.ConnectionPool] 000084 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:833][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5ed5a9e3 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:834][org.logicalcobwebs.proxool.ConnectionPool] 000085 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:860][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 4a02775e (belonging to connection 2) automatically
+[2014-12-15 11:20:30:862][org.logicalcobwebs.proxool.ConnectionPool] 000086 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:891][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 1567ca08 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:893][org.logicalcobwebs.proxool.ConnectionPool] 000087 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:918][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 11f8d3a8 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:920][org.logicalcobwebs.proxool.ConnectionPool] 000088 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:30:941][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 5ac4c508 (belonging to connection 2) automatically
+[2014-12-15 11:20:30:943][org.logicalcobwebs.proxool.ConnectionPool] 000089 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:30:968][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 65ce3f76 (belonging to connection 1) automatically
+[2014-12-15 11:20:30:970][org.logicalcobwebs.proxool.ConnectionPool] 000090 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:30:991][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 27ef6570 (belonging to connection 3) automatically
+[2014-12-15 11:20:30:993][org.logicalcobwebs.proxool.ConnectionPool] 000091 (01/03/00) - Connection #2 tested: OK
+[2014-12-15 11:20:31:018][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7088daa7 (belonging to connection 2) automatically
+[2014-12-15 11:20:31:020][org.logicalcobwebs.proxool.ConnectionPool] 000092 (01/03/00) - Connection #1 tested: OK
+[2014-12-15 11:20:31:049][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 263e2b1 (belonging to connection 1) automatically
+[2014-12-15 11:20:31:051][org.logicalcobwebs.proxool.ConnectionPool] 000093 (01/03/00) - Connection #3 tested: OK
+[2014-12-15 11:20:31:076][org.logicalcobwebs.proxool.ProxyConnection] Closing statement 7541213a (belonging to connection 3) automatically
+[2014-12-15 11:20:31:568][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613631568
+[2014-12-15 11:20:36:569][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613636569
+[2014-12-15 11:20:41:569][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613641569
+[2014-12-15 11:20:46:569][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613646569
+[2014-12-15 11:20:51:569][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613651569
+[2014-12-15 11:20:56:570][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613656570
+[2014-12-15 11:21:01:570][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613661570
+[2014-12-15 11:21:06:570][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613666570
+[2014-12-15 11:21:11:571][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613671571
+[2014-12-15 11:21:16:571][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613676571
+[2014-12-15 11:21:21:571][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613681571
+[2014-12-15 11:21:26:571][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613686571
+[2014-12-15 11:21:31:572][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613691572
+[2014-12-15 11:21:36:572][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613696572
+[2014-12-15 11:21:41:572][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613701572
+[2014-12-15 11:21:46:573][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613706573
+[2014-12-15 11:21:51:573][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613711573
+[2014-12-15 11:21:56:573][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613716573
+[2014-12-15 11:22:01:573][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613721573
+[2014-12-15 11:22:06:574][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613726574
+[2014-12-15 11:22:11:574][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613731574
+[2014-12-15 11:22:16:574][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613736574
+[2014-12-15 11:22:21:575][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613741575
+[2014-12-15 11:22:26:575][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613746575
+[2014-12-15 11:22:31:575][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613751575
+[2014-12-15 11:22:36:575][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613756575
+[2014-12-15 11:22:41:576][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613761576
+[2014-12-15 11:22:46:576][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613766576
+[2014-12-15 11:22:51:576][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613771576
+[2014-12-15 11:22:56:577][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613776577
+[2014-12-15 11:23:01:577][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613781577
+[2014-12-15 11:23:06:577][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613786577
+[2014-12-15 11:23:11:577][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613791577
+[2014-12-15 11:23:16:578][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613796578
+[2014-12-15 11:23:21:579][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613801579
+[2014-12-15 11:23:26:578][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613806578
+[2014-12-15 11:23:31:580][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613811580
+[2014-12-15 11:23:36:579][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613816579
+[2014-12-15 11:23:41:579][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613821579
+[2014-12-15 11:23:46:579][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613826579
+[2014-12-15 11:23:51:580][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613831580
+[2014-12-15 11:23:56:580][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613836580
+[2014-12-15 11:24:01:580][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613841580
+[2014-12-15 11:24:06:581][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613846581
+[2014-12-15 11:24:11:581][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613851581
+[2014-12-15 11:24:16:581][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613856581
+[2014-12-15 11:24:21:581][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613861581
+[2014-12-15 11:24:26:582][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613866582
+[2014-12-15 11:24:31:582][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613871582
+[2014-12-15 11:24:36:582][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613876582
+[2014-12-15 11:24:41:583][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613881583
+[2014-12-15 11:24:46:583][com.switek.netseed.server.ui.ImportIRCodeForm$3$1] shell.isVisible(): true1418613886583

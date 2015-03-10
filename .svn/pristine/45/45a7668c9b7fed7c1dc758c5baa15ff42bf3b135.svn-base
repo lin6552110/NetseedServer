@@ -1,0 +1,269 @@
+package com.switek.netseed.server.dal;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.log4j.Logger;
+
+import com.switek.netseed.server.Utils;
+import com.switek.netseed.server.bean.Device;
+import com.switek.netseed.server.bean.LearnIRCode;
+import com.switek.netseed.server.bean.SubController;
+
+public class MySQLDAL implements IDAL {
+
+	Logger logger = Logger.getLogger(MySQLDAL.class);
+	static IDAL dal = null;
+
+	public static synchronized IDAL newInstance() {
+		if (dal == null) {
+			dal = new MySQLDAL();
+		}
+		return dal;
+	}
+
+	@Override
+	public boolean addSubcontroller(SubController subcontroller) {
+		String sql = "insert into mdsubcontroller (controllerid, subcontrollerid, subcontrollername, registerdt, registerby, status, lasteditdt, lasteditby) values(?, ?, ?, CURRENT_TIMESTAMP, 'controller', '00', current_timestamp, 'controller')";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(subcontroller.getParent().getControllerId());
+		params.add(subcontroller.getControllerId());
+		params.add(subcontroller.getControllerName());
+		try {
+			DB.beginTran();
+			boolean result = DB.executeSQL(sql, params);
+
+			// Add device;
+			if (!result) {
+				DB.rollback();
+				return false;
+			}
+			Device device = new Device(subcontroller);
+			device.setDeviceType(0); // 0: sensor
+			device.setDeviceName("Sensor");
+			boolean addDeviceResult = addDevice(device);
+			if (!addDeviceResult) {
+				DB.rollback();
+				return false;
+			}
+
+			DB.commit();
+			subcontroller.addDevice(device.getDeviceId(), device);
+			return result;
+		} catch (Exception e) {
+			DB.rollback();
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean addDevice(Device device) {
+		String deviceId = Utils.generateUUID();
+		String sql = "insert into mddevice (controllerid, subcontrollerid, deviceid, devicename, devicetype, brandcode, ircodeindex, islearnedircode, registerdt, registerby, status, lasteditdt, lasteditby) values (?,?,?,?,?,?,?,?,?,'server','00',?, 'server')";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(device.getControllerId());
+		params.add(device.getSubcontrollerId());
+		params.add(deviceId);
+		params.add(device.getDeviceName());
+		params.add(device.getDeviceType());
+		params.add(device.getBrandCode());
+		params.add(device.getIRCodeIndex());
+		params.add(device.isLearnedIRCode());
+
+		Date lastEditDT = new Date();
+		params.add(lastEditDT);
+		params.add(lastEditDT);
+
+		try {
+			boolean result = DB.executeSQL(sql, params);
+			if (result) {
+				device.setLastEditDT(lastEditDT.getTime());
+				device.setDeviceId(deviceId);
+			}
+			return result;
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateDeviceLastPressKey(Device device, int lastPressedKey) {
+		String sql = "update mddevice set lastpressedkey=? where controllerid = ? and subcontrollerid = ? and deviceid = ?";
+		ArrayList<Object> params = new ArrayList<>();
+
+		params.add(lastPressedKey);
+
+		params.add(device.getControllerId());
+		params.add(device.getSubcontrollerId());
+		params.add(device.getDeviceId());
+		try {
+			boolean result = DB.executeSQL(sql, params);
+			if (result) {
+				device.setLastPressedKey(lastPressedKey);
+			}
+			return result;
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateDevice(Device device) {
+		String sql = "update mddevice set devicename=?, ircodeindex = ?, islearnedircode=?, devicetype=?,brandcode=?, lasteditdt = ?, lastpressedkey=? where controllerid = ? and subcontrollerid = ? and deviceid = ?";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(device.getDeviceName());
+		params.add(device.getIRCodeIndex());
+		params.add(device.isLearnedIRCode());
+		params.add(device.getDeviceType());
+		params.add(device.getBrandCode());
+
+		Date lastEditDT = new Date();
+		params.add(lastEditDT);
+
+		params.add(device.getLastPressedKey());
+
+		params.add(device.getControllerId());
+		params.add(device.getSubcontrollerId());
+		params.add(device.getDeviceId());
+		try {
+			boolean result = DB.executeSQL(sql, params);
+			if (result) {
+				device.setLastEditDT(lastEditDT.getTime());
+			}
+			return result;
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean deleteDevice(Device device) {
+		String sql = "delete d,l from mddevice as d left join mdlearnedircode as l on d.controllerid = l.controllerid and d.subcontrollerid = l.subcontrollerid and d.deviceid = l.deviceid where d.controllerid = ? and d.subcontrollerid = ? and d.deviceid= ?";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(device.getControllerId());
+		params.add(device.getSubcontrollerId());
+		params.add(device.getDeviceId());
+		try {
+			return DB.executeSQL(sql, params);
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean deleteSubController(SubController subcontroller) {
+		String sql = "delete s,d,l from mdsubcontroller as s left join mddevice as d on s.controllerid = d.controllerid and s.subcontrollerid = d.subcontrollerid left join mdlearnedircode as l on d.controllerid = l.controllerid and d.subcontrollerid = l.subcontrollerid and d.deviceid = l.deviceid where s.controllerid = ? and s.subcontrollerid = ?";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(subcontroller.getParent().getControllerId());
+		params.add(subcontroller.getControllerId());
+		try {
+			return DB.executeSQL(sql, params);
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean registerController(String Id, String name, String macAddress,
+			boolean isReregister) {
+
+		List<String> sqlList = new ArrayList<>();
+		String IdValue = Id.replace("'", "'");
+		macAddress=macAddress.replace("'","''");
+		if (isReregister) {
+			// sqlList.add("delete c from mdlearnedircode as c join mddevice as d on c.deviceid = d.deviceid where d.controllerid = "
+			// + IdValue);
+			// sqlList.add("delete from mddevice where controllerid = " +
+			// IdValue);
+//			sqlList.add("delete from mdsubcontroller where controllerid = "
+//					+ IdValue);
+//			sqlList.add("delete from mdcontroller where controllerid = "
+//					+ IdValue);
+			sqlList.add("update mdcontroller set MacAddress='"+  macAddress + "', RegisterDT = CURRENT_TIMESTAMP, LastEditDT=CURRENT_TIMESTAMP, LastEditBy='reregister' where controllerid = '"
+					+ IdValue + "'");
+		} else {
+			String strInsertController = "insert into mdcontroller (controllerid, controllername, MacAddress, registerdt, registerby, lasteditby, lasteditdt, status) values ('"
+					+ IdValue
+					+ "', '"
+					+ name.replace("'", "''")
+					+ "', '"
+					+ macAddress
+					+ "', CURRENT_TIMESTAMP, 'auto','auto', CURRENT_TIMESTAMP, '01')";
+			String strInsertSubcontroller = "insert into MDSubController (controllerid, subcontrollerid, subcontrollername, registerdt, registerby, lasteditby, lasteditdt, status) values ('"
+					+ Id
+					+ "', 0, '"+ Id +"', CURRENT_TIMESTAMP, 'Auto','Auto', CURRENT_TIMESTAMP, '01')";
+			sqlList.add(strInsertController);
+			sqlList.add(strInsertSubcontroller);
+		}
+
+		try {
+			System.out.println(sqlList.get(0));
+			DB.executeBatch(sqlList);
+			return true;
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean addLearnedIRCode(Device device, LearnIRCode learnIRCode) {
+		String sql = "insert into mdlearnedircode (controllerid, subcontrollerid, deviceid, keyindex, ircodedata, createdt, createby, lasteditdt, lasteditby) values(?, ?, ?, ?, ?, ?, 'server', ?, 'server')";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(device.getControllerId());
+		params.add(device.getSubcontrollerId());
+		params.add(device.getDeviceId());
+		params.add(learnIRCode.getKeyIndex());
+		params.add(learnIRCode.getIRCodeData());
+
+		Date lastEditDT = new Date();
+		params.add(lastEditDT);
+		params.add(lastEditDT);
+
+		try {
+			boolean result = DB.executeSQL(sql, params);
+			if (result) {
+				learnIRCode.setLastEditDT(lastEditDT.getTime());
+			}
+			return result;
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateLearnedIRCode(Device device, LearnIRCode learnIRCode) {
+		String sql = "update mdlearnedircode set ircodedata = ?, lasteditdt= ? where controllerid = ? and subcontrollerid = ? and DeviceId = ? and keyindex = ?";
+		ArrayList<Object> params = new ArrayList<>();
+		params.add(learnIRCode.getIRCodeData());
+
+		Date lastEditDT = new Date();
+		params.add(lastEditDT);
+
+		params.add(device.getControllerId());
+		params.add(device.getSubcontrollerId());
+		params.add(device.getDeviceId());
+		params.add(learnIRCode.getKeyIndex());
+
+		try {
+			boolean result = DB.executeSQL(sql, params);
+			if (result) {
+				learnIRCode.setLastEditDT(lastEditDT.getTime());
+			}
+			return result;
+		} catch (SQLException e) {
+			logger.error(e.getLocalizedMessage(), e);
+			return false;
+		}
+	}
+
+}

@@ -1,0 +1,930 @@
+package com.switek.netseed.server;
+
+import java.awt.Graphics2D;
+import java.awt.font.FontRenderContext;
+import java.awt.geom.Rectangle2D;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
+import java.util.regex.Pattern;
+
+import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
+
+public class Utils {
+	private static Logger logger = Logger.getLogger(Utils.class);
+
+	public static String getDateThroughSDF(String simpleDateFormat) {
+		SimpleDateFormat sdf = new SimpleDateFormat(simpleDateFormat);
+		return sdf.format(new Date());
+	}
+
+	/**
+	 * 取得当前是星期几。
+	 * 
+	 * @return
+	 */
+	public static int getWeekDay() {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(new Date());
+		return calendar.get(Calendar.DAY_OF_WEEK) - 1;
+	}
+
+	public static String formatDateTime(long time, String format) {
+		SimpleDateFormat sdf = new SimpleDateFormat(format);
+		return sdf.format(new Date(time));
+	}
+
+	public static String getStartupPath() {
+		URL url = Thread.currentThread().getContextClassLoader()
+				.getResource("");
+		File file = new File(url.getPath());
+		String startupPath = "";
+		try {
+			startupPath = URLDecoder.decode(file.getAbsolutePath(), "utf-8");
+			logger.info("startupPath = " + startupPath);
+		} catch (UnsupportedEncodingException e) {
+			logger.error(e.getLocalizedMessage(), e);
+		}
+		return startupPath;
+	}
+
+	public static Date stringToDate(String dateStr, String format)
+			throws ParseException {
+		SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+		Date cDate = dateFormat.parse(dateStr);
+		return cDate;
+	}
+
+	/**
+	 * 获取当前进程Id
+	 * 
+	 * @return 当前进程Id
+	 */
+	public static int getCurrentPID() {
+		RuntimeMXBean runtime = ManagementFactory.getRuntimeMXBean();
+		String name = runtime.getName(); // format: "pid@hostname"
+		try {
+			return Integer.parseInt(name.substring(0, name.indexOf('@')));
+		} catch (Exception e) {
+			System.err.println(e.getLocalizedMessage());
+			return -1;
+		}
+	}
+
+	private static SimpleDateFormat dateFormat_yyyy_MM_dd = new SimpleDateFormat(
+			"yyyy-MM-dd");
+
+	/**
+	 * yyyy-MM-dd格式
+	 * 
+	 * @param DateStr
+	 * @return
+	 * @throws ParseException
+	 */
+	public static Date getDateyyyy_MM_dd(String dateStr) throws ParseException {
+		return dateFormat_yyyy_MM_dd.parse(dateStr);
+	}
+
+	public static String getDateStryyyy_MM_dd(Date date) {
+		return dateFormat_yyyy_MM_dd.format(date);
+	}
+
+	private static SimpleDateFormat dateFormat_yyyy_MM_dd_HH_mm_ss = new SimpleDateFormat(
+			"yyyy-MM-dd HH:mm:ss");
+
+	public static String getDateyyyy_MM_dd_HH_mm_ss(Date date) {
+		return dateFormat_yyyy_MM_dd_HH_mm_ss.format(date);
+	}
+
+	private static SimpleDateFormat timeFormat = new SimpleDateFormat(
+			"HH:mm:ss");// 20:40:00
+
+	/**
+	 * HH:mm:ss格式
+	 * 
+	 * @param DateStr
+	 * @return
+	 * @throws ParseException
+	 */
+	public static Date getTimeHH_mm_ss(String timeStr) throws ParseException {
+		return timeFormat.parse(timeStr);
+	}
+
+	/**
+	 * yyyy-MM-dd HH:mm:ss 格式
+	 * 
+	 * @param DateStr
+	 * @return
+	 * @throws ParseException
+	 */
+	public static Date getDate(String DateStr) throws ParseException {
+		return dateFormat_yyyy_MM_dd_HH_mm_ss.parse(DateStr);
+	}
+
+	/**
+	 * 
+	 * @return yyyyMMddHHmmss格式
+	 */
+	public static String getCurrentDateStr_yyyyMMddHHmmss() {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+		return dateFormat.format(new Date());
+	}
+
+	// Change to call System.currentTimeMillis();
+	// public static long getSystemTicks(){
+	// return (new Date()).getTime();
+	// }
+
+	public static String bytes2String(List<Byte> bytes) {
+		StringBuilder builder = new StringBuilder();
+		for (byte b : bytes) {
+			builder.append(String.format("%1$02d", b & 0xff) + " ");
+		}
+
+		return builder.toString().toUpperCase();
+	}
+
+	public static String ints2HexString(List<Integer> in) {
+		StringBuilder builder = new StringBuilder();
+		for (int i : in) {
+			builder.append(String.format("%1$02x", i) + " ");
+		}
+
+		return builder.toString().toUpperCase();
+	}
+
+	public static String ints2HexString(int[] in) {
+		StringBuilder builder = new StringBuilder();
+		for (int i : in) {
+			builder.append(String.format("%1$02x", i) + " ");
+		}
+
+		return builder.toString().toUpperCase();
+	}
+
+	public static String bytes2String(byte[] bytes) {
+
+		StringBuilder builder = new StringBuilder();
+		for (byte b : bytes) {
+			builder.append(String.format("%1$02d", b & 0xff) + " ");
+		}
+
+		return builder.toString().toUpperCase();
+	}
+
+	public static String bytes2HexString(List<Byte> bytes) {
+		StringBuilder builder = new StringBuilder();
+		for (byte b : bytes) {
+			builder.append(String.format("%1$02x", b & 0xff) + " ");
+		}
+
+		return builder.toString().toUpperCase();
+	}
+
+	public static String bytes2HexString(byte[] bytes) {
+
+		StringBuilder builder = new StringBuilder();
+		for (byte b : bytes) {
+			builder.append(String.format("%1$02x", b & 0xff) + " ");
+		}
+
+		return builder.toString().toUpperCase();
+	}
+
+	public static String bytes2HexString2(byte[] bytes) {
+
+		StringBuilder builder = new StringBuilder();
+		for (byte b : bytes) {
+			builder.append(String.format("%1$02x", b & 0xff));
+		}
+
+		return builder.toString().toUpperCase();
+	}
+	
+	public static int formatBinary(String binary) {// 鈭��嗉�����
+		BigInteger src = new BigInteger(binary, 2);
+		return Integer.valueOf(src.toString(10)).intValue();
+	}
+
+	public static int formatTwoInt(int value1, int value2) {
+		String valueStr1 = getBinary(value1);
+		String valueStr2 = getBinary(value2);
+		BigInteger src = new BigInteger(valueStr1 + valueStr2, 2);
+		Integer value = Integer.valueOf(src.toString());
+		return value;
+	}
+
+	public static char[] format_N_Byte(List<Integer> values) {
+		return format_N_Byte(values.toArray(new Integer[values.size()]));
+	}
+
+	public static char[] format_N_Byte(Integer[] values) {
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < values.length; i++) {
+			sb.append(getBinary(values[i].intValue()));
+		}
+		return sb.toString().toCharArray();
+	}
+
+	//	public static int format_N_BigInteger(Integer[] values){
+	//		StringBuffer sb= new StringBuffer();
+	//		for (int i = 0; i < values.length; i++) {
+	//			sb.append(getBinary(values[i].intValue()));
+	//		}
+	//		BigInteger src = new BigInteger(sb.toString(), values.length);
+	//		return Integer.valueOf(src.toString());
+	//	}
+
+	public static String getBinary(int algorism) {
+		String binary = Integer.toBinaryString(algorism);
+		for (int i = 0; i < 7; i++) {
+			if (binary.length() >= 8) {
+				break;
+			} else {
+				binary = "0" + binary;
+			}
+		}
+		return binary;
+	}
+
+	static DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+
+	public static Date addSecondsFrom2011(int seconds) {
+		try {
+			return new Date(df.parse("2011/1/1").getTime() + seconds * 1000L);
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return new Date();
+		}
+	}
+
+	public static byte[] short2TwoBytes(short val) {
+		byte[] bytes = new byte[2];
+
+		bytes[0] = (byte) (val >> 8);
+		bytes[1] = (byte) (val & 0xFF);
+
+		return bytes;
+	}
+
+	/**
+	 * 将long转成8个byte
+	 * 
+	 * @param val
+	 * @return
+	 */
+	public static byte[] long2Bytes(long val) {
+		byte[] bytes = new byte[8];
+		bytes[0] = (byte) (val >> 56);
+		bytes[1] = (byte) ((val >> 48) & 0xFF);
+		bytes[2] = (byte) ((val >> 40) & 0xFF);
+		bytes[3] = (byte) ((val >> 32) & 0xFF);
+		bytes[4] = (byte) ((val >> 24) & 0xFF);
+		bytes[5] = (byte) ((val >> 16) & 0xFF);
+		bytes[6] = (byte) ((val >> 8) & 0xFF);
+		bytes[7] = (byte) (val & 0xFF);
+
+		return bytes;
+	}
+
+	/**
+	 * 将int转成4个byte
+	 * 
+	 * @param val
+	 * @return
+	 */
+	public static byte[] int2Bytes(int val) {
+		byte[] bytes = new byte[4];
+
+		bytes[0] = (byte) (val >> 24);
+		bytes[1] = (byte) ((val >> 16) & 0xFF);
+		bytes[2] = (byte) ((val >> 8) & 0xFF);
+		bytes[3] = (byte) (val & 0xFF);
+
+		return bytes;
+	}
+
+	/**
+	 * 两个int转成一个int
+	 * 
+	 * @param high
+	 * @param low
+	 * @return
+	 */
+	public static int twoByte2Int(int high, int low) {
+		return twoByte2Int((byte) high, (byte) low);
+	}
+
+	/**
+	 * 将4个bytes转成一个int
+	 * 
+	 * @param highestByte
+	 * @param highByte
+	 * @param lowByte
+	 * @param lowestByte
+	 * @return
+	 */
+	public static int bytes2Int(byte highestByte, byte highByte, byte lowByte,
+			byte lowestByte) {
+
+		int val = ((highestByte & 0xff) << 24) | ((highByte & 0xff) << 16)
+				| ((lowByte & 0xff) << 8) | (lowestByte & 0xff);
+		return val;
+	}
+
+	/**
+	 * 将4个bytes转成一个long
+	 * 
+	 * @param highestByte
+	 * @param highByte
+	 * @param lowByte
+	 * @param lowestByte
+	 * @return
+	 */
+	public static long bytes2Long(byte highestByte, byte highByte,
+			byte lowByte, byte lowestByte) {
+
+		long val = (((Long.valueOf(highestByte & 0xff).longValue()) << 24)
+				| ((Long.valueOf(highByte & 0xff).longValue()) << 16)
+				| ((Long.valueOf(lowByte & 0xff).longValue()) << 8) | (Long
+				.valueOf(lowestByte & 0xff).longValue()));
+		return val;
+	}
+	
+	
+
+	public static long toLong(byte[] b)
+
+	{
+		long l = 0;
+
+		l = b[7];
+
+		l |= ((long) b[6] << 8);
+
+		l |= ((long) b[5] << 16);
+
+		l |= ((long) b[4] << 24);
+
+		l |= ((long) b[3] << 32);
+
+		l |= ((long) b[2] << 40);
+
+		l |= ((long) b[1] << 48);
+
+		l |= ((long) b[0] << 56);
+
+		return l;
+	}
+
+	public static byte[] toByteArray(int number) {
+
+		int temp = number;
+
+		byte[] b = new byte[8];
+
+		for (int i = b.length - 1; i > -1; i--) {
+
+			b[i] = new Integer(temp & 0xff).byteValue();
+
+			temp = temp >> 8;
+
+		}
+
+		return b;
+	}
+
+	/**
+	 * 格式化数字为指定的格式。
+	 * 
+	 * @param decimal
+	 * @param pattern
+	 *            格式（如：0000）
+	 * @return
+	 */
+	public static String formatDecimal(int decimal, String pattern) {
+		DecimalFormat df = new DecimalFormat(pattern);
+		return df.format(decimal);
+	}
+	
+	public static String generateUUID(){
+		UUID uuid = UUID.randomUUID();
+		return uuid.toString();
+	}
+
+	/**
+	 * 两个bytes转成一个int
+	 * 
+	 * @param highByte
+	 * @param lowByte
+	 * @return
+	 */
+	public static int twoByte2Int(byte highByte, byte lowByte) {
+		// System.out.println("highByte: " + Integer.toBinaryString(highByte &
+		// 0xff));
+		// System.out.println("highByte2: " + Integer.toBinaryString((highByte &
+		// 0xff) << 8));//
+		// System.out.println("lowByte: " + Integer.toBinaryString(lowByte &
+		// 0xff));
+
+		int val = ((highByte & 0xff) << 8) | (lowByte & 0xff);
+		// System.out.println("result: " + val + ": " +
+		// Integer.toBinaryString(lowByte & 0xff));
+		return val;
+	}
+
+	/**
+	 * 判断数字是否是纯数字
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isNonNegative(String str) {
+		return Pattern.compile("[0-9]*").matcher(str).matches();
+	}
+
+	/**
+	 * 判断一个字符串是否是纯英文字母 f1045078
+	 * 
+	 * @return
+	 */
+	public static boolean isLetter(String str) {
+		return Pattern.compile("[a-zA-Z]{1,}").matcher(str).matches();
+	}
+
+	/**
+	 * 判断一个字符串是否是纯英文字母或者0 f1045078
+	 * 
+	 * @return
+	 */
+	public static boolean isLetterOrZero(String str) {
+		return Pattern.compile("[a-zA-Z0]{1,}").matcher(str).matches();
+	}
+
+	/**
+	 * 判断一个数字的长度 f1045078
+	 * 
+	 * @return
+	 */
+	public static boolean isLenForNumber(String str, int len) {
+		return Pattern.compile("\\d{" + len + "}").matcher(str).matches();
+	}
+
+	/**
+	 * 201303121117 判断一个字符串是否是纯英文字母或者纯数字 f1045078
+	 * 
+	 * @return
+	 */
+	public static boolean isLetterOrNumber(String str) {
+		return Pattern.compile("[a-zA-Z0-9]{0,}").matcher(str).matches();
+	}
+
+	/**
+	 * 判断一个数字的长度 f1045078
+	 * 
+	 * @return
+	 */
+	public static boolean isLenForNumber(String str, int len1, int len2) {
+		return Pattern.compile("\\d{" + len1 + "," + len2 + "}").matcher(str)
+				.matches();
+	}
+
+	/**
+	 * 把H-ASCII码转成十进制数字‘ 例如H-ASCII码：3DA00000转成十进制为：41021
+	 * 
+	 * @param hAsscii
+	 *            H-ASCII码
+	 * @return 十进制数据
+	 */
+	public static int hAscii_to_Int(String hAsscii) {
+		int e = hAsscii.length() / 2;
+		String hAsscii2 = "";
+		for (int n = 0; n < e; n++) {
+			hAsscii2 = hAsscii2
+					+ hAsscii.substring(hAsscii.length() - (n + 1) * 2,
+							hAsscii.length() - n * 2);
+		}
+		return Integer.parseInt(hAsscii2, 16);//
+	}
+
+	/**
+	 * 把一个十进制数字转成制定长度的H-ASCII码数组
+	 * 
+	 * @param number
+	 *            十进制数字
+	 * @param len
+	 *            数组长度
+	 * @return
+	 */
+	public static byte[] int_to_hAscii(Long number, int len) {
+		String hexNum = Long.toHexString(number);
+		hexNum = hexNum.toUpperCase();
+		int samllLength = len - hexNum.length();
+		for (int n = 0; n < samllLength; n++) {
+			hexNum = 0 + hexNum;
+		}
+		int e = hexNum.length() / 2;
+		String numHex = "";
+		for (int n = 0; n < e; n++) {
+			numHex = numHex
+					+ hexNum.substring(hexNum.length() - (n + 1) * 2,
+							hexNum.length() - n * 2);
+		}
+		return numHex.getBytes();
+	}
+
+	/**
+	 * 把长整形转换成B-ASCII码byte数组
+	 * 
+	 * @param number
+	 * @param len
+	 * @return
+	 */
+	public static byte[] long2BAscii(Long number, int len) {
+		String numberStr = String.valueOf(number);
+		numberStr = numberStr.toUpperCase();
+		int samllLength = len - numberStr.length();
+		for (int n = 0; n < samllLength; n++) {
+			numberStr = 0 + numberStr;
+		}
+		return numberStr.getBytes();
+	}
+
+	public static byte[] int_to_hAscii(int number, int len) {
+		String hexNum = Integer.toHexString(number);
+		hexNum = hexNum.toUpperCase();
+		int samllLength = len - hexNum.length();
+		for (int n = 0; n < samllLength; n++) {
+			hexNum = 0 + hexNum;
+		}
+		int e = hexNum.length() / 2;
+		String numHex = "";
+		for (int n = 0; n < e; n++) {
+			numHex = numHex
+					+ hexNum.substring(hexNum.length() - (n + 1) * 2,
+							hexNum.length() - n * 2);
+		}
+		return numHex.getBytes();
+	}
+
+	/**
+	 * 从数组B到数组A中，B的长度小于A，从数组A的第I个位置开始Copy I+B.length小于A.length
+	 * 
+	 * @param localBytes
+	 *            数组A
+	 * @param targetBytes
+	 *            数组B
+	 * @param fromNo
+	 *            第I个位置
+	 * @return
+	 */
+	public static byte[] copyBytes(byte localBytes[], byte[] targetBytes,
+			int fromNo) {
+		for (int i = 0; i < targetBytes.length; i++) {
+			localBytes[fromNo + i] = targetBytes[i];
+		}
+		return localBytes;
+	}
+
+	/**
+	 * 把一个整形转成短整型
+	 * 
+	 * @param num
+	 *            整型数字
+	 * @return
+	 */
+	public static int int_to_short(int num) {
+		String binary = Integer.toBinaryString(num);
+		if (binary.length() <= 16) {
+			return num;
+		} else {
+			binary = binary.substring(binary.length() - 16, binary.length());
+		}
+		int b = Integer.valueOf(binary, 2);
+		return b;
+	}
+
+	public synchronized static String readTextFile(File file, String encoding)
+			throws IOException {
+		InputStreamReader reader = null;
+		BufferedReader br = null;
+		try {
+			reader = new InputStreamReader(new FileInputStream(file), encoding);
+			br = new BufferedReader(reader);
+			StringBuffer sb = new StringBuffer();
+			String lineTXT = null;
+			while ((lineTXT = br.readLine()) != null) {
+				sb.append(lineTXT);
+			}
+			return sb.toString();
+		} finally {
+			if (reader != null) {
+				reader.close();
+				reader = null;
+			}
+			if (br != null) {
+				br.close();
+				br = null;
+			}
+		}
+	}
+
+	public synchronized static void writeTextFile(File file, String text,
+			String encoding) throws IOException {
+		BufferedWriter br = null;
+		OutputStreamWriter writer = null;
+		try {
+			writer = new OutputStreamWriter(new FileOutputStream(file),
+					encoding);
+			br = new BufferedWriter(writer);
+			br.write(text);
+			br.flush();
+		} finally {
+			if (writer != null) {
+				writer.close();
+				writer = null;
+			}
+			if (br != null) {
+				br.close();
+				br = null;
+			}
+		}
+	}
+
+	public static float getAWTTextWidth(Graphics2D g, String text) {
+		FontRenderContext frc = g.getFontRenderContext();
+		Rectangle2D bounds = g.getFont().getStringBounds(text, frc);
+		return (float) bounds.getWidth();
+	}
+
+	/**
+	 * The function provides an accurate add operation of two float numbers<br/>
+	 * For example:
+	 * <p>
+	 * <br/>
+	 * float f1 = 1.89f;<br/>
+	 * float f2 = 1.02f;<br/>
+	 * System.out.println(f1+f2);<br/>
+	 * System.out.println(add2Float(f1, f2));<br/>
+	 * You'll see the result is <b>2.9099998</b> and <b>2.91</b><br/>
+	 * You can use this function to make the add function of two float numbers
+	 * accurately<br/>
+	 * </p>
+	 * For subtraction instance,make the subtractor negative
+	 * 
+	 * @param f1
+	 * @param f2
+	 * @return
+	 */
+	public static float add2Float(float f1, float f2) {
+		BigDecimal b1 = new BigDecimal(Float.toString(f1));
+		BigDecimal b2 = new BigDecimal(Float.toString(f2));
+		return b1.add(b2).floatValue();
+	}
+
+	/**
+	 * 将一个10进制BCD码转换成制定长度的byte数组
+	 * 
+	 * @param BCDStr
+	 * @param len
+	 * @return
+	 */
+	public static byte[] getBCDBytesByStr(String BCDStr, int len) {
+		byte by[] = getBCDBytesByStr(BCDStr);
+		System.out.println(Arrays.toString(by));
+		byte bys[] = new byte[4];
+		System.arraycopy(by, 0, bys, len - by.length, by.length);
+		return bys;
+	}
+
+	/**
+	 * 将一个10进制BCD码转换成一个byte数组
+	 * 
+	 * @param BCDStr
+	 * @return
+	 */
+	public static byte[] getBCDBytesByStr(String BCDStr) {
+		if (BCDStr.length() % 2 != 0) {
+			BCDStr = "0" + BCDStr;
+		}
+		List<Byte> listBCDBytes = new ArrayList<Byte>();
+		char bcdStrToChars[] = BCDStr.toCharArray();
+		for (int i = 0; i < bcdStrToChars.length; i++) {
+			if (i % 2 != 0) {
+				String s2 = String.valueOf(bcdStrToChars[i - 1]);
+				String s1 = String.valueOf(bcdStrToChars[i]);
+				String bcdStr = s2 + s1;
+				int bcdInt = Integer.valueOf(bcdStr, 16);
+				listBCDBytes.add((byte) bcdInt);
+			}
+		}
+		byte bcdBytes[] = new byte[listBCDBytes.size()];
+		for (int i = 0; i < listBCDBytes.size(); i++) {
+			bcdBytes[i] = listBCDBytes.get(i);
+		}
+		return bcdBytes;
+	}
+
+	/**
+	 * 将一个byte数组转换成一个10进制BCD码字符串
+	 * 
+	 * @param b
+	 * @return
+	 */
+	public static String getBCDStrByBCDBytes(Byte... b) {
+		String hexsStr = "";
+		for (byte s : b) {
+			String hexStr = Integer.toHexString(s & 0xff);
+			if (hexStr.length() == 1) {
+				hexStr = "0" + hexStr;
+			}
+			hexsStr = hexsStr + hexStr;
+		}
+		return hexsStr;
+	}
+
+	/**
+	 * 将一个16 进制字符串转换成一个byte数组
+	 * 
+	 * @param hexStr
+	 * @return
+	 */
+	public static byte[] getHexMBytesByStr(String hexStr) {
+		String hexmStr = Long.toHexString(Long.valueOf(hexStr));
+		return getBCDBytesByStr(hexmStr);
+	}
+
+	/**
+	 * 将一个byte数组转换成一个16进制M码字符串
+	 * 
+	 * @param b
+	 * @return
+	 */
+	public static String getHexMByBytes(Byte... b) {
+		return Long.valueOf(getBCDStrByBCDBytes(b), 16).toString();
+	}
+
+	/**
+	 * 以yyyyMMddHHmmss形式得到当前时间
+	 * 
+	 * @return
+	 */
+	public static String getCurrentTime() {
+		SimpleDateFormat dateFormat_yyyy_MM_dd = new SimpleDateFormat(
+				"yyyyMMddHHmmss");
+		return dateFormat_yyyy_MM_dd.format(new Date());
+	}
+
+	/**
+	 * 以16进制log一个byte List
+	 * 
+	 * @param bys
+	 */
+	public static void printBytes(List<Byte> bys) {
+		List<String> list = new ArrayList<String>();
+		for (byte b : bys) {
+			list.add(Integer.toHexString(b & 0xff).toUpperCase());
+		}
+		logger.info(list);
+	}
+
+	public static void printBytes(List<Byte> bys, String header) {
+		List<String> list = new ArrayList<String>();
+		for (byte b : bys) {
+			list.add(Integer.toHexString(b & 0xff).toUpperCase());
+		}
+		logger.info(header + list);
+	}
+	
+	public static int compareVersion(String compareFrom, String compareTo) throws NumberFormatException{
+		int[] fromInts = new int[4];
+		String[] from = compareFrom.split("\\.");
+		for (int i = 0; i < from.length; i++) {
+			fromInts[i] = Integer.valueOf(from[i]);
+		}
+		int[] toInts = new int[4];
+		String[] to = compareTo.split("\\.");
+		for (int i = 0; i < to.length; i++) {
+			toInts[i] = Integer.valueOf(to[i]);
+		}
+		
+		for (int i = 0; i < fromInts.length; i++) {
+			if (fromInts[i] < toInts[i]){
+				return -1;
+			}
+			
+			if (fromInts[i] > toInts[i]){
+				return 1;
+			}			
+		}
+		
+		return 0;
+	}
+
+	public static boolean verifyStringInFile(String verifyStr, File verifyFile)
+			throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(verifyFile));
+		String str = "";
+		while ((str = br.readLine()) != null) {
+			if (verifyStr.trim().equalsIgnoreCase(str.trim())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * 将byte数组转化成一个字符串（将byte转化为char）
+	 * 
+	 * @param bytes
+	 * @return
+	 */
+	public static String bytes2Chars(byte[] bytes) {
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < bytes.length; i++) {
+			sb.append((char) bytes[i]);
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * 将byte数组转换为字符串
+	 * 
+	 * @param bytes
+	 * @return
+	 */
+	public static String bytes2Str(byte[] bytes) {
+		StringBuffer sb = new StringBuffer();
+		for (int i = 0; i < bytes.length; i++) {
+			sb.append(bytes[i]).append(",");
+		}
+		if (sb.length() > 0) {
+			return sb.substring(0, sb.length() - 1);
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * 将两个byte数组合并
+	 * 
+	 * @param bytes1
+	 * @param bytes2
+	 * @return
+	 */
+	public static byte[] combine2Bytes(byte[] bytes1, byte[] bytes2) {
+		//		byte[] b = Arrays.copyOf(bytes1, bytes1.length + bytes2.length);
+		//		for(int i = bytes1.length ; i < b.length ; i ++){
+		//			b[i] = bytes2[i - bytes1.length];
+		//		}
+		//		return b;
+		return ArrayUtils.addAll(bytes1, bytes2);
+	}
+
+	public static String formatLength(String str, int len) {
+		return StringUtils.leftPad(str, len, '0');
+		//		if(str.length() > len){
+		//			return str.substring(0,len);
+		//		}
+		//		String temp = "000000000000000000000000000000000000000";
+		//		while(temp.length()< str.length()){
+		//			temp += temp;
+		//		}
+		//		return temp.substring(0, len - str.length()) + str;
+	}
+
+	public static Date getDate(String dateFormat, String dateStr)
+			throws ParseException {
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+		return sdf.parse(dateStr);
+	}
+
+	public static String getDateStr(String dateFormat, Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
+		return sdf.format(date);
+	}
+}

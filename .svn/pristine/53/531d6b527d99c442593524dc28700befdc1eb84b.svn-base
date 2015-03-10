@@ -1,0 +1,79 @@
+package com.switek.netseed.server.bean;
+
+public class IRCode {
+
+	public IRCode() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	int keyIndex;
+	byte[] IRCodeData;
+	IRCode previous;
+	IRCode next;
+	/**
+	 * @return the previous
+	 */
+	public IRCode getPrevious() {
+		return previous;
+	}
+	/**
+	 * @param previous the previous to set
+	 */
+	public void setPrevious(IRCode previous) {
+		this.previous = previous;
+	}
+	/**
+	 * @return the next
+	 */
+	public IRCode getNext() {
+		return next;
+	}
+	/**
+	 * @param next the next to set
+	 */
+	public void setNext(IRCode next) {
+		this.next = next;
+	}
+	/**
+	 * @return the keyIndex
+	 */
+	public int getKeyIndex() {
+		return keyIndex;
+	}
+	/**
+	 * @param keyIndex the keyIndex to set
+	 */
+	public void setKeyIndex(int keyIndex) {
+		this.keyIndex = keyIndex;
+	}
+	/**
+	 * @return the iRCodeData
+	 */
+	public byte[] getIRCodeData() {
+		return IRCodeData;
+	}
+	/**
+	 * @param iRCodeData the iRCodeData to set
+	 */
+	public void setIRCodeData(byte[] iRCodeData) {
+		IRCodeData = iRCodeData;
+	}	
+	
+	long lastEditDT = 0;
+	/**
+	 * @return the lastEditDT
+	 */
+	public long getLastEditDT() {
+		return lastEditDT;
+	}
+
+	/**
+	 * @param lastEditDT the lastEditDT to set
+	 */
+	public void setLastEditDT(long lastEditDT) {
+		this.lastEditDT = lastEditDT;
+	}
+
+	
+
+}

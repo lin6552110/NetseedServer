@@ -1,0 +1,275 @@
+package com.switek.netseed.server.bean;
+
+import java.util.Date;
+import java.util.Hashtable;
+
+public class Device {
+
+	public static final int DEVICE_TYPE_AC = 1;
+	public static final int DEVICE_TYPE_TV = 2;
+	SubController owner;
+	long lastEditDT = 0;
+
+	/**
+	 * @return the lastEditDT
+	 */
+	public long getLastEditDT() {
+		return lastEditDT;
+	}
+
+	/**
+	 * @param lastEditDT
+	 *            the lastEditDT to set
+	 */
+	public void setLastEditDT(long lastEditDT) {
+		this.lastEditDT = lastEditDT;
+	}
+
+	/**
+	 * @return the owner
+	 */
+	public SubController getOwner() {
+		return owner;
+	}
+
+	public Device(SubController owner) {
+		this.owner = owner;
+		this.controllerId = owner.getParent().getControllerId();
+		this.subcontrollerId = owner.getControllerId();
+	}
+
+	public static final String DEVICE_ID_NEW = "{NEW_DEVICE}";
+
+	String controllerId = "";
+	String subcontrollerId = "";
+
+	/**
+	 * @return the controllerId
+	 */
+	public String getControllerId() {
+		return controllerId;
+	}
+
+	/**
+	 * @param controllerId
+	 *            the controllerId to set
+	 */
+	public void setControllerId(String controllerId) {
+		this.controllerId = controllerId;
+	}
+
+	/**
+	 * @return the subcontrollerId
+	 */
+	public String getSubcontrollerId() {
+		return subcontrollerId;
+	}
+
+	/**
+	 * @param subcontrollerId
+	 *            the subcontrollerId to set
+	 */
+	public void setSubcontrollerId(String subcontrollerId) {
+		this.subcontrollerId = subcontrollerId;
+	}
+
+	String deviceId = DEVICE_ID_NEW;
+	String deviceName = "";
+	int deviceType;
+	String brandCode = "";
+	int IRCodeIndex = -1;
+	boolean isLearnedIRCode = false;
+	String status = "";
+	Date registerDT;
+	String registerBy = "";
+
+	Hashtable<Integer, IRCode> learnedIRCodes = new Hashtable<>();
+
+	/**
+	 * @return the deviceId
+	 */
+	public String getDeviceId() {
+		return deviceId;
+	}
+
+	public static boolean isNewDevice(String deviceId) {
+		return deviceId.equalsIgnoreCase(DEVICE_ID_NEW);
+	}
+
+	/**
+	 * @return the iRCodes
+	 */
+	public Hashtable<Integer, IRCode> getLearnedIRCodes() {
+		return learnedIRCodes;
+	}
+
+	public boolean existsIRCode(int keyIndex) {
+		return getLearnedIRCodes().containsKey(keyIndex);
+	}
+
+	public IRCode getLearnedIRCode(int keyIndex) {
+		return getLearnedIRCodes().get(keyIndex);
+	}
+
+	public void putIRCode(int keyIndex, IRCode IRCode) {
+		getLearnedIRCodes().put(keyIndex, IRCode);
+	}
+
+	/**
+	 * @param iRCodeList
+	 *            the iRCodes to set
+	 */
+	public void setIRCodes(Hashtable<Integer, IRCode> IRCodeList) {
+		learnedIRCodes = IRCodeList;
+	}
+
+	/**
+	 * @param deviceId
+	 *            the deviceId to set
+	 */
+	public void setDeviceId(String deviceId) {
+		this.deviceId = deviceId;
+	}
+
+	/**
+	 * @return the deviceName
+	 */
+	public String getDeviceName() {
+		return deviceName;
+	}
+
+	/**
+	 * @param deviceName
+	 *            the deviceName to set
+	 */
+	public void setDeviceName(String deviceName) {
+		this.deviceName = deviceName;
+	}
+
+	/**
+	 * @return the deviceType
+	 */
+	public int getDeviceType() {
+		return deviceType;
+	}
+
+	public boolean isSensor() {
+		return getDeviceType() == 0;
+	}
+
+	/**
+	 * @param deviceType
+	 *            the deviceType to set
+	 */
+	public void setDeviceType(int deviceType) {
+		this.deviceType = deviceType;
+	}
+
+	/**
+	 * @return the brandCode
+	 */
+	public String getBrandCode() {
+		return brandCode;
+	}
+
+	/**
+	 * @param brandCode
+	 *            the brandCode to set
+	 */
+	public void setBrandCode(String brandCode) {
+		this.brandCode = brandCode;
+	}
+
+	/**
+	 * Get the index of standard IR code.
+	 * 
+	 * @return the iRCodeIndex
+	 */
+	public int getIRCodeIndex() {
+		return IRCodeIndex;
+	}
+
+	/**
+	 * @param iRCodeIndex
+	 *            the iRCodeIndex to set
+	 */
+	public void setIRCodeIndex(int iRCodeIndex) {
+		IRCodeIndex = iRCodeIndex;
+	}
+
+	/**
+	 * @return the isLearnedIRCode
+	 */
+	public boolean isLearnedIRCode() {
+		return isLearnedIRCode;
+	}
+
+	/**
+	 * @param isLearnedIRCode
+	 *            the isLearnedIRCode to set
+	 */
+	public void setLearnedIRCode(boolean isLearnedIRCode) {
+		this.isLearnedIRCode = isLearnedIRCode;
+	}
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+
+	/**
+	 * @param status
+	 *            the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	/**
+	 * @return the registerDT
+	 */
+	public Date getRegisterDT() {
+		return registerDT;
+	}
+
+	/**
+	 * @param registerDT
+	 *            the registerDT to set
+	 */
+	public void setRegisterDT(Date registerDT) {
+		this.registerDT = registerDT;
+	}
+
+	/**
+	 * @return the registerBy
+	 */
+	public String getRegisterBy() {
+		return registerBy;
+	}
+
+	/**
+	 * @param registerBy
+	 *            the registerBy to set
+	 */
+	public void setRegisterBy(String registerBy) {
+		this.registerBy = registerBy;
+	}
+
+	int lastPressedKey=0;
+
+	/**
+	 * @return the lastPressedKey
+	 */
+	public int getLastPressedKey() {
+		return lastPressedKey;
+	}
+
+	/**
+	 * @param lastPressedKey the lastPressedKey to set
+	 */
+	public void setLastPressedKey(int lastPressedKey) {
+		this.lastPressedKey = lastPressedKey;
+	}	
+}

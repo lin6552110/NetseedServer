@@ -1,0 +1,33 @@
+package com.switek.netseed.server.bean;
+
+
+public class ErrorCode {
+
+	public ErrorCode() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public static final int NO_ERROR = 0;
+	public static final int ERROR_UNKNOWN_EXCEPTION = 10000;
+	public static final int ERROR_COULDNOT_CONNECT_CTRL = 10001;
+	public static final int ERROR_NETWORK_ISSUE = 10002;
+	public static final int ERROR_READ_LEARNED_IRCODE = 10003;
+	public static final int ERROR_READ_SENSOR_DATA = 10004;
+	public static final int ERROR_LEARNED_IRCODE_KEYINDEX_MISMATCH = 10005;
+	public static final int ERROR_NO_IRCODE = 20001;
+	public static final int ERROR_FAILED_UPDATEDB = 30001;
+	public static final int ERROR_FAILED_CREATE_DEVICE = 30002;
+	public static final int ERROR_INVALID_CONTROLLERID = 40001;
+	public static final int ERROR_INVALID_SUBCONTROLLERID = 40002;
+	public static final int ERROR_INVALID_DEVICEID = 40003;
+	public static final int ERROR_COULDNOT_FIND_IRCODE = 40004;
+	public static final int ERROR_REMOVE_DEFAULT_SUBCONTROLLER_PROHIBITED = 40005;
+	public static final int ERROR_REMOVE_SENSON_IS_PROHIBITED = 40006;
+	public static final int ERROR_SUBCONTROLLERID_ALREADY_EXISTS = 40007;
+	public static final int ERROR_INVALID_DEVICETYPE = 40008;
+	public static final int ERROR_AC_ALREADY_EXISTS = 40009;
+	public static final int ERROR_INVALID_APP_NAME = 50001;
+	public static final int ERROR_INVALID_VERSION_FORMAT = 50002;
+	public static final int ERROR_COULDNOT_FIND_FILE = 60001;
+	public static final int ERROR_READ_FILE = 60002;
+}

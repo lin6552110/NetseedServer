@@ -1,0 +1,5 @@
+#port of socket server
+port=8899
+#max number of thread in the thread pool
+maxthreads=100
+connect2CtrlTimeout=60000

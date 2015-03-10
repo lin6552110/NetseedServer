@@ -1,0 +1,30 @@
+[2015-02-09 17:35:45:786][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:35:45:953][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:35:45:955][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:35:46:000][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-09 17:35:46:010][cn.jpush.api.common.connection.NativeHttpClient] Send request - POST https://api.jpush.cn/v3/push
+[2015-02-09 17:35:46:011][cn.jpush.api.common.connection.NativeHttpClient] Request Content - {"platform":"all","audience":{"alias":["BB"]},"notification":{"android":{"alert":"Hello world!","title":"NetSeed!"}},"options":{"sendno":880705114,"apns_production":false}}
+[2015-02-09 17:35:46:700][cn.jpush.api.common.resp.ResponseWrapper] JPush API Rate Limiting params - quota:600, remaining:599, reset:60
+[2015-02-09 17:35:46:701][cn.jpush.api.common.connection.NativeHttpClient] Succeed to get response - 200 OK
+[2015-02-09 17:35:46:702][cn.jpush.api.common.connection.NativeHttpClient] Response Content - {"sendno":"880705114","msg_id":"1681795813"}
+[2015-02-09 17:35:46:739][com.lin.test.JpushTest] Got result{"msg_id":1681795813,"sendno":880705114}
+[2015-02-09 17:36:01:336][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:36:01:506][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:36:01:508][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:36:01:553][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-09 17:36:01:564][cn.jpush.api.common.connection.NativeHttpClient] Send request - POST https://api.jpush.cn/v3/push
+[2015-02-09 17:36:01:564][cn.jpush.api.common.connection.NativeHttpClient] Request Content - {"platform":"all","audience":{"alias":["BB"]},"notification":{"android":{"alert":"Hello world!","title":"NetSeed!"}},"options":{"sendno":1727653196,"apns_production":false}}
+[2015-02-09 17:36:01:902][cn.jpush.api.common.resp.ResponseWrapper] JPush API Rate Limiting params - quota:600, remaining:598, reset:45
+[2015-02-09 17:36:01:902][cn.jpush.api.common.connection.NativeHttpClient] Succeed to get response - 200 OK
+[2015-02-09 17:36:01:903][cn.jpush.api.common.connection.NativeHttpClient] Response Content - {"sendno":"1727653196","msg_id":"1167130178"}
+[2015-02-09 17:36:01:925][com.lin.test.JpushTest] Got result{"msg_id":1167130178,"sendno":1727653196}
+[2015-02-09 17:36:16:441][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:36:16:618][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:36:16:620][cn.jpush.api.common.connection.NativeHttpClient] Created instance with _maxRetryTimes = 3
+[2015-02-09 17:36:16:667][cn.jpush.api.push.model.notification.AndroidNotification$Builder] Null extras param. Throw away it.
+[2015-02-09 17:36:16:677][cn.jpush.api.common.connection.NativeHttpClient] Send request - POST https://api.jpush.cn/v3/push
+[2015-02-09 17:36:16:678][cn.jpush.api.common.connection.NativeHttpClient] Request Content - {"platform":"all","audience":{"alias":["BB"]},"notification":{"android":{"alert":"Hello world!","title":"NetSeed!"}},"options":{"sendno":82474561,"apns_production":false}}
+[2015-02-09 17:36:17:057][cn.jpush.api.common.resp.ResponseWrapper] JPush API Rate Limiting params - quota:600, remaining:597, reset:30
+[2015-02-09 17:36:17:058][cn.jpush.api.common.connection.NativeHttpClient] Succeed to get response - 200 OK
+[2015-02-09 17:36:17:059][cn.jpush.api.common.connection.NativeHttpClient] Response Content - {"sendno":"82474561","msg_id":"410749989"}
+[2015-02-09 17:36:17:099][com.lin.test.JpushTest] Got result{"msg_id":410749989,"sendno":82474561}

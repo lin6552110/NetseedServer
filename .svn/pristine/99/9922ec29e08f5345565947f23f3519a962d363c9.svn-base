@@ -1,0 +1,166 @@
+package com.switek.netseed.server.bean;
+
+import java.beans.Transient;
+import java.util.Date;
+import java.util.Hashtable;
+
+import com.switek.netseed.util.FormatTransfer;
+
+public class Controller {
+
+	public Controller() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public static final String DEFAULT_SUB_CONTROLLER_ID = "0";	
+	String controllerId;
+	String controllerName="";
+	String status="";
+	Date registerDT;
+	String registerBy="";
+	long lastHeartbetTime = 0;
+	String macAddressString="";
+	
+	public String getMacAddress(){
+		return macAddressString;		
+	}
+	
+	public void setMacAddress(String macAddress){
+		this.macAddressString=macAddress;
+	}
+	
+	Hashtable<String, SubController> subControllers = new Hashtable<>();
+	
+	
+	/**
+	 * @return the subControllers
+	 */
+	public Hashtable<String, SubController> getSubControllers() {
+		return subControllers;
+	}
+	
+	public SubController getSubController(String subcontrollerId) {
+		return subControllers.get(subcontrollerId);
+	}
+	
+	public SubController removeSubController(SubController subcontroller) {
+		return subControllers.remove(subcontroller.getControllerId());
+	}
+	
+	public void addSubController(String id, SubController sub) {
+		this.subControllers.put(id, sub);
+	}
+	/**
+	 * @param subControllers the subControllers to set
+	 */
+	public void setSubControllers(Hashtable<String, SubController> subControllers) {
+		this.subControllers = subControllers;
+	}
+	/**
+	 * @return the controllerId
+	 */
+	public String getControllerId() {
+		return controllerId;
+	}
+	/**
+	 * @param controllerId the controllerId to set
+	 */
+	public void setControllerId(String controllerId) {
+		this.controllerId = controllerId;
+	}
+	/**
+	 * @return the controllerName
+	 */
+	public String getControllerName() {
+		return controllerName;
+	}
+	/**
+	 * @param controllerName the controllerName to set
+	 */
+	public void setControllerName(String controllerName) {
+		this.controllerName = controllerName;
+	}
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+		return status;
+	}
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	/**
+	 * @return the registerDT
+	 */
+	public Date getRegisterDT() {
+		return registerDT;
+	}
+	/**
+	 * @param registerDT the registerDT to set
+	 */
+	public void setRegisterDT(Date registerDT) {
+		this.registerDT = registerDT;
+	}
+	/**
+	 * @return the registerBy
+	 */
+	public String getRegisterBy() {
+		return registerBy;
+	}
+	/**
+	 * @param registerBy the registerBy to set
+	 */
+	public void setRegisterBy(String registerBy) {
+		this.registerBy = registerBy;
+	}
+	/**
+	 * @return the lastHeartbetDT
+	 */
+	@Transient
+	public long getLastHeartbetDT() {
+		return lastHeartbetTime;
+	}
+	/**
+	 * @param lastHeartbetDT the lastHeartbetDT to set
+	 */
+	public void setLastHeartbetDT(long lastHeartbetDT) {
+		this.lastHeartbetTime = lastHeartbetDT;
+	}
+	
+	public boolean isOnline() {
+		return System.currentTimeMillis() - getLastHeartbetDT() <= 5 * 60 * 1000;
+	}
+	
+	public static byte[] convertControllerId2Bytes(String controllerId) {
+		byte[] bytes = new byte[6];
+		if (controllerId.equals("")){
+			return bytes;
+		}
+		if (controllerId.length() != 12){
+			throw new IllegalArgumentException("The controller Id must be 12 characters with format YYYYMMDDnnnn.");
+		}
+		short year = Short.valueOf(controllerId.substring(0, 4));
+		byte month = Byte.valueOf(controllerId.substring(4, 6));
+		byte day = Byte.valueOf(controllerId.substring(6, 8));
+		short No = Short.valueOf(controllerId.substring(8, 12));
+		
+		byte[] bytesYear = FormatTransfer.toLH(year);	
+		byte[] bytesNo = FormatTransfer.toLH(No);
+		
+		bytes[0] = bytesYear[0];
+		bytes[1] = bytesYear[1];
+		bytes[2] = month;
+		bytes[3] = day;
+		bytes[4] = bytesNo[0];
+		bytes[5] = bytesNo[1];
+		
+		return bytes;		
+	}
+
+
+	
+}

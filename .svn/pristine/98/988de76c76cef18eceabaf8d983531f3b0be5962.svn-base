@@ -1,0 +1,29 @@
+log4j.rootLogger=info,stdout,DailyRolling
+
+#log4j.logger.com.vander=DEBUG, stdout, DailyRolling
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=[%d{yyyy-MM-dd HH:mm:ss:SSS}][%C] %m%n
+
+log4j.appender.DailyRolling=org.apache.log4j.CompositeRollingFileAppender
+log4j.appender.DailyRolling.File = log/server/
+log4j.appender.DailyRolling.DatePattern = yyyy-MM-dd/yyyy-MM-dd_HH'.log'
+#In date folder(eg. yyyy-MM-dd), if the count of log files is over maxBackupIndex, it will auto delete the oldest log file
+#log4j.appender.DailyRolling.maxBackupIndex=15
+#if count of date folder over maxFolderBackupIndex, it will auto delete the oldest folder
+log4j.appender.DailyRolling.maxFolderBackupIndex=15
+log4j.appender.DailyRolling.maxFileSize=150MB
+log4j.appender.DailyRolling.layout=org.apache.log4j.PatternLayout
+log4j.appender.DailyRolling.layout.ConversionPattern=[%d{yyyy-MM-dd HH\:mm\:ss\:SSS}][%C] %m%n
+
+#log4j.logger.org.apache.ibatis=DEBUG, stdout, sqliteoutput
+#log4j.appender.sqliteoutput=org.apache.log4j.CompositeRollingFileAppender
+#log4j.appender.sqliteoutput.File = log/sqlite/
+#log4j.appender.sqliteoutput.DatePattern = yyyy-MM-dd/yyyy-MM-dd_HH'.log'
+##In date folder(eg. yyyy-MM-dd), if the count of log files is over maxBackupIndex, it will auto delete the oldest log file
+##log4j.appender.DailyRolling.maxBackupIndex=15
+##if count of date folder over maxFolderBackupIndex, it will auto delete the oldest folder
+#log4j.appender.sqliteoutput.maxFolderBackupIndex=15
+#log4j.appender.sqliteoutput.maxFileSize=150MB
+#log4j.appender.sqliteoutput.layout=org.apache.log4j.PatternLayout
+#log4j.appender.sqliteoutput.layout.ConversionPattern=[%d{yyyy-MM-dd HH\:mm\:ss\:SSS}][%C] %m%n
