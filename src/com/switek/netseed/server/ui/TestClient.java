@@ -473,17 +473,18 @@ public class TestClient {
 			// Utils.long2Bytes(System.currentTimeMillis());
 			
 			byte[] commId=new byte[2];
-			commId[0]=0x38;
-			commId[1]=0x0F;
+			commId[0]=0x15;
+			commId[1]=0x00;
 			String str=tbxPacket.getText();
-			byte[] data=new byte[7];
-			data[0]=(byte)0x0;
-			data[1]=(byte)0x0;
+			byte[] data=new byte[8];
+			data[0]=(byte)0x00;
+			data[1]=(byte)0x00;
 			data[2]=(byte)0x00;
 			data[3]=(byte)0x00;
 			data[4]=(byte)0x08;
 			data[5]=(byte)0xAD;
 			data[6]=(byte)0xE9;
+			data[7]=(byte)0xAC;
 			
 //			data[2]=(byte)0xDE;
 //			data[3]=(byte)0x07;
@@ -491,8 +492,8 @@ public class TestClient {
 //			data[5]=(byte)0x07;
 //			data[6]=(byte)0x30;
 ////			DE07050730
-			out.write(createPacke(commId,str.getBytes()));
-//			out.write(createPacke(commId,data));
+//			out.write(createPacke(commId,str.getBytes()));
+			out.write(createPacke(commId,data));
 			//out.flush();
 			//out.close();
 			//System.out.println("心跳时收到：" + in.readLine());

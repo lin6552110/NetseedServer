@@ -26,6 +26,7 @@ public class Device {
 	public static final int DEVICE_TYPE_GAS_LEAKAGE_ALARM=0x86;
 	public static final int DEVICE_TYPE_OUTDOOR_PIR_SENSOR=0x87;
 	public static final int DEVICE_TYPE_CURTIAN_DETECTOR=0x88;
+	public static final int DEVICE_TYPE_LEAK_ALARM=0x89;
 	
 	SubController owner;
 	int circuitCount = 0;
@@ -362,38 +363,81 @@ public class Device {
 		String str="";
 		switch (deviceType) {
 		case Device.DEVICE_TYPE_DOORCONTACT:
-			str=deviceName+"(门磁 )\n";
+			str=deviceName+"(门磁 )";
 			break;
 		case Device.DEVICE_TYPE_SMARTSENS:
-			str=deviceName+"(红外感应器)\n";
+			str=deviceName+"(红外感应器)";
 			break;
 		case Device.DEVICE_TYPE_INDOOR_INTRARED_RALARM_SIRENN:
-			str=deviceName+"(红外感应报警)\n";
+			str=deviceName+"(红外感应报警)";
 			break;
 		case Device.DEVICE_TYPE_PHOTOELECTRIC_SMOKE_DETECTOR:
-			str=deviceName+"(光电感烟探测器)\n";
+			str=deviceName+"(光电感烟探测器)";
 			break;
 		case Device.DEVICE_TYPE_BREAK_GLASS_DETECTOR:
-			str=deviceName+"(玻璃破碎感应器)\n";
+			str=deviceName+"(玻璃破碎感应器)";
 			break;
 		case Device.DEVICE_TYPE_PANIC_ALARMS_SOS_BUTTON:
-			str=deviceName+"(SOS按钮)\n";
+			str=deviceName+"(SOS按钮)";
 			break;
 		case Device.DEVICE_TYPE_GAS_LEAKAGE_ALARM:
-			str=deviceName+"(燃气感应)\n";
+			str=deviceName+"(燃气感应)";
 			break;
 		case Device.DEVICE_TYPE_OUTDOOR_PIR_SENSOR:
-			str=deviceName+"(红外栏栅)\n";
+			str=deviceName+"(红外栏栅)";
 			break;
 		case Device.DEVICE_TYPE_CURTIAN_DETECTOR:
-			str=deviceName+"(帘幕感应)\n";
+			str=deviceName+"(帘幕感应)";
+			break;
+		case Device.DEVICE_TYPE_LEAK_ALARM:
+			str=deviceName+"(漏水报警)";
 			break;
 		default:
-			str=deviceName+"\n";
+			str=deviceName;
 			break;
 		}
 		return str;
 	}
+	
+	private long lastHeartbeatTime=0;
+	private byte eventCode=0;
+	private String event="";
+	public static final byte EVENCODE_ID_ALARM=0x0C;//报警
+	public static final byte EVENCODE_ID_HEARTBEAT=0x0D;//周期测试
+	public static final byte EVENCODE_ID_TAMPER_ALARM=0x0A;//防拆报警
+	public static final byte  EVENCODE_ID_UNDER_VOLTAGE=0x03;//电池欠压
+	
+	public long getLastHeartbeatTime() {
+		return lastHeartbeatTime;
+	}
+	public void setLastHeartbeatTime(long lastHeartbeatTime) {
+		this.lastHeartbeatTime = lastHeartbeatTime;
+	}
+	public byte getEventCode() {
+		
+		return eventCode;
+	}
+	public void setEventCode(byte eventCode) {
+		this.eventCode = (byte) (eventCode&15);
+		switch(this.eventCode){
+			case EVENCODE_ID_ALARM:
+				event="报警";
+				break;
+			case EVENCODE_ID_HEARTBEAT:
+				event="周期测试";
+				break;
+			case EVENCODE_ID_TAMPER_ALARM:
+				event="防拆报警";
+				break;
+			case EVENCODE_ID_UNDER_VOLTAGE:
+				event="电池欠压";
+				break;
+		}
+	}
+	public String getEvent() {
+		return event;
+	}
+	
 	
 	
 	

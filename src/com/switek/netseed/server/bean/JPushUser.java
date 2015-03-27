@@ -6,6 +6,7 @@ public class JPushUser {
 	private int status;
 	private String controllerId;
 	private String tag;
+	private int appType=1;
 	public String getRegistrationId() {
 		return registrationId;
 	}
@@ -39,7 +40,14 @@ public class JPushUser {
 	}
 	
 	public String toString(){
-		return controllerId+"  "+registrationId+"  "+platform+"  "+tag;
+		return controllerId+"  "+registrationId+"  "+platform+"  "+tag+"  "+appType;
+	}
+	
+	public int getAppType() {
+		return appType;
+	}
+	public void setAppType(int appType) {
+		this.appType = appType;
 	}
 
 	

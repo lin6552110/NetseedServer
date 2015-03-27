@@ -2,6 +2,8 @@ package com.lin.test;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -16,11 +19,14 @@ import net.sf.json.JSONObject;
 import com.switek.netseed.server.Jpush;
 import com.switek.netseed.server.Utils;
 import com.switek.netseed.server.bean.Device;
-import com.switek.netseed.server.bean.JPushUser;
+import com.switek.netseed.server.bean.DeviceHaoEn;
+import com.switek.netseed.server.bean.SocketPacket;
 import com.switek.netseed.server.dao.ControllerDao;
-import com.switek.netseed.server.dao.DeviceDao;
 import com.switek.netseed.server.dao.IRCodeDao;
 import com.switek.netseed.server.dao.JPushUserDao;
+import com.switek.netseed.server.dao.JpushHistoryDao;
+import com.switek.netseed.server.io.socket.strategy.CommJpushHistory;
+import com.switek.netseed.server.io.socket.strategy.CommStrategy;
 
 public class Test {
 	public static void main(String[] args) {
@@ -52,8 +58,11 @@ public class Test {
 		//getDeviceIndex();
 		//testBatch();
 		//testDate();
-		jpushUserDao();
-		
+//		jpushUserDao();
+//		split();
+		//getJpushHistory();
+		byte3();
+//		byte2();
 	}
 	
 	public static void testFile(){
@@ -269,27 +278,110 @@ public class Test {
 	}
 	
 	public static void jpushUserDao(){
-//		Jpush jpush=new Jpush();
-//		Device device=new Device();
-//		device.setControllerId("DE070507E009");
-//		device.setDeviceType(0x80);
-//		device.setDeviceName("大门");
-//		jpush.push2APP(device);
+		Jpush jpush=new Jpush();
+		Device device=new Device();
+		device.setControllerId("DE070507E009");
+		device.setDeviceType(0x80);
+		device.setDeviceName("大门");
+		jpush.push2APP(device);
 //		JSONObject o=new JSONObject();
 //		o.put("Status", "2");
 //		int i=o.getInt("Status");
 //		System.out.println(i);
 //		int s=Integer.valueOf("FF", 16);
 //		System.out.println(s==0xff);
-		byte[] byteDeviceId=new byte[5];
-		byteDeviceId[0]=(byte)0x00;
-		byteDeviceId[1]=(byte)0x00;
-		byteDeviceId[2]=(byte)0x08;
-		byteDeviceId[3]=(byte)0xAD;
-		byteDeviceId[4]=(byte)0xE9;
-		String deviceId=Utils.bytes2HexString2(byteDeviceId);
-		System.out.println(deviceId);
+//		byte[] byteDeviceId=new byte[5];
+//		byteDeviceId[0]=(byte)0x00;
+//		byteDeviceId[1]=(byte)0x00;
+//		byteDeviceId[2]=(byte)0x08;
+//		byteDeviceId[3]=(byte)0xAD;
+//		byteDeviceId[4]=(byte)0xE9;
+//		String deviceId=Utils.bytes2HexString2(byteDeviceId);
+//		System.out.println(deviceId);
 	}
 	
+	public static void split(){
+//		String str="2015-03-09 20:22:38";
+//		String format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS").format(new Date());
+//			//Date date=format.parse(str);
+//			System.out.println(format);
+		long s;
+	//	System.out.println(s);
+	}
+	
+	public static void getJpushHistory(){
+		JpushHistoryDao dao=new JpushHistoryDao();
+		String registrationId="030d9c274f7";
+		String controllerId="DE075545";
+		String deviceId="055";
+		long startDT=1426065808000L;
+		long endDT=0;
+//		List<Map<String,Object>> list=dao.getJpushHistory(registrationId, controllerId, deviceId, startDT, endDT);
+//		JSONArray object=JSONArray.fromObject(list);
+//		System.out.println(object.toString());
+		JSONObject body=new JSONObject();
+		JSONObject body1=new JSONObject();
+		body.put("RegistrationId", registrationId);
+		JSONArray array=new JSONArray();
+		array.add(1426065808000L);
+		array.add(1426645450000L);
+		body.put("DeleteDT", array);
+		body.put("Status", 1);
+		body1.put("Body", body);
+		System.out.println(body1.toString());
+		CommStrategy comm=new CommJpushHistory();
+		SocketPacket packet=new SocketPacket(null);
+		packet.setCommandDataString(body1.toString());
+		comm.analysisPacket(packet);
+	}
+	
+	public static void byte2(){
+		byte s=(byte)0x8c;
+		System.out.println(s&0x0f);
+		System.out.println(Integer.toBinaryString(s&0x0f));
+//		System.out.println(Integer.valueOf("11111111", 2).toString());
+//		
+//		//byte[] array=Utils.hexString2byte();
+//		for(byte b:"abcdef123".getBytes()){
+//			System.out.println((char)b);
+//		}
+		Map<String,Device> list=new HashMap<String,Device>();
+		Device device=new Device();
+		device.setStatus("abcd");
+		device.setDeviceId("12345");
+		DeviceHaoEn haoEn=new DeviceHaoEn();
+		haoEn.setStatus("abcde");
+		haoEn.setDeviceId("123456");
+		haoEn.setLastHeartbeatTime(123);
+		list.put("a",device);
+		list.put("b",haoEn);
+		DeviceHaoEn en=(DeviceHaoEn) list.get("a");
+		System.out.println(en.getLastHeartbeatTime());
+		
+	}
+	
+	public static void byte4(){
+		String controllerId="DE0707190032";
+		JPushUserDao dao=new JPushUserDao();
+		HashMap<String,List<String>> map=dao.registrationIdAndTypeList(controllerId);
+		Iterator iter=map.entrySet().iterator();
+		while(iter.hasNext()){
+			Map.Entry entry= (Map.Entry) iter.next();
+			System.out.println(entry.getKey()+":");
+			int appType=	Integer.valueOf((String) entry.getKey());
+			System.out.println(appType+1);
+			List<String> list=(List<String>)entry.getValue();
+			for(String str:list){
+				System.out.print(str+"\t");
+			}
+			System.out.println("\n");
+		}
+	}
+	
+	public static void byte3(){
+		HashMap map=new HashMap();
+		map.put("1", "value");
+		System.out.println(map.isEmpty());
+	}
 	
 }

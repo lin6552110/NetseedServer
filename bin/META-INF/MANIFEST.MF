@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Ant-Version: Apache Ant 1.8.4
 Created-By: 1.7.0_67-b01 (Oracle Corporation)
 Built-By: Administrator
-Built-Date: 2015-03-09 21:07:09
+Built-Date: 2015-03-27 10:44:31
 Implementation-Vendor: Switek
 Implementation-Title: NetseedServer
-Implementation-Version: 1.8.1 (build 307)
+Implementation-Version: 1.8.1 (build 318)
 Main-Class: com.switek.netseed.server.Main
 Class-Path: . lib/aopalliance-1.0.jar lib/aspectjweaver-1.7.2.jar lib/
  com.ibm.icu_4.4.2.v20110823.jar lib/commons-beanutils-1.7.0.jar lib/c

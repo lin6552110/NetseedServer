@@ -113,7 +113,8 @@ public class CommContext {
 				comm=new CommUpdatePushStatus();
 				break;
 			case SocketPacket.COMMAND_ID_CS_SAPDEVICE_ALARM:
-				comm=new CommSAPDeviceAlarm();
+				//comm=new CommSAPDeviceAlarm();
+				comm=new HaoEn();
 				break;
 			case SocketPacket.COMMAND_ID_AS_UPDATE_ASPDEVICE_STATUS:
 				comm=new CommUpdateSAPDeviceStatus();
@@ -123,6 +124,10 @@ public class CommContext {
 				break;
 			case SocketPacket.COMMAND_ID_AS_GET_SAPDEVICE_STATUS:
 				comm=new CommGetSAPDeviceStatus();
+				break;
+			case SocketPacket.COMMAND_ID_AS_JPUSH_HISTORY:
+				comm=new CommJpushHistory();
+				break;
 			default:
 				break;
 		}

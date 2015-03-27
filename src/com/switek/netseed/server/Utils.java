@@ -932,4 +932,10 @@ public class Utils {
 		SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
 		return sdf.format(new Date());
 	}
+	
+	public static byte[] hexString2byte(String str){
+		long l=Long.valueOf(str, 16);
+		System.out.println(l);
+		return long2Bytes(l);
+	}
 }

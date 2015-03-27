@@ -41,11 +41,11 @@ public class CommSAPDeviceAlarm extends CommStrategy{
 		byte[] cmdData=new byte[1];
 		int s=Integer.valueOf(status, 16);
 		cmdData[0]=(byte)0xFF;
-		send.sendPacket(packet, controllerId, subcontrollerId, commandId, cmdData);
 		if(0xFF==s){
 			Jpush jpush=new Jpush();
 			jpush.push2APP(device);
 		}
+		send.sendPacket(packet, controllerId, subcontrollerId, commandId, cmdData);
 	}
 	
 	//通知中控修改设备的撤防布防状态

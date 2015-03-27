@@ -32,7 +32,10 @@ public class CommCheckAppVersion extends CommStrategy{
 		if(jsonBody.containsKey("Type")){
 			type=jsonBody.getInt("Type");
 		}
-		
+		if(jsonBody.containsKey("Language")){
+			String language=jsonBody.getString("Language");
+			
+		}
 		String appName = "NetSeed";
 
 		int resultCode = 0;
