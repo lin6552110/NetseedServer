@@ -58,7 +58,6 @@ public class SocketPacket {
 	public static final short COMMAND_ID_AS_UPDATE_ASPDEVICE_STATUS=0x0F37;
 	public static final short COMMAND_ID_AS_ADD_SAPDEVICE=0x0F38;
 	public static final short COMMAND_ID_AS_GET_SAPDEVICE_STATUS=0x0F39;
-	public static final short COMMAND_ID_AS_JPUSH_HISTORY=0x0F3A;
 	
 
 	public static final int PACKET_LEN_WITHOUTDATA = 2 + 2 + 6 + 1 + 2 + 2;
@@ -338,9 +337,6 @@ public class SocketPacket {
 			break;
 		case COMMAND_ID_AS_ADD_SAPDEVICE:
 			typeString +="COMMAND_ID_AS_ADD_SAPDEVICE";
-			break;
-		case COMMAND_ID_AS_JPUSH_HISTORY:
-			typeString +="COMMAND_ID_AS_JPUSH_HISTORY";
 			break;
 		default:
 			typeString += "_UNKNOWN";

@@ -28,7 +28,6 @@ public class CommUpdatePushStatus extends CommStrategy{
 		JSONObject jsonBody=packet.getJsonBody();
 		String registrationId=jsonBody.getString("RegistrationId");
 		String platform=jsonBody.getString("Platform");
-		int appType=1;
 		JSONArray jsonArray=jsonBody.getJSONArray("Controller");
 		String controllerId=packet.getControllerId();
 		int resultCode=0;
@@ -40,10 +39,6 @@ public class CommUpdatePushStatus extends CommStrategy{
 			if(!(null==tag||tag.equals(""))){
 				jpushUser.setTag(tag);
 			}
-		}
-		if(jsonBody.containsKey("AppType")){
-			appType=jsonBody.getInt("AppType");
-			jpushUser.setAppType(appType);
 		}
 		JPushUserDao dao=new JPushUserDao();
 		dao.delete(registrationId);

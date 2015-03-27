@@ -2,9 +2,7 @@ package com.switek.netseed.server.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 
@@ -39,7 +37,7 @@ public class JPushUserDao extends Dao{
 	} 
 	
 	public boolean insert(JPushUser jpushUser){
-		String sql="INSERT INTO aduser(RegistrationId,ControllerId,Platform,Tag,Status,AppType) VALUES(?,?,?,?,?,?)";
+		String sql="INSERT INTO aduser(RegistrationId,ControllerId,Platform,Tag,Status) VALUES(?,?,?,?,?)";
 		boolean result=false;
 		try {
 			con=DB.getConnection();
@@ -49,7 +47,6 @@ public class JPushUserDao extends Dao{
 			pstmt.setString(3, jpushUser.getPlatform());
 			pstmt.setString(4, jpushUser.getTag());
 			pstmt.setInt(5, jpushUser.getStatus());
-			pstmt.setInt(6, jpushUser.getAppType());
 			int count=pstmt.executeUpdate();
 			if(1==count){
 				result=true;
@@ -135,35 +132,6 @@ public class JPushUserDao extends Dao{
 			DB.close(con, pstmt, set);
 		}
 		return list;
-	}
-	
-	public HashMap<String, List<String>> registrationIdAndTypeList(String controllerId){
-		String sql="SELECT RegistrationId,AppType FROM aduser WHERE ControllerId=? AND Status=1";
-		HashMap<String, List<String>> map=new HashMap<>();
-		try {
-			con=DB.getConnection();
-			pstmt=con.prepareStatement(sql);
-			pstmt.setString(1, controllerId);
-			set=pstmt.executeQuery();
-			while(set.next()){
-				String registrationId=set.getString("RegistrationId");
-				String appType=set.getString("AppType");
-				if(map.containsKey(appType)){
-					List list=map.get(appType);
-					list.add(registrationId);
-				}else{
-					List<String> list=new ArrayList();
-					list.add(registrationId);
-					map.put(appType, list);
-				}
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			logger.error("#ERROR# :执行SQL语句出错，请检查！\n" + sql, e);
-		}finally{
-			DB.close(con, pstmt, set);
-		}
-		return map;
 	}
 	
 	public void delete(String registrationId){

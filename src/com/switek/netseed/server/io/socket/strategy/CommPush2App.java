@@ -40,7 +40,7 @@ public class CommPush2App extends CommStrategy{
 				.setNotification(Notification.android(alert, "通知", null))
 				.build();
 		
-	//	PushResult result=jpush.push(payload);
+		PushResult result=jpush.push(payload);
 		//保存推送记录
 		
 	}
